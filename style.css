@@ -32,6 +32,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Ensure header content wraps on smaller screens */
 }
 
 .logo {
@@ -41,6 +42,8 @@ body {
 .main-nav {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* Allow navigation links to wrap */
+    justify-content: center;
 }
 
 .main-nav a {
@@ -73,11 +76,12 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    max-width: 90%; /* Ensure content fits within the viewport */
 }
 
 /* Sections */
 .section {
-    padding: 60px 0;
+    padding: 40px 20px;
     background-color: white;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -97,15 +101,15 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
-    margin-top: 20px;
 }
 
 .mission, .vision {
-    flex: 1;
+    flex: 1 1 45%; /* Allow flex items to adjust their width */
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .mission h3, .vision h3 {
@@ -309,7 +313,7 @@ body {
 
 /* Contact Page Specific Styles */
 .contact-main {
-    padding: 60px 0;
+    padding: 40px 20px;
     background-color: #f9f9f9;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -319,13 +323,13 @@ body {
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     justify-content: space-between;
 }
 
 .contact-details, .contact-form-section {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 45%; /* Ensure contact details and form sections adjust */
+    min-width: 280px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -392,76 +396,6 @@ body {
     padding: 20px 0;
 }
 
-/* Floating WhatsApp Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.whatsapp-logo {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s;
-}
-
-.whatsapp-logo:hover {
-    transform: scale(1.1);
-}
-
-/* Video Section */
-.video-section {
-    text-align: center;
-    padding: 40px 0;
-}
-
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Hero Section with Video Background */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 60vh; /* Adjust the height as needed */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire section */
-    z-index: -1; /* Ensures the video is behind the content */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1; /* Ensures content is above the video */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to improve text readability */
-    padding: 20px;
-    border-radius: 10px;
-}
-/* Footer Styling */
-.footer {
-    background-color: rgba(0, 127, 255, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-}
-
 /* Social Media Icons in Footer */
 .social-icons {
     margin-top: 10px;
@@ -478,6 +412,7 @@ body {
 .social-icons a:hover {
     color: #ddd; /* Change icon color on hover */
 }
+
 /* Floating WhatsApp Chat Widget */
 .whatsapp-chat-widget {
     position: fixed;
