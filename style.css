@@ -32,7 +32,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Ensure header content wraps on smaller screens */
 }
 
 .logo {
@@ -42,8 +41,6 @@ body {
 .main-nav {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Allow navigation links to wrap */
-    justify-content: center;
 }
 
 .main-nav a {
@@ -65,6 +62,7 @@ body {
     text-align: center;
     color: white;
     height: 60vh;
+    background-image: url('index.jpg'); /* Example image path */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -76,12 +74,11 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    max-width: 90%; /* Ensure content fits within the viewport */
 }
 
 /* Sections */
 .section {
-    padding: 40px 20px;
+    padding: 60px 0;
     background-color: white;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -101,15 +98,15 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .mission, .vision {
-    flex: 1 1 45%; /* Allow flex items to adjust their width */
+    flex: 1;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
 .mission h3, .vision h3 {
@@ -313,7 +310,7 @@ body {
 
 /* Contact Page Specific Styles */
 .contact-main {
-    padding: 40px 20px;
+    padding: 60px 0;
     background-color: #f9f9f9;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -323,13 +320,13 @@ body {
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: space-between;
 }
 
 .contact-details, .contact-form-section {
-    flex: 1 1 45%; /* Ensure contact details and form sections adjust */
-    min-width: 280px;
+    flex: 1;
+    min-width: 300px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -394,6 +391,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px 0;
+    position: relative;
 }
 
 /* Social Media Icons in Footer */
@@ -490,20 +488,7 @@ body {
         align-items: center;
     }
 
-    .container {
-        padding: 10px;
-    }
-
-    .section h2 {
-        font-size: 1.8em;
-    }
-
-    .cta-button {
-        font-size: 0.9em;
-        padding: 8px 16px;
-    }
-
-    .footer {
-        padding: 15px 0;
+    .hero-section {
+        height: 50vh; /* Adjust for smaller screens */
     }
 }
