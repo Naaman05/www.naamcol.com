@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naamcol - Home</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Include Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 </head>
 <body class="homepage">
     <!-- Unified Header and Navigation -->
@@ -24,19 +29,26 @@
         </div>
     </header>
 
-   <!-- Hero Section with Local Video Background -->
+    <!-- Hero Section with Local Video Background -->
 <section class="hero-section">
     <!-- Local Video Background -->
     <video class="video-background" autoplay muted loop>
-        <source src="homem.mp4" type="video/mp4">
+        <source src="img/homem.mp4" type="video/mp4"width = 100>
         Your browser does not support the video tag.
     </video>
+    <!-- Hero Content Overlay -->
+    <div class="hero-content">
+        <h2>Leading the Way in Marine and Distribution Services</h2>
+        <p>Your trusted partner for excellence across the seas and beyond.</p>
+        <a href="about.html" class="cta-button">Learn More About Us</a>
+    </div>
+</section>
 
     <!-- Introduction Section -->
     <section class="section intro">
         <div class="container">
             <h2>Welcome to Naamcol</h2>
-            <p>At Naamcol, we specialize in providing exceptional marine and distribution services tailored to meet the unique needs of our clients. With a rich heritage and a commitment to excellence, we deliver reliable solutions that drive success across the globe.</p>
+            <p>Naamcol is an integral part of Muses Mohamed, a company with a rich history dating back to 1888. As a fourth-generation company, Naamcol continues the legacy of excellence established by its founders, offering specialized marine and distribution services. Our commitment to quality and innovation drives our success across the globe, providing reliable solutions tailored to meet the unique needs of our clients.</p>
         </div>
     </section>
 
@@ -46,19 +58,18 @@
             <h2>Our Expertise</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <img src="./img/shipchandling-icon.png" alt="Shipchandling Icon" class="service-icon">
                     <h3>Shipchandling Services</h3>
                     <p>Muses Mohamed has been a pioneer in providing exceptional shipchandling services in Mombasa. We ensure every vessel is fully equipped for smooth operations, catering to Navy, Cruise, and Cargo ships.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./img/import-export-icon.png" alt="Import and Export Icon" class="service-icon">
                     <h3>Import and Export Services</h3>
                     <p>Our Import and Export division specializes in facilitating smooth and efficient trade across international borders, ensuring safe and timely delivery of goods.</p>
                 </div>
                 <div class="service-card">
-                    <img src="./img/distribution-icon.png" alt="Distribution Icon" class="service-icon">
                     <h3>Wholesale Distribution</h3>
                     <p>Naamcol is a leading distributor in the region, known for distributing Tropical Heat products throughout the Coast of Kenya with a robust and reliable network.</p>
+                    <a href="https://glovoapp.com/ke/en/mombasa/naaman-muses/" class="cta-button">Our Products</a>
+                    
                 </div>
             </div>
             <div class="services-button">
@@ -67,13 +78,70 @@
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/+96871006120" class="whatsapp-float" target="_blank">
-        <img src="./img/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo">
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Naamcol has been our trusted partner for years. Their expertise in marine services is unmatched!"</p>
+                    <p>- Marine Solutions Ltd.</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The team at Naamcol is always professional and reliable. We highly recommend them."</p>
+                    <p>- Oceanic Logistics Inc.</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Outstanding service and commitment to quality. Naamcol has never let us down."</p>
+                    <p>- Coastal Shipping Co.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News and Updates Section -->
+    <section class="section news">
+        <div class="container">
+            <h2>Latest News & Updates</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <h3>Naamcol Joins Glovo!</h3>
+                    <p>
+                        We’re thrilled to partner with Glovo, bringing our products directly to your doorstep for quick and easy delivery across the region.
+                    </p>
+                    <a href="https://glovoapp.com/ke/en/mombasa/naaman-muses/" class="cta-link">Read More</a>
+                </div>
+                <div class="news-card">
+                    <h3>Exclusive Distributor of Tropical Heat Products</h3>
+                    <p>Naamcol is proud to be the main distributor of Tropical Heat snacks, spices, and more across the entire Coast of Kenya, ensuring a variety of quality products reach every corner of the region..</p>
+                    <a href="https://www.tropicalheatgroup.com/" class="cta-link">Read More</a>
+                </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section call-to-action">
+        <div class="container">
+            <h2>Ready to Partner with Naamcol?</h2>
+            <p>Contact us today to learn more about how we can support your marine and distribution needs.</p>
+
+            <a href="contact.html" class="cta-button">Contact Us Now</a>
+        </div>
+    </section>
+
+   <!-- Floating WhatsApp Chat Widget -->
+<div class="whatsapp-chat-widget">
+    <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
+        <i class="fab fa-whatsapp"></i> Chat with Us
     </a>
+</div>
 
     <footer class="footer">
         <p>&copy; 2024 Naamcol. All rights reserved.</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/+96871006120" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
-</body>
-</html>
+    
