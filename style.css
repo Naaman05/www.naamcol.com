@@ -82,19 +82,30 @@ body {
     height: 100vh; /* Full viewport height */
     overflow: hidden; /* Hide any overflow */
 }
+/* Set up the hero section to be positioned relative for the video positioning */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fallback background color in case video fails to load */
+}
 
 /* Style the video to cover the entire section */
 .video-background {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
     width: auto;
     height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensure the video covers the section completely */
     z-index: -1; /* Ensure the video stays behind content */
-    transform: translate(-50%, -50%); /* Center the video */
-    object-fit: cover; /* Cover the entire section without distortion */
 }
 
 /* Style for the hero content to be above the video */
@@ -104,6 +115,20 @@ body {
     text-align: center;
     color: white; /* Ensure text is readable against the video */
     padding: 20px; /* Add some padding for readability */
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+
+    .hero-content {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+
 }
 
 
