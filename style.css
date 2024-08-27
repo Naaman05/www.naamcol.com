@@ -28,6 +28,11 @@ body {
     z-index: 1000;
 }
 
+/* Additional space for header on smaller screens */
+body {
+    padding-top: 70px; /* Adjust based on the actual header height */
+}
+
 .header-content {
     display: flex;
     align-items: center;
@@ -62,19 +67,53 @@ body {
     text-align: center;
     color: white;
     height: 60vh;
-    background-image: url(); /* Example image path */
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Prevents overflow */
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the background without distortion */
+    z-index: -1; /* Keeps the video behind the content */
 }
 
 .hero-content {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    position: relative;
+    z-index: 1; /* Ensures content is above the video */
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 0; /* Reduce padding for smaller screens */
+    }
+
+    body {
+        padding-top: 60px; /* Adjust padding to match the header height */
+    }
+
+    .hero-section {
+        height: 50vh; /* Adjust hero section height for smaller screens */
+    }
+
+    .hero-content {
+        padding: 15px;
+        font-size: 14px; /* Adjust text size for better readability on smaller screens */
+    }
+}
+
 /* Set up the hero section to be positioned relative for the video positioning */
 .hero-section {
     position: relative;
