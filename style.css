@@ -62,7 +62,7 @@ body {
     text-align: center;
     color: white;
     height: 60vh;
-    background-image: url('index.jpg'); /* Example image path */
+    background-image: url(); /* Example image path */
     background-size: cover;
     background-position: center;
     display: flex;
