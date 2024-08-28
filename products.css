@@ -227,9 +227,19 @@ p {
   box-sizing: border-box;
 }
 
-.footer p {
-  margin: 0;
-  font-size: 14px;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
 }
 
 .social-icons {
@@ -247,6 +257,16 @@ p {
 .social-icon:hover {
   color: #143f90; /* Match the hover effect with navbar link hover */
 }
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
 
 /* WhatsApp Chat Widget */
 .whatsapp-chat-widget {
