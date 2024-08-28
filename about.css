@@ -122,6 +122,70 @@ body {
   margin: 10px 0 0;
 }
 
+/* About Us Section */
+.about-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1e4494;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.about-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+ul {
+  text-align: left;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul strong {
+  color: #1e4494;
+}
+
 /* Footer Styles */
 .footer {
   background-color: #1e4494; /* Blue background for footer */
