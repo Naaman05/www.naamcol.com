@@ -112,7 +112,7 @@ body {
 .hero-section {
     width: 100%;
     max-width: 900px; /* Limit the width of the hero section */
-    height: 445px; /* Fixed height for the hero section */
+    height: 350px; /* Fixed height for the hero section */
     overflow: hidden; /* Prevent images from overflowing */
     position: relative; /* Ensures positioned elements are contained within the section */
     margin: 0 auto; /* Center the hero section */
