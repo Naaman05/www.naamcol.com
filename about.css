@@ -50,7 +50,7 @@ body.about {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('images/about-hero.jpg');
+  background-image: url('about-hero.jpg');
   background-size: cover;
   background-position: center;
   color: white;
