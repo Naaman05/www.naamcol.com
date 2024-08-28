@@ -1,32 +1,30 @@
 /* General Reset and Typography */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Bai Jamjuree', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  /* Header Styles */
-  .main-header {
-    background-color: #1e4494;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header Styles */
+.main-header {
+  background-color: #1e4494;
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
   .logo {
     height: 80px;
   }
