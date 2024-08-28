@@ -35,11 +35,11 @@
         </div>
     </header>
 
-      <!-- Hero Section with Animated Images -->
-<section class="hero-section">
-    <div class="slideshow-container">
-        <!-- Image slides -->
-        <div class="mySlides fade">
+        <!-- Hero Section with Animated Images -->
+    <section class="hero-section">
+        <div class="slideshow-container">
+            <!-- Image slides -->
+            <div class="mySlides fade">
             <img src="zesta3.jpeg" alt="Hero Image 1" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
@@ -70,20 +70,19 @@
             <img src="pwani3.png." alt="Hero Image 10" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
-            <img src="pwani4.png" alt="Hero Image 10" class="hero-image bounce">
+            <img src="pwani4.png" alt="Hero Image 11" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
-            <img src="manji22.png" alt="Hero Image 10" class="hero-image bounce">
+            <img src="manji22.png" alt="Hero Image 12" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
-            <img src="manji-products.jpg" alt="Hero Image 10" class="hero-image bounce">
+            <img src="manji-products.jpg" alt="Hero Image 13" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
-            <img src="manji3.jpeg" alt="Hero Image 10" class="hero-image bounce">
+            <img src="manji3.jpeg" alt="Hero Image 14" class="hero-image bounce">
         </div>
         <div class="mySlides fade">
-            <img src="kim4.png" alt="Hero Image 10" class="hero-image bounce">
-        </div>
+            <img src="kim4.png" alt="Hero Image 15" class="hero-image bounce">
         </div>
     </section>
 
@@ -153,11 +152,34 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+ <!-- JavaScript Code -->
     <script>
-        // JavaScript to toggle menu visibility on mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
         });
     </script>
 </body>
