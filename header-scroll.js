@@ -1,17 +1,26 @@
-// JavaScript to hide/show the header on scroll
+// JavaScript to handle header show/hide on scroll
 let lastScrollTop = 0;
 const header = document.querySelector('.main-header');
+const threshold = 5; // Minimum scroll distance before header is hidden/shown
 
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+function onScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        // User is scrolling down, hide the header
-        header.style.top = '-60px'; // Adjust this value to the negative height of your header
-    } else {
-        // User is scrolling up, show the header
-        header.style.top = '0';
+    if (Math.abs(lastScrollTop - scrollTop) <= threshold) {
+        return;
     }
 
-    lastScrollTop = scrollTop;
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down - hide the header
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        // Scrolling up - show the header
+        header.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+}
+
+window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(onScroll);
 });
