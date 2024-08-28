@@ -17,18 +17,19 @@ body {
   z-index: 1000;
   width: 100%; /* Ensure full width coverage */
   display: flex; /* Flex to align items properly */
-  justify-content: center; /* Center the content */
+  justify-content: center; /* Center the content horizontally */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Make sure content spans the full width */
+  width: 100%; /* Ensure full width for content */
   max-width: 1200px;
   padding: 20px; /* Adjust padding as needed */
   margin: 0; /* Remove margin to prevent white space */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box; /* Include padding in the total width */
 }
 
 .logo {
@@ -38,6 +39,7 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
+  width: 100%; /* Ensure nav covers the full width */
 }
 
 .nav-links {
@@ -46,6 +48,7 @@ body {
   flex-direction: row;
   align-items: center;
   position: relative; /* For positioning the close button */
+  width: 100%; /* Ensure full width */
 }
 
 .main-nav a {
@@ -113,6 +116,8 @@ body {
   color: white;
   padding: 40px 0;
   text-align: center;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box;
 }
 
 .footer p {
