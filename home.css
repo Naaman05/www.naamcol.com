@@ -48,28 +48,31 @@ body {
 .hero-section {
     position: relative;
     width: 100%; /* Full width of the parent container */
-    height: auto; /* Height will adjust according to the aspect ratio of the images */
-    max-width: 2650px; /* Limit the maximum width to 2650px to match the image size */
-    margin: auto; /* Center the hero section horizontally */
+    height: 100vh; /* Set height to full viewport height to fully show images */
     overflow: hidden; /* Ensure images do not overflow the section */
+    display: flex; /* Enable flexbox to align content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: black; /* Optional: Set background color to handle aspect ratio gaps */
 }
 
 /* Slideshow container styles */
 .slideshow-container {
     width: 100%;
-    height: auto;
+    height: 100%;
     position: relative;
-    margin: auto;
-    overflow: hidden; /* Ensure images stay within the hero section */
+    display: flex; /* Flexbox to center the images */
+    align-items: center; /* Vertically center images */
+    justify-content: center; /* Horizontally center images */
 }
 
 /* Style for the images in the hero section */
 .hero-image {
-    width: 100%; /* Set the width to 100% to scale down according to container width */
-    height: 100%; /* Set the height to 100% to maintain the aspect ratio */
-    max-width: 2650px; /* Set max width to the specified image width */
-    max-height: 1094px; /* Set max height to the specified image height */
-    object-fit: cover; /* Ensure images cover the section without distortion */
+    max-width: 100%; /* Ensure images scale down proportionally */
+    max-height: 100%; /* Ensure images scale down proportionally */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the full image is displayed without cropping */
     animation: bounce 3s infinite; /* Apply bounce animation */
 }
 
@@ -124,6 +127,7 @@ body {
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
+
 
 
 
