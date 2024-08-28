@@ -1,28 +1,17 @@
-// File: slideshow.js
+// JavaScript to handle automatic slideshow
 
 let slideIndex = 0; // Initialize slide index
-showSlides(); // Start the slideshow
+showSlides(); // Call function to display slides
 
-// Function to show slides
 function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide all slides
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1} // Reset to first slide after the last
-    slides[slideIndex-1].style.display = "block"; // Display current slide
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-}
-
-// Function to control next/previous slide navigation
-function plusSlides(n) {
-    slideIndex += n;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    if (slideIndex < 1) {slideIndex = slides.length}
+    const slides = document.getElementsByClassName("mySlides"); // Get all slides
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none"; // Hide all slides initially
     }
-    slides[slideIndex-1].style.display = "block";  
+    slideIndex++; // Increment slide index
+    if (slideIndex > slides.length) { 
+        slideIndex = 1; // Reset to the first slide if index exceeds number of slides
+    }
+    slides[slideIndex - 1].style.display = "block"; // Display the current slide
+    setTimeout(showSlides, 3000); // Change slide every 3 seconds
 }
