@@ -1,9 +1,9 @@
 /* General Reset and Typography */
-body {
+body.team {
   margin: 0;
   padding: 0;
   font-family: 'Bai Jamjuree', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
   color: #333;
 }
 
@@ -39,64 +39,10 @@ body {
   font-weight: bold;
 }
 
-.main-nav a:hover,
-.main-nav a.current {
+.main-nav a:hover {
   background-color: #143f90;
   border-radius: 5px;
 }
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.menu-toggle {
-  display: none; /* Hide the menu toggle by default */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Show the toggle button for smaller screens */
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    background-color: #1e4494;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding-top: 10px;
-  }
-
-  .nav-links.active {
-    display: flex; /* Display the nav links when active class is added */
-  }
-
-  .main-nav a {
-    padding: 15px 20px;
-    text-align: center;
-    width: 100%;
-  }
-}
-
 /* Footer Styles */
 .footer {
   background-color: #1e4494; /* Blue background for footer */
