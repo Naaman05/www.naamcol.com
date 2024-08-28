@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contact.css"> <!-- Updated to link contact.css -->
-    <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
-
-    <title>Contact Us</title>
+    <link rel="stylesheet" href="about.css"> <!-- Link to specific CSS file for About Us page -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
+    <title>Contact Us - Naaman Muses and Co Ltd</title>
 </head>
-<body class="contact">
+<body class="Contact-page">
 
     <!-- Header -->
     <header class="main-header">
         <div class="header-content">
             <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="our-products.html">Our Products</a>
-                <a href="our-team.html">Our Team</a>
-                <a href="contact-us.html" class="current">Contact Us</a>
+            <nav class="main-nav">
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="current">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="our-products.html">Our Products</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -169,5 +173,7 @@
             navList.classList.toggle('active');
         });
     </script>
+ <!-- Include JavaScript for Slideshow -->
+    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
