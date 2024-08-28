@@ -9,27 +9,25 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494; /* Ensure the header background is fully blue */
+  background-color: #1e4494; /* Blue background for header */
   color: white;
   padding: 0; /* Remove padding to ensure full background coverage */
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%; /* Ensure full width coverage */
-  display: flex; /* Flex to align items properly */
-  justify-content: center; /* Center the content horizontally */
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  box-sizing: border-box; /* Include padding in the total width */
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure full width for content */
   max-width: 1200px;
-  padding: 20px; /* Adjust padding as needed */
-  margin: 0; /* Remove margin to prevent white space */
-  box-sizing: border-box; /* Include padding in the total width */
+  width: 100%;
+  margin: 0 auto; /* Center the header content */
+  padding: 20px; /* Adjust padding for spacing */
+  box-sizing: border-box;
 }
 
 .logo {
@@ -39,7 +37,7 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
-  width: 100%; /* Ensure nav covers the full width */
+  width: 100%;
 }
 
 .nav-links {
@@ -47,12 +45,11 @@ body {
   gap: 15px;
   flex-direction: row;
   align-items: center;
-  position: relative; /* For positioning the close button */
-  width: 100%; /* Ensure full width */
+  width: 100%;
 }
 
 .main-nav a {
-  color: white;
+  color: white; /* White text for nav links */
   text-decoration: none;
   padding: 10px 20px;
   transition: background-color 0.3s;
@@ -64,8 +61,8 @@ body {
   border-radius: 5px;
 }
 
-.menu-toggle, .menu-close {
-  display: none;
+.menu-toggle {
+  display: none; /* Hide the menu toggle by default */
   background: none;
   border: none;
   color: white;
@@ -75,6 +72,10 @@ body {
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show the toggle button for smaller screens */
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -82,25 +83,13 @@ body {
     background-color: #1e4494;
     width: 100%;
     position: absolute;
-    top: 60px; /* Adjust to align below the header */
+    top: 60px;
     left: 0;
-    padding-top: 10px; /* Add padding to create space for the close button */
+    padding-top: 10px;
   }
 
   .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu-close {
-    display: block;
-    position: absolute;
-    top: 10px; /* Position close button at the top-right corner */
-    right: 20px;
-    font-size: 2rem;
+    display: flex; /* Display the nav links when active class is added */
   }
 
   .main-nav a {
@@ -112,11 +101,11 @@ body {
 
 /* Footer Styles */
 .footer {
-  background-color: #1e4494; /* Ensure same color as header */
+  background-color: #1e4494; /* Blue background for footer */
   color: white;
   padding: 40px 0;
   text-align: center;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   box-sizing: border-box;
 }
 
