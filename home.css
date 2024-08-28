@@ -27,7 +27,7 @@ body {
 }
 
 .logo {
-  height: 80px;
+  height: 100px;
 }
 
 .main-nav {
@@ -51,7 +51,7 @@ body {
 }
 
 .main-nav a:hover {
-  background-color: #143f90;
+  background-color: ##1e4494;
   border-radius: 5px;
 }
 
