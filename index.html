@@ -110,23 +110,23 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section core-services">
+   <!-- Services Section -->
+    <section class="core-services">
         <div class="container">
-            <h2 class="centered-text">Our Core Services</h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fas fa-globe feature-icon"></i>
+            <h2>Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-globe service-icon"></i>
                     <h3>Importing</h3>
                     <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fas fa-truck feature-icon"></i>
+                <div class="service-item">
+                    <i class="fas fa-truck service-icon"></i>
                     <h3>Distribution</h3>
                     <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fas fa-handshake feature-icon"></i>
+                <div class="service-item">
+                    <i class="fas fa-handshake service-icon"></i>
                     <h3>Trading</h3>
                     <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
                 </div>
@@ -134,12 +134,13 @@
         </div>
     </section>
 
-   <!-- WhatsApp Chat Widget -->
-   <div class="whatsapp-chat-widget">
-    <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
-        <i class="fab fa-whatsapp"></i> Chat with Us
-    </a>
-</div>
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat-widget">
+        <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
+            <i class="fab fa-whatsapp"></i> Chat with Us
+        </a>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -151,38 +152,12 @@
             </div>
         </div>
     </footer>
-    
-     <!-- JavaScript Code - Place this just before closing </body> tag -->
+
+    <!-- Scripts -->
     <script>
-        // Slideshow functionality
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
-        }
-
-        function plusSlides(n) {
-            slideIndex += n;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            if (slideIndex < 1) {slideIndex = slides.length}
-            showSlides();
-        }
-
-        // JavaScript to handle the toggle of the mobile menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
+        // JavaScript to toggle menu visibility on mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>
