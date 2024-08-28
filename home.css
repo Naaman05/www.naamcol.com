@@ -48,14 +48,16 @@ body {
 .hero-section {
     position: relative;
     width: 100%; /* Full width of the parent container */
-    height: 400px; /* Set a fixed height for the hero section */
+    height: auto; /* Height will adjust according to the aspect ratio of the images */
+    max-width: 2650px; /* Limit the maximum width to 2650px to match the image size */
+    margin: auto; /* Center the hero section horizontally */
     overflow: hidden; /* Ensure images do not overflow the section */
 }
 
 /* Slideshow container styles */
 .slideshow-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
     margin: auto;
     overflow: hidden; /* Ensure images stay within the hero section */
@@ -63,8 +65,10 @@ body {
 
 /* Style for the images in the hero section */
 .hero-image {
-    width: 100%; /* Make all images take the full width of the hero section */
-    height: 100%; /* Make all images take the full height of the hero section */
+    width: 100%; /* Set the width to 100% to scale down according to container width */
+    height: 100%; /* Set the height to 100% to maintain the aspect ratio */
+    max-width: 2650px; /* Set max width to the specified image width */
+    max-height: 1094px; /* Set max height to the specified image height */
     object-fit: cover; /* Ensure images cover the section without distortion */
     animation: bounce 3s infinite; /* Apply bounce animation */
 }
@@ -120,6 +124,7 @@ body {
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
+
 
 
 /* Main Content Styles */
