@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about.css"> <!-- Updated to link about.css -->
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Link to Font Awesome for icons -->
+    <title>About Us - Naaman Muses and Co Ltd</title>
+</head>
+<body class="about-page">
 
-    <!-- Hero Section with Image -->
-<section class="hero-section">
-    <div class="image-container">
-        <img src="Tropical.png" alt="Hero Image" class="hero-image">
-    </div>
-</section>
-
-                <!-- Hamburger menu icon for mobile view -->
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
+            <nav class="main-nav">
                 <div class="menu-toggle" id="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
-                <!-- Navigation links -->
-                <ul class="nav-list">
+                <ul class="nav-links nav-list">
                     <li><a href="index.html" class="current">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="our-products.html">Our Products</a></li>
@@ -30,7 +30,7 @@
         </div>
     </header>
 
-    <!-- Hero Section for About Us with Background Image -->
+    <!-- Hero Section with Background Image -->
     <section class="hero-section" style="background-image: url('transport.jpg');">
         <div class="hero-content">
             <h2>About Us</h2>
@@ -85,11 +85,8 @@
             <a href="https://wa.me/+96871006120" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-    <!-- Footer End -->
 
     <!-- Scripts -->
-    <!-- JavaScript Code - Place this just before closing </body> tag -->
-   <!-- Scripts -->
     <script>
         // JavaScript to toggle menu visibility on mobile
         document.querySelector('.menu-toggle').addEventListener('click', function() {
