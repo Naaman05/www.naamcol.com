@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Reset and Typography */
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +10,7 @@ body {
 /* Header Styles */
 .main-header {
   background-color: #1e4494;
+  color: white;
   padding: 20px 0;
   position: sticky;
   top: 0;
