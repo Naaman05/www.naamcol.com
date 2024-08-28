@@ -9,21 +9,19 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494;
-  color: white;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* or your preferred color */
+    z-index: 1000; /* Ensures the header stays on top of other content */
+    transition: top 0.3s; /* Smooth transition for the hide/show effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Add some padding to the body to prevent content from hiding behind the header */
+body {
+    padding-top: 60px; /* Adjust this value according to the height of your header */
 }
 
 .logo {
