@@ -5,40 +5,31 @@ body {
   font-family: 'Bai Jamjuree', sans-serif;
 }
 
-/* Hero Section Styles */
-.hero-section {
-    width: 100%;
-    max-width: 900px; /* Limit the width of the hero section */
-    height: 445px; /* Fixed height for the hero section */
-    overflow: hidden; /* Prevent images from overflowing */
-    position: relative; /* Ensures positioned elements are contained within the section */
-    margin: 0 auto; /* Center the hero section */
+/* Header Styles */
+.main-header {
+  background-color: #1e4494; /* Blue background for header */
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
-/* Slideshow Container */
-.slideshow-container {
-    width: 100%; /* Full width of the hero section */
-    height: 100%; /* Full height of the hero section */
-    position: relative; /* Position relative for absolute positioning of slides */
-    overflow: hidden; /* Hide any overflow of images */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Image Slides */
-.mySlides {
-    display: none; /* Initially hide all slides */
-    width: 100%; /* Full width for the slide container */
-    height: 100%; /* Full height for the slide container */
-    position: absolute; /* Absolute position to stack slides on top of each other */
-    top: 0;
-    left: 0;
-}
-
-/* Individual Images */
-.hero-image {
-    width: 100%; /* Ensure image takes full width of the container */
-    height: 100%; /* Ensure image takes full height of the container */
-    object-fit: cover; /* Ensures image covers the container without distortion */
-    object-position: center; /* Center the image in the container */
+.logo img {
+  height: 50px;
 }
 
 /* Navigation Styles */
@@ -114,4 +105,158 @@ body {
 /* Icon Hover Effect */
 .menu-toggle i:hover {
   color: #143f90; /* Slight color change on hover */
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    width: 100%;
+    max-width: 900px; /* Limit the width of the hero section */
+    height: 445px; /* Fixed height for the hero section */
+    overflow: hidden; /* Prevent images from overflowing */
+    position: relative; /* Ensures positioned elements are contained within the section */
+    margin: 0 auto; /* Center the hero section */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    width: 100%; /* Full width of the hero section */
+    height: 100%; /* Full height of the hero section */
+    position: relative; /* Position relative for absolute positioning of slides */
+    overflow: hidden; /* Hide any overflow of images */
+}
+
+/* Image Slides */
+.mySlides {
+    display: none; /* Initially hide all slides */
+    width: 100%; /* Full width for the slide container */
+    height: 100%; /* Full height for the slide container */
+    position: absolute; /* Absolute position to stack slides on top of each other */
+    top: 0;
+    left: 0;
+}
+
+/* Individual Images */
+.hero-image {
+    width: 100%; /* Ensure image takes full width of the container */
+    height: 100%; /* Ensure image takes full height of the container */
+    object-fit: cover; /* Ensures image covers the container without distortion */
+    object-position: center; /* Center the image in the container */
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.reason-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reason-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reason-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
+}
+
+/* Core Services Section */
+.core-services {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1e4494; /* Blue background for footer */
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #143f90; /* Match the hover effect with navbar link hover */
+}
+
+/* WhatsApp Chat Widget */
+.whatsapp-chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-chat-widget i {
+  margin-right: 5px;
 }
