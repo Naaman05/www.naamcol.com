@@ -120,7 +120,7 @@
                 loading="lazy"></iframe>
     </div>
 
-    <!-- WhatsApp Chat Widget -->
+      <!-- WhatsApp Chat Widget -->
     <div class="whatsapp-chat-widget">
         <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
             <i class="fab fa-whatsapp"></i> Chat with Us
@@ -139,5 +139,35 @@
         </div>
     </footer>
 
+ <!-- JavaScript Code -->
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
