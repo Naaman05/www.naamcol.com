@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <title>About Us</title>
-</head>
-<body class="about">
-    <!-- Unified Header and Navigation -->
+ <!-- Header with Responsive Navigation -->
     <header class="main-header">
         <div class="header-content">
             <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="about-us.html" class="current">About Us</a>
-                <a href="our-products.html">Our Products</a>
-                <a href="our-team.html">Our Team</a>
-                <a href="contact-us.html">Contact Us</a>
+                <!-- Hamburger menu icon for mobile view -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <!-- Navigation links -->
+                <ul class="nav-list">
+                    <li><a href="index.html" class="current">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="our-products.html">Our Products</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -82,5 +87,38 @@
     <!-- Footer End -->
 
     <!-- Scripts -->
+    <!-- JavaScript Code - Place this just before closing </body> tag -->
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            showSlides();
+        }
+
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
