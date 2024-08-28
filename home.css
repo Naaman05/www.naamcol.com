@@ -9,7 +9,7 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494;
+  background-color: #1e4494; /* Same color as footer */
   color: white;
   padding: 20px 0;
   position: sticky;
@@ -27,7 +27,7 @@ body {
 }
 
 .logo {
-  height: 100px;
+  height: 80px;
 }
 
 .main-nav {
@@ -51,7 +51,7 @@ body {
 }
 
 .main-nav a:hover {
-  background-color: ##1e4494;
+  background-color: #143f90;
   border-radius: 5px;
 }
 
@@ -90,4 +90,33 @@ body {
     text-align: center;
     width: 100%;
   }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1e4494; /* Ensure same color as header */
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #143f90; /* Match the hover effect with navbar link hover */
 }
