@@ -87,9 +87,12 @@
 
     <!-- Scripts -->
     <script>
-        // JavaScript to toggle menu visibility on mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
         });
     </script>
 <!-- Include JavaScript for Slideshow -->
