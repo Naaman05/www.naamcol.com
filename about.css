@@ -3,20 +3,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bai Jamjuree', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 /* Header Styles */
 .main-header {
   background-color: #1e4494; /* Blue background for header */
   color: white;
-  padding: 0;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
 .header-content {
@@ -24,80 +23,90 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
-.logo {
-  height: 80px;
+.logo img {
+  height: 50px;
 }
 
+/* Navigation Styles */
 .main-nav {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
-.nav-links {
+.nav-list {
   display: flex;
-  gap: 15px;
-  flex-direction: row;
-  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 20px;
 }
 
-.nav-links a {
-  color: white; /* White text for nav links */
+.nav-list a {
+  color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
 }
 
-.nav-links a:hover {
-  background-color: #143f90;
+.nav-list a:hover,
+.nav-list a.current {
+  background-color: #143f90; /* Darker shade on hover */
   border-radius: 5px;
 }
 
+/* Menu Toggle for Mobile */
 .menu-toggle {
-  display: none; /* Hide the menu toggle by default */
-  background: none;
-  border: none;
-  color: white;
+  display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Show the toggle button for smaller screens */
-  }
-
-  .nav-links {
+  .nav-list {
     display: none;
     flex-direction: column;
-    background-color: #1e4494;
-    width: 100%;
     position: absolute;
-    top: 60px;
+    top: 60px; /* Adjust based on header height */
     left: 0;
+    width: 100%;
+    background-color: #1e4494;
+    text-align: center;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    z-index: 999;
   }
 
-  .nav-links.active {
+  .nav-list.active {
     display: flex;
   }
 
-  .nav-links a {
-    padding: 15px 20px;
-    text-align: center;
+  .nav-list a {
+    padding: 15px;
     width: 100%;
   }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .is-active .fas {
+    transform: rotate(90deg);
+  }
 }
+
+/* Icon Hover Effect */
+.menu-toggle i:hover {
+  color: #143f90; /* Slight color change on hover */
+}
+
 
 /* Hero Section Styles */
 .hero-section {
@@ -134,39 +143,21 @@ body {
     object-fit: cover; /* Ensures image covers the container without distortion */
     object-position: center; /* Center the image in the container */
 }
-/* About Us Section */
-.about-section {
+
+/* Why Choose Us Section */
+.why-choose-us {
   padding: 60px 20px;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #1e4494;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.about-grid {
+.reasons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 30px;
 }
 
-.about-item {
+.reason-item {
   background-color: white;
   padding: 20px;
   text-align: center;
@@ -175,27 +166,48 @@ p {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.about-item:hover {
+.reason-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.full-width {
-  grid-column: span 2;
-}
-
-ul {
-  text-align: left;
-  padding-left: 20px;
-  line-height: 1.8;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-ul strong {
+.reason-icon {
+  font-size: 2.5rem;
   color: #1e4494;
+  margin-bottom: 15px;
+}
+
+/* Core Services Section */
+.core-services {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
 }
 
 /* Footer Styles */
