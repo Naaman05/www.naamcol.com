@@ -38,6 +38,8 @@ body {
 .nav-links {
   display: flex;
   gap: 15px;
+  flex-direction: row;
+  align-items: center;
 }
 
 .main-nav a {
@@ -71,7 +73,7 @@ body {
     background-color: #1e4494;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 60px; /* Adjust to align below the header */
     left: 0;
   }
 
