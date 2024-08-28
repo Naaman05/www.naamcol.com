@@ -1,30 +1,29 @@
-/* General Styles */
+/* General Reset and Typography */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Bai Jamjuree', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  /* Header Styles */
+  margin: 0;
+  padding: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header Styles */
 .main-header {
-    background-color: #1e4494;
-    padding: 20px 0;
-    position: fixed; /* Change from 'sticky' to 'fixed' to handle the hide/show on scroll */
-    width: 100%; /* Ensure the header takes full width */
-    top: 0;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth hide/show */
+  background-color: #1e4494;
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
