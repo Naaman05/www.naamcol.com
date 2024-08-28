@@ -50,7 +50,7 @@ body.team {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('images/team-hero.jpg');
+  background-image: url('team-hero.jpg');
   background-size: cover;
   background-position: center;
   color: white;
