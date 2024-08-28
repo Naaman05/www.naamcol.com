@@ -1,300 +1,35 @@
-/* General Reset and Typography */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Bai Jamjuree', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* Header Styles */
-.main-header {
-  background-color: #1e4494; /* Blue background for header */
-  color: white;
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.logo {
-  height: 80px;
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: white; /* White text for nav links */
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  background-color: #143f90;
-  border-radius: 5px;
-}
-
-.menu-toggle {
-  display: none; /* Hide the menu toggle by default */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Show the toggle button for smaller screens */
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #1e4494;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 15px 20px;
-    text-align: center;
-    width: 100%;
-  }
-}
-
 /* Hero Section Styles */
 .hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 300px; /* Adjust the height as needed */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
+    width: 100%;
+    max-width: 900px; /* Limit the width of the hero section */
+    height: 445px; /* Fixed height for the hero section */
+    overflow: hidden; /* Prevent images from overflowing */
+    position: relative; /* Ensures positioned elements are contained within the section */
+    margin: 0 auto; /* Center the hero section */
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin: 0;
+/* Slideshow Container */
+.slideshow-container {
+    width: 100%; /* Full width of the hero section */
+    height: 100%; /* Full height of the hero section */
+    position: relative; /* Position relative for absolute positioning of slides */
+    overflow: hidden; /* Hide any overflow of images */
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+/* Image Slides */
+.mySlides {
+    display: none; /* Initially hide all slides */
+    width: 100%; /* Full width for the slide container */
+    height: 100%; /* Full height for the slide container */
+    position: absolute; /* Absolute position to stack slides on top of each other */
+    top: 0;
+    left: 0;
 }
 
-/* Main Content Section */
-.contact-main {
-  padding: 60px 20px;
-  background-color: #fff;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #1e4494;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.contact-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-}
-
-.contact-details, .contact-form-section {
-  flex: 1;
-  min-width: 300px;
-}
-
-.details-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.details-item {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.details-item h3 {
-  color: #1e4494;
-  margin-bottom: 10px;
-  font-size: 1.25rem;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-ul strong {
-  color: #1e4494;
-}
-
-/* Contact Form Section */
-.contact-form-section {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.form-group input[type="submit"] {
-  background-color: #1e4494;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.form-group input[type="submit"]:hover {
-  background-color: #143f90;
-}
-
-.map-container {
-  margin: 60px 0;
-}
-
-.map-container h3 {
-  color: #1e4494;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #1e4494; /* Blue background for footer */
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
-
-.social-icon {
-  margin: 0 10px;
-  color: white;
-  transition: color 0.3s;
-}
-
-.social-icon:hover {
-  color: #143f90; /* Match the hover effect with navbar link hover */
-}
-
-/* WhatsApp Chat Widget */
-.whatsapp-chat-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  border-radius: 50px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.whatsapp-chat-widget i {
-  margin-right: 5px;
+/* Individual Images */
+.hero-image {
+    width: 100%; /* Ensure image takes full width of the container */
+    height: 100%; /* Ensure image takes full height of the container */
+    object-fit: cover; /* Ensures image covers the container without distortion */
+    object-position: center; /* Center the image in the container */
 }
