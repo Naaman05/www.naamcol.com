@@ -7,70 +7,42 @@ body {
   color: #333;
 }
 
-/* Header Styles */
-.main-header {
-  background-color: #1e4494; /* Blue background for header */
-  color: white;
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  box-sizing: border-box;
+/* Hero Section Styles */
+.hero-section {
+    width: 100%;
+    max-width: 900px; /* Limit the width of the hero section */
+    height: 445px; /* Fixed height for the hero section */
+    overflow: hidden; /* Prevent images from overflowing */
+    position: relative; /* Ensures positioned elements are contained within the section */
+    margin: 0 auto; /* Center the hero section */
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+/* Slideshow Container */
+.slideshow-container {
+    width: 100%; /* Full width of the hero section */
+    height: 100%; /* Full height of the hero section */
+    position: relative; /* Position relative for absolute positioning of slides */
+    overflow: hidden; /* Hide any overflow of images */
 }
 
-.logo {
-  height: 80px;
+/* Image Slides */
+.mySlides {
+    display: none; /* Initially hide all slides */
+    width: 100%; /* Full width for the slide container */
+    height: 100%; /* Full height for the slide container */
+    position: absolute; /* Absolute position to stack slides on top of each other */
+    top: 0;
+    left: 0;
 }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
+/* Individual Images */
+.hero-image {
+    width: 100%; /* Ensure image takes full width of the container */
+    height: 100%; /* Ensure image takes full height of the container */
+    object-fit: cover; /* Ensures image covers the container without distortion */
+    object-position: center; /* Center the image in the container */
 }
 
-.nav-links {
-  display: flex;
-  gap: 15px;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: white; /* White text for nav links */
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  background-color: #143f90;
-  border-radius: 5px;
-}
-
-.menu-toggle {
-  display: none; /* Hide the menu toggle by default */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
