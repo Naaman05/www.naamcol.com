@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="about.css"> <!-- Updated to link about.css -->
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
-    <title>About Us</title>
- <!-- Header with Responsive Navigation -->
-    <header class="main-header">
-        <div class="header-content">
-            <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
-            <nav class="main-nav">
+    <!-- Hero Section with Image -->
+<section class="hero-section">
+    <div class="image-container">
+        <img src="Tropical.png" alt="Hero Image" class="hero-image">
+    </div>
+</section>
+
                 <!-- Hamburger menu icon for mobile view -->
                 <div class="menu-toggle" id="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -88,36 +89,11 @@
 
     <!-- Scripts -->
     <!-- JavaScript Code - Place this just before closing </body> tag -->
+   <!-- Scripts -->
     <script>
-        // Slideshow functionality
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
-        }
-
-        function plusSlides(n) {
-            slideIndex += n;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            if (slideIndex < 1) {slideIndex = slides.length}
-            showSlides();
-        }
-
-        // JavaScript to handle the toggle of the mobile menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
+        // JavaScript to toggle menu visibility on mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>
