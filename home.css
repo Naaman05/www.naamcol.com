@@ -33,6 +33,8 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
+  background-color: #1e4494; /* Same color as footer */
+  
 }
 
 .nav-links {
