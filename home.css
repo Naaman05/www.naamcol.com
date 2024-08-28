@@ -8,42 +8,44 @@ body {
   }
   
   /* Header Styles */
-  .main-header {
+.main-header {
     background-color: #1e4494;
     padding: 20px 0;
-    position: sticky;
+    position: fixed; /* Change from 'sticky' to 'fixed' to handle the hide/show on scroll */
+    width: 100%; /* Ensure the header takes full width */
     top: 0;
     z-index: 1000;
-  }
-  
-  .header-content {
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hide/show */
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-  }
-  
-  .logo {
+}
+
+.logo {
     height: 80px;
-  }
-  
-  .main-nav a {
+}
+
+.main-nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     padding: 10px 20px;
     transition: background-color 0.3s;
     font-weight: bold;
-  }
-  
-  .main-nav a:hover,
-  .main-nav a.current {
+}
+
+.main-nav a:hover,
+.main-nav a.current {
     background-color: #143f90;
     border-radius: 5px;
-  }
-  
+}
+
   /* Hero Section Styles */
   .hero-section {
     height: 300px;
