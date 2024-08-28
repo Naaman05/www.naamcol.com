@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css"> <!-- Link to specific CSS file for home page -->
+    <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
+    <title>Naaman Muses and Co Ltd - Home</title>
+</head>
+
+<body class="home">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
+            <nav class="main-nav">
+                <a href="index.html" class="current">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="our-products.html">Our Products</a>
+                <a href="our-team.html">Our Team</a>
+                <a href="contact-us.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+   <!-- Hero Section with Video -->
+<section class="hero-section">
+    <div class="video-container">
+        <video style="width:50%; height: 50%; object-fit: cover;" controls muted autoplay loop>
+            <source src="tropical.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
+
+
+    <!-- Main Content -->
+    <section class="section main-content">
+        <div class="container">
+            <h2>Welcome to Naaman Muses and Co Ltd</h2>
+            <p>Naaman Muses and Co. Ltd is a renowned company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
+            <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
+            <ul>
+                <li>Wide range of quality products from reputable brands</li>
+                <li>Efficient distribution network covering East Africa</li>
+                <li>Strong focus on customer satisfaction and service excellence</li>
+                <li>Commitment to sustainability and community development</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section core-services">
+        <div class="container">
+            <h2 class="centered-text">Our Core Services</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>Importing</h3>
+                    <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-truck feature-icon"></i>
+                    <h3>Distribution</h3>
+                    <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-handshake feature-icon"></i>
+                    <h3>Trading</h3>
+                    <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- WhatsApp Chat Widget -->
+   <div class="whatsapp-chat-widget">
+    <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
+        <i class="fab fa-whatsapp"></i> Chat with Us
+    </a>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Naamcol. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/+96871006120" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    </script>
+
+    <style>
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Hide all images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 2s;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* Core Services Grid */
+        .features-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #1e4494;
+            margin-bottom: 15px;
+        }
+    </style>
+</body>
+</html>
