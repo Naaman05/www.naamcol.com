@@ -144,21 +144,67 @@ body.our-products {
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Footer Styles */
-.footer {
-  background-color: #1e4494;
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
+/* WhatsApp Chat Widget */
+.whatsapp-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .whatsapp-chat-button {
+    display: flex;
+    align-items: center;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .whatsapp-chat-button:hover {
+    background-color: #1ebe5b;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: #1e4494;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #d4d4d4;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+  
+    .contact-details, .contact-form-section {
+        flex: 1 1 100%;
+    }
+  }
