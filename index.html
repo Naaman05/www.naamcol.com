@@ -19,11 +19,16 @@
         <div class="header-content">
             <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
             <nav class="main-nav">
-                <a href="index.html" class="current">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="our-products.html">Our Products</a>
-                <a href="our-team.html">Our Team</a>
-                <a href="contact-us.html">Contact Us</a>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links">
+                    <a href="index.html" class="current">Home</a>
+                    <a href="about-us.html">About Us</a>
+                    <a href="our-products.html">Our Products</a>
+                    <a href="our-team.html">Our Team</a>
+                    <a href="contact-us.html">Contact Us</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -106,115 +111,11 @@
         </div>
     </footer>
     
-    <!-- Scripts -->
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
-        }
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+   <script>
+        // JavaScript to toggle menu visibility on mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
     </script>
-
-    <style>
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        /* Hide all images by default */
-        .mySlides {
-            display: none;
-        }
-
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        /* Fading animation */
-        .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 2s;
-            animation-name: fade;
-            animation-duration: 2s;
-        }
-
-        @-webkit-keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        /* Core Services Grid */
-        .features-grid {
-            display: flex;
-            gap: 40px;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
-
-        .feature-box {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #1e4494;
-            margin-bottom: 15px;
-        }
-    </style>
 </body>
 </html>
