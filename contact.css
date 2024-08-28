@@ -45,27 +45,91 @@ body {
   border-radius: 5px;
 }
 
-/* Hero Section Styles */
+/* Hero section styles */
 .hero-section {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 0 20px;
+    position: relative;
+    width: 100%; /* Full width of the parent container */
+    max-width: 2650px; /* Limit the maximum width to 2650px */
+    height: auto; /* Height will adjust according to the aspect ratio of the images */
+    margin: auto; /* Center the hero section horizontally */
+    overflow: hidden; /* Ensure images do not overflow the section */
+    display: flex; /* Enable flexbox to align content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin: 0;
+/* Slideshow container styles */
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden; /* Ensure images stay within the hero section */
+    display: flex; /* Flexbox to center the images */
+    align-items: center; /* Vertically center images */
+    justify-content: center; /* Horizontally center images */
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+/* Style for the images in the hero section */
+.hero-image {
+    max-width: 2650px; /* Ensure the images are at their natural width */
+    max-height: 1094px; /* Ensure the images are at their natural height */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the full image is displayed without cropping */
+    animation: bounce 3s infinite; /* Apply bounce animation */
+}
+
+/* Keyframe animation for bouncing effect */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Fade effect for slideshow */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+/* Keyframes for fade animation */
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Main Content Section */
