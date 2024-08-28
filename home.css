@@ -9,23 +9,26 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494; /* Same color as footer */
+  background-color: #1e4494; /* Ensure the header background is fully blue */
   color: white;
   padding: 0; /* Remove padding to ensure full background coverage */
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%; /* Ensure full width coverage */
+  display: flex; /* Flex to align items properly */
+  justify-content: center; /* Center the content */
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* Make sure content spans the full width */
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px; /* Padding is now on the header-content instead of the main-header */
-  background-color: #1e4494; /* Match the background color under the logo */
+  padding: 20px; /* Adjust padding as needed */
+  margin: 0; /* Remove margin to prevent white space */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .logo {
@@ -42,6 +45,7 @@ body {
   gap: 15px;
   flex-direction: row;
   align-items: center;
+  position: relative; /* For positioning the close button */
 }
 
 .main-nav a {
@@ -57,7 +61,7 @@ body {
   border-radius: 5px;
 }
 
-.menu-toggle {
+.menu-toggle, .menu-close {
   display: none;
   background: none;
   border: none;
@@ -77,6 +81,7 @@ body {
     position: absolute;
     top: 60px; /* Adjust to align below the header */
     left: 0;
+    padding-top: 10px; /* Add padding to create space for the close button */
   }
 
   .nav-links.active {
@@ -85,6 +90,14 @@ body {
 
   .menu-toggle {
     display: block;
+  }
+
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 10px; /* Position close button at the top-right corner */
+    right: 20px;
+    font-size: 2rem;
   }
 
   .main-nav a {
