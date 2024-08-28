@@ -9,14 +9,12 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494; /* Blue background for header */
+  background-color: #1e4494;
   color: white;
-  padding: 0; /* Remove padding to ensure full background coverage */
+  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; /* Ensure full width coverage */
-  box-sizing: border-box; /* Include padding in the total width */
 }
 
 .header-content {
@@ -24,14 +22,27 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  width: 100%;
-  margin: 0 auto; /* Center the header content */
-  padding: 20px; /* Adjust padding for spacing */
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
   height: 80px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.main-nav a:hover,
+.main-nav a.current {
+  background-color: #143f90;
+  border-radius: 5px;
 }
 
 .main-nav {
@@ -46,19 +57,6 @@ body {
   flex-direction: row;
   align-items: center;
   width: 100%;
-}
-
-.main-nav a {
-  color: white; /* White text for nav links */
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-
-.main-nav a:hover {
-  background-color: #143f90;
-  border-radius: 5px;
 }
 
 .menu-toggle {
