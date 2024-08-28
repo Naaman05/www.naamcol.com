@@ -1,20 +1,21 @@
 /* General Reset and Typography */
-body.team {
+body {
   margin: 0;
   padding: 0;
   font-family: 'Bai Jamjuree', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494;
+  background-color: #1e4494; /* Blue background for header */
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
 .header-content {
@@ -24,87 +25,199 @@ body.team {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 80px;
+.logo img {
+  height: 50px;
 }
 
-.main-nav a {
+/* Navigation Styles */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-list a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
 }
 
-.main-nav a:hover {
-  background-color: #143f90;
+.nav-list a:hover,
+.nav-list a.current {
+  background-color: #143f90; /* Darker shade on hover */
   border-radius: 5px;
 }
 
+/* Menu Toggle for Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #1e4494;
+    text-align: center;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list a {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .is-active .fas {
+    transform: rotate(90deg);
+  }
+}
+
+/* Icon Hover Effect */
+.menu-toggle i:hover {
+  color: #143f90; /* Slight color change on hover */
+}
+
+
 /* Hero Section Styles */
 .hero-section {
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('team-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
+    width: 100%;
+    max-width: 900px; /* Limit the width of the hero section */
+    height: 445px; /* Fixed height for the hero section */
+    overflow: hidden; /* Prevent images from overflowing */
+    position: relative; /* Ensures positioned elements are contained within the section */
+    margin: 0 auto; /* Center the hero section */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    width: 100%; /* Full width of the hero section */
+    height: 100%; /* Full height of the hero section */
+    position: relative; /* Position relative for absolute positioning of slides */
+    overflow: hidden; /* Hide any overflow of images */
+}
+
+/* Image Slides */
+.mySlides {
+    display: none; /* Initially hide all slides */
+    width: 100%; /* Full width for the slide container */
+    height: 100%; /* Full height for the slide container */
+    position: absolute; /* Absolute position to stack slides on top of each other */
+    top: 0;
+    left: 0;
+}
+
+/* Individual Images */
+.hero-image {
+    width: 100%; /* Ensure image takes full width of the container */
+    height: 100%; /* Ensure image takes full height of the container */
+    object-fit: cover; /* Ensures image covers the container without distortion */
+    object-position: center; /* Center the image in the container */
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.reason-item {
+  background-color: white;
+  padding: 20px;
   text-align: center;
-  padding: 0 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hero-content h2 {
+.reason-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reason-icon {
   font-size: 2.5rem;
-  margin: 0;
+  color: #1e4494;
+  margin-bottom: 15px;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
-}
-
-/* Team Section Styles */
-.section.team-section {
+/* Core Services Section */
+.core-services {
   padding: 60px 20px;
   background-color: #fff;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.team-grid {
+.services-grid {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.team-member {
+.service-item {
   background-color: white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
 }
 
 /* Footer Styles */
 .footer {
-  background-color: #1e4494;
+  background-color: #1e4494; /* Blue background for footer */
   color: white;
   padding: 40px 0;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer p {
@@ -116,4 +229,34 @@ body.team {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #143f90; /* Match the hover effect with navbar link hover */
+}
+
+/* WhatsApp Chat Widget */
+.whatsapp-chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-chat-widget i {
+  margin-right: 5px;
 }
