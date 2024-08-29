@@ -9,7 +9,7 @@ body {
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494; /* Blue background for header */
+  background-color: #ADD8E6; /* Light blue background for header */
   color: white;
   padding: 15px 0;
   position: sticky;
@@ -49,7 +49,7 @@ body {
 }
 
 .nav-list a {
-  color: white;
+  color: white; /* Set navbar text to white */
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s, color 0.3s;
@@ -59,7 +59,8 @@ body {
 
 .nav-list a:hover,
 .nav-list a.current {
-  background-color: #143f90; /* Darker shade on hover */
+  background-color: #87CEEB; /* Slightly darker shade of light blue on hover */
+  color: white; /* Keep text white on hover */
 }
 
 /* Menu Toggle for Mobile */
@@ -82,7 +83,7 @@ body {
     top: 60px; /* Adjust based on header height */
     left: 0;
     width: 100%;
-    background-color: #1e4494;
+    background-color: #ADD8E6; /* Light blue background for mobile menu */
     text-align: center;
     transition: max-height 0.3s ease;
     overflow: hidden;
@@ -96,6 +97,7 @@ body {
   .nav-list a {
     padding: 15px;
     width: 100%;
+    color: white; /* Ensure text remains white on mobile */
   }
 
   .menu-toggle {
@@ -110,7 +112,7 @@ body {
 
 /* Icon Hover Effect */
 .menu-toggle i:hover {
-  color: #143f90; /* Slight color change on hover */
+  color: #87CEEB; /* Slight color change on hover */
 }
 
 /* Hero Section Styles */
@@ -228,7 +230,7 @@ body {
 
 /* Footer Styles */
 .footer {
-  background-color: #1e4494; /* Blue background for footer */
+  background-color: #ADD8E6; /* Light blue background for footer */
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -254,7 +256,7 @@ body {
 }
 
 .social-icon:hover {
-  color: #143f90; /* Match the hover effect with navbar link hover */
+  color: #87CEEB; /* Match the hover effect with navbar link hover */
 }
 
 /* WhatsApp Chat Widget */
@@ -295,7 +297,7 @@ body {
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #1e4494;
+    background-color: #ADD8E6; /* Light blue background for mobile menu */
     z-index: 999;
     padding: 0;
     border-top: 1px solid #ccc;
@@ -308,6 +310,7 @@ body {
   .nav-list a {
     padding: 15px 0;
     width: 100%;
+    color: white; /* Ensure text remains white on mobile */
   }
 
   .products-grid, .reasons-grid, .services-grid {
