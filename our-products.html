@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -17,6 +17,7 @@
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
         .container {
@@ -44,73 +45,83 @@
         }
 
         .products-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
 
         .product-item {
-            flex: 1 1 calc(33.333% - 20px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product-item h4 {
-            margin-top: 0;
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-name {
+            background-color: #1e4494;
+            color: white;
+            padding: 10px;
+            text-align: center;
             font-size: 1.2em;
-            color: #007BFF;
-        }
-
-        .product-item p {
-            font-size: 0.95em;
-            color: #555;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
         }
 
         /* Slideshow container */
         .slideshow-container {
-            max-width: 100%;
+            width: 100%;
             position: relative;
-            margin: auto;
             overflow: hidden;
-            border-radius: 8px;
+            margin-top: 40px; /* Adds some spacing between the company name and the slideshow */
         }
 
-        /* Hide all images by default */
         .mySlides {
             display: none;
+            width: 100%;
         }
 
-        /* Show the first slide initially */
-        .slideshow-container .mySlides:first-child {
+        .mySlides img {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
-        /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
             width: auto;
-            margin-top: -22px;
             padding: 16px;
             color: white;
             font-weight: bold;
             font-size: 18px;
             transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
             user-select: none;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Position the "next button" to the right */
         .next {
             right: 0;
             border-radius: 3px 0 0 3px;
         }
 
-        /* On hover, add a black background color with a little bit see-through */
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
         .prev:hover, .next:hover {
             background-color: rgba(0,0,0,0.8);
         }
@@ -196,21 +207,21 @@
             <div class="products-grid">
                 <!-- Tropical Heat Products -->
                 <div class="product-item">
-                    <h4>Tropical Heat Products</h4>
+                    <div class="company-name">Tropical Heat Products</div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <img src="trp44.jpeg"style="width:100%" alt="Hero Image 1" class="hero-image">
+                            <img src="trp44.jpeg" alt="Tropical Heat 1">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trop66.png" style="width:100%">
+                            <img src="trop66.png" alt="Tropical Heat 2">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trp33.jpg" style="width:100%">
+                            <img src="trp33.jpg" alt="Tropical Heat 3">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trop22.jpg" style="width:100%">
+                            <img src="trop22.jpg" alt="Tropical Heat 4">
                         </div>
-                        <!-- Next/prev buttons for Tropical Heat -->
+                        <!-- Next/prev buttons -->
                         <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
                     </div>
@@ -219,21 +230,21 @@
 
                 <!-- Pwani Oil Products Ltd -->
                 <div class="product-item">
-                    <h4>Pwani Oil Products Ltd</h4>
+                    <div class="company-name">Pwani Oil Products Ltd</div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <img src="pwani-oil-1.jpg" style="width:100%">
+                            <img src="pwani-oil-1.jpg" alt="Pwani Oil 1">
                         </div>
                         <div class="mySlides fade">
-                            <img src="pwani-oil-2.jpg" style="width:100%">
+                            <img src="pwani-oil-2.jpg" alt="Pwani Oil 2">
                         </div>
                         <div class="mySlides fade">
-                            <img src="pwani-oil-3.jpg" style="width:100%">
+                            <img src="pwani-oil-3.jpg" alt="Pwani Oil 3">
                         </div>
                         <div class="mySlides fade">
-                            <img src="pwani-oil-4.jpg" style="width:100%">
+                            <img src="pwani-oil-4.jpg" alt="Pwani Oil 4">
                         </div>
-                        <!-- Next/prev buttons for Pwani Oil -->
+                        <!-- Next/prev buttons -->
                         <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
                     </div>
@@ -242,21 +253,21 @@
 
                 <!-- Manji Food Industries -->
                 <div class="product-item">
-                    <h4>Manji Food Industries</h4>
+                    <div class="company-name">Manji Food Industries</div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <img src="manji-food-1.jpg" style="width:100%">
+                            <img src="manji-food-1.jpg" alt="Manji Food 1">
                         </div>
                         <div class="mySlides fade">
-                            <img src="manji-food-2.jpg" style="width:100%">
+                            <img src="manji-food-2.jpg" alt="Manji Food 2">
                         </div>
                         <div class="mySlides fade">
-                            <img src="manji-food-3.jpg" style="width:100%">
+                            <img src="manji-food-3.jpg" alt="Manji Food 3">
                         </div>
                         <div class="mySlides fade">
-                            <img src="manji-food-4.jpg" style="width:100%">
+                            <img src="manji-food-4.jpg" alt="Manji Food 4">
                         </div>
-                        <!-- Next/prev buttons for Manji Food Industries -->
+                        <!-- Next/prev buttons -->
                         <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
                     </div>
@@ -265,21 +276,21 @@
 
                 <!-- Kimfay -->
                 <div class="product-item">
-                    <h4>Kimfay</h4>
+                    <div class="company-name">Kimfay</div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <img src="kimfay-1.jpg" style="width:100%">
+                            <img src="kimfay-1.jpg" alt="Kimfay 1">
                         </div>
                         <div class="mySlides fade">
-                            <img src="kimfay-2.jpg" style="width:100%">
+                            <img src="kimfay-2.jpg" alt="Kimfay 2">
                         </div>
                         <div class="mySlides fade">
-                            <img src="kimfay-3.jpg" style="width:100%">
+                            <img src="kimfay-3.jpg" alt="Kimfay 3">
                         </div>
                         <div class="mySlides fade">
-                            <img src="kimfay-4.jpg" style="width:100%">
+                            <img src="kimfay-4.jpg" alt="Kimfay 4">
                         </div>
-                        <!-- Next/prev buttons for Kimfay -->
+                        <!-- Next/prev buttons -->
                         <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
                     </div>
@@ -288,21 +299,21 @@
 
                 <!-- Trufoods -->
                 <div class="product-item">
-                    <h4>Trufoods</h4>
+                    <div class="company-name">Trufoods</div>
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <img src="trufoods-1.jpg" style="width:100%">
+                            <img src="trufoods-1.jpg" alt="Trufoods 1">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trufoods-2.jpg" style="width:100%">
+                            <img src="trufoods-2.jpg" alt="Trufoods 2">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trufoods-3.jpg" style="width:100%">
+                            <img src="trufoods-3.jpg" alt="Trufoods 3">
                         </div>
                         <div class="mySlides fade">
-                            <img src="trufoods-4.jpg" style="width:100%">
+                            <img src="trufoods-4.jpg" alt="Trufoods 4">
                         </div>
-                        <!-- Next/prev buttons for Trufoods -->
+                        <!-- Next/prev buttons -->
                         <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
                     </div>
