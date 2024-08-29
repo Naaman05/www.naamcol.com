@@ -82,6 +82,11 @@
             display: none;
         }
 
+        /* Show the first slide initially */
+        .slideshow-container .mySlides:first-child {
+            display: block;
+        }
+
         /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
@@ -128,7 +133,7 @@
         }
 
         .whatsapp-chat-button {
-            background-color: #25D366;
+            background-color: #25d366;
             color: white;
             padding: 10px 20px;
             border-radius: 50px;
@@ -329,40 +334,35 @@
     <!-- JavaScript Code -->
     <script>
         // Initialize slide indices for each slideshow
-let slideIndices = [1, 1, 1, 1, 1]; // Initialize to 1 for each company slideshow
+        let slideIndices = [1, 1, 1, 1, 1]; // Set initial index to 1 for each slideshow
 
-// Function to display slides
-function showSlides(n, slideshowIndex) {
-    let slides = document.getElementsByClassName("slideshow-container")[slideshowIndex].getElementsByClassName("mySlides");
-    
-    // If slide index exceeds length, reset to 1
-    if (n > slides.length) { 
-        slideIndices[slideshowIndex] = 1;
-    }
-    // If slide index is less than 1, set to the last slide
-    if (n < 1) { 
-        slideIndices[slideshowIndex] = slides.length;
-    }
+        // Function to display slides
+        function showSlides(n, slideshowIndex) {
+            let slides = document.getElementsByClassName("slideshow-container")[slideshowIndex].getElementsByClassName("mySlides");
+            
+            if (n > slides.length) { 
+                slideIndices[slideshowIndex] = 1;
+            }
+            if (n < 1) { 
+                slideIndices[slideshowIndex] = slides.length;
+            }
 
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
 
-    // Show the current slide
-    slides[slideIndices[slideshowIndex] - 1].style.display = "block";
-}
+            slides[slideIndices[slideshowIndex] - 1].style.display = "block";
+        }
 
-// Function to control next and previous slide actions
-function plusSlides(n, slideshowIndex) {
-    showSlides(slideIndices[slideshowIndex] += n, slideshowIndex);
-}
+        // Function to control next and previous slide actions
+        function plusSlides(n, slideshowIndex) {
+            showSlides(slideIndices[slideshowIndex] += n, slideshowIndex);
+        }
 
-// Initialize all slideshows
-for (let i = 0; i < document.getElementsByClassName("slideshow-container").length; i++) {
-    showSlides(slideIndices[i], i);
-}
-
+        // Initialize all slideshows
+        for (let i = 0; i < document.getElementsByClassName("slideshow-container").length; i++) {
+            showSlides(slideIndices[i], i);
+        }
     </script>
 </body>
 </html>
