@@ -1,93 +1,108 @@
-/* General Page Styles */
-body.home-page {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
+/* General Reset and Typography */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 /* Header Styles */
 .main-header {
-    background-color: #1e4494;
-    padding: 20px 0;
-    position: fixed; /* Changed to fixed to keep the header visible */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth hide/show */
+  background-color: #1e4494; /* Blue background for header */
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
-/* Hero Section Styles */
-.hero-section {
-    width: 100%;
-    max-width: 900px; /* Limit the width of the hero section */
-    height: 445px; /* Fixed height for the hero section */
-    overflow: hidden; /* Prevent images from overflowing */
-    position: relative; /* Ensures positioned elements are contained within the section */
-    margin: 0 auto; /* Center the hero section */
-    margin-top: 80px; /* Added margin to account for fixed header height */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Slideshow Container */
-.slideshow-container {
-    width: 100%; /* Full width of the hero section */
-    height: 100%; /* Full height of the hero section */
-    position: relative; /* Position relative for absolute positioning of slides */
-    overflow: hidden; /* Hide any overflow of images */
+.logo img {
+  height: 50px;
 }
 
-/* Image Slides */
-.mySlides {
-    display: none; /* Initially hide all slides */
-    width: 100%; /* Full width for the slide container */
-    height: 100%; /* Full height for the slide container */
-    position: absolute; /* Absolute position to stack slides on top of each other */
-    top: 0;
+/* Navigation Styles */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+}
+
+.nav-list a:hover,
+.nav-list a.current {
+  background-color: #143f90; /* Darker shade on hover */
+  border-radius: 5px;
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
     left: 0;
-}
-
-/* Individual Images */
-.hero-image {
-    width: 100%; /* Ensure image takes full width of the container */
-    height: 100%; /* Ensure image takes full height of the container */
-    object-fit: cover; /* Ensures image covers the container without distortion */
-    object-position: center; /* Center the image in the container */
-}
-
-/* Main Content Styles */
-.section.main-content {
-    padding: 40px 20px;
-    background-color: #fff;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Additional styles for other sections */
-
-/* Footer Styles */
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
+    width: 100%;
+    background-color: #1e4494;
     text-align: center;
-}
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    z-index: 999;
+  }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+  .nav-list.active {
+    display: flex;
+  }
 
-.social-icons a {
+  .nav-list a {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
     color: white;
-    margin: 0 10px;
-    text-decoration: none;
+  }
+
+  .is-active .fas {
+    transform: rotate(90deg);
+  }
 }
 
-.social-icons a:hover {
-    color: #ddd;
+/* Icon Hover Effect */
+.menu-toggle i:hover {
+  color: #143f90; /* Slight color change on hover */
 }
