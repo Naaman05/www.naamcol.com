@@ -18,6 +18,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
 
         .container {
@@ -58,10 +59,8 @@
             overflow: hidden;
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 20px; /* Adds space at the bottom for product descriptions */
+            padding: 20px;
+            text-align: center;
         }
 
         .product-item:hover {
@@ -79,13 +78,44 @@
             width: 100%;
         }
 
-        /* Slideshow container */
+        .view-more-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .view-more-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .product-description {
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* Slideshow Section Below */
+        .product-slideshow-section {
+            width: 100%;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
         .slideshow-container {
             width: 100%;
             position: relative;
             overflow: hidden;
-            margin-top: 20px; /* Adds some spacing between the company name and the slideshow */
-            border-radius: 10px; /* Adds rounded corners to the slideshow */
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         .mySlides {
@@ -137,13 +167,6 @@
         @keyframes fade {
             from {opacity: .4} 
             to {opacity: 1}
-        }
-
-        .product-description {
-            margin-top: 20px;
-            text-align: center;
-            color: #555;
-            font-size: 0.9em;
         }
 
         .whatsapp-chat-widget {
@@ -217,127 +240,154 @@
                 <!-- Tropical Heat Products -->
                 <div class="product-item">
                     <div class="company-name">Tropical Heat Products</div>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <img src="trp44.jpeg" alt="Tropical Heat 1">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trop66.png" alt="Tropical Heat 2">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trp33.jpg" alt="Tropical Heat 3">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trop22.jpg" alt="Tropical Heat 4">
-                        </div>
-                        <!-- Next/prev buttons -->
-                        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-                    </div>
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
                     </div>
+                    <button class="view-more-btn" onclick="scrollToSlideshow('tropical-heat')">View More</button>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
                 <div class="product-item">
                     <div class="company-name">Pwani Oil Products Ltd</div>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <img src="pwani-oil-1.jpg" alt="Pwani Oil 1">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="pwani-oil-2.jpg" alt="Pwani Oil 2">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="pwani-oil-3.jpg" alt="Pwani Oil 3">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="pwani-oil-4.jpg" alt="Pwani Oil 4">
-                        </div>
-                        <!-- Next/prev buttons -->
-                        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-                    </div>
                     <div class="product-description">
                         As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
                     </div>
+                    <button class="view-more-btn" onclick="scrollToSlideshow('pwani-oil')">View More</button>
                 </div>
 
                 <!-- Manji Food Industries -->
                 <div class="product-item">
                     <div class="company-name">Manji Food Industries</div>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <img src="manji-food-1.jpg" alt="Manji Food 1">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="manji-food-2.jpg" alt="Manji Food 2">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="manji-food-3.jpg" alt="Manji Food 3">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="manji-food-4.jpg" alt="Manji Food 4">
-                        </div>
-                        <!-- Next/prev buttons -->
-                        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-                    </div>
                     <div class="product-description">
                         Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
                     </div>
+                    <button class="view-more-btn" onclick="scrollToSlideshow('manji-food')">View More</button>
                 </div>
 
                 <!-- Kimfay -->
                 <div class="product-item">
                     <div class="company-name">Kimfay</div>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <img src="kimfay-1.jpg" alt="Kimfay 1">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="kimfay-2.jpg" alt="Kimfay 2">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="kimfay-3.jpg" alt="Kimfay 3">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="kimfay-4.jpg" alt="Kimfay 4">
-                        </div>
-                        <!-- Next/prev buttons -->
-                        <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-                    </div>
                     <div class="product-description">
                         Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
                     </div>
+                    <button class="view-more-btn" onclick="scrollToSlideshow('kimfay')">View More</button>
                 </div>
+
                 <!-- Trufoods -->
                 <div class="product-item">
                     <div class="company-name">Trufoods</div>
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <img src="trufoods-1.jpg" alt="Trufoods 1">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trufoods-2.jpg" alt="Trufoods 2">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trufoods-3.jpg" alt="Trufoods 3">
-                        </div>
-                        <div class="mySlides fade">
-                            <img src="trufoods-4.jpg" alt="Trufoods 4">
-                        </div>
-                        <!-- Next/prev buttons -->
-                        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-                    </div>
                     <div class="product-description">
                         Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
                     </div>
+                    <button class="view-more-btn" onclick="scrollToSlideshow('trufoods')">View More</button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Sections for Each Company -->
+    <section id="tropical-heat" class="product-slideshow-section" style="display:none;">
+        <h3>Tropical Heat Products</h3>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="tropical-heat-1.jpg" alt="Tropical Heat 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="tropical-heat-2.jpg" alt="Tropical Heat 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="tropical-heat-3.jpg" alt="Tropical Heat 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="tropical-heat-4.jpg" alt="Tropical Heat 4">
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="pwani-oil" class="product-slideshow-section" style="display:none;">
+        <h3>Pwani Oil Products Ltd</h3>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="pwani-oil-1.jpg" alt="Pwani Oil 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="pwani-oil-2.jpg" alt="Pwani Oil 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="pwani-oil-3.jpg" alt="Pwani Oil 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="pwani-oil-4.jpg" alt="Pwani Oil 4">
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="manji-food" class="product-slideshow-section" style="display:none;">
+        <h3>Manji Food Industries</h3>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="manji-food-1.jpg" alt="Manji Food 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="manji-food-2.jpg" alt="Manji Food 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="manji-food-3.jpg" alt="Manji Food 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="manji-food-4.jpg" alt="Manji Food 4">
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="kimfay" class="product-slideshow-section" style="display:none;">
+        <h3>Kimfay</h3>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="kimfay-1.jpg" alt="Kimfay 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="kimfay-2.jpg" alt="Kimfay 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="kimfay-3.jpg" alt="Kimfay 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="kimfay-4.jpg" alt="Kimfay 4">
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="trufoods" class="product-slideshow-section" style="display:none;">
+        <h3>Trufoods</h3>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="trufoods-1.jpg" alt="Trufoods 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="trufoods-2.jpg" alt="Trufoods 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="trufoods-3.jpg" alt="Trufoods 3">
+            </div>
+            <div class="mySlides fade">
+                <img src="trufoods-4.jpg" alt="Trufoods 4">
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
         </div>
     </section>
 
@@ -362,6 +412,15 @@
 
     <!-- JavaScript Code -->
     <script>
+        // Function to scroll to the specific slideshow section and show it
+        function scrollToSlideshow(sectionId) {
+            document.querySelectorAll('.product-slideshow-section').forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Show the specific section
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+        }
+
         // Initialize slide indices for each slideshow
         let slideIndices = [1, 1, 1, 1, 1]; // Set initial index to 1 for each slideshow
 
