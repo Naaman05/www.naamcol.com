@@ -3,11 +3,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bai Jamjuree', sans-serif;
+  background-color: #f4f4f4; /* Light grey background for body */
+  color: #333; /* Default text color */
 }
 
 /* Header Styles */
 .main-header {
-  background-color: #1e4494; /* Blue background for header */
+  background-color: #ADD8E6; /* Light blue background for header */
   color: white;
   padding: 15px 0;
   position: sticky;
@@ -47,17 +49,18 @@ body {
 }
 
 .nav-list a {
-  color: white;
+  color: white; /* Set navbar text to white */
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s, color 0.3s;
   font-weight: 500;
+  border-radius: 5px;
 }
 
 .nav-list a:hover,
 .nav-list a.current {
-  background-color: #143f90; /* Darker shade on hover */
-  border-radius: 5px;
+  background-color: #87CEEB; /* Slightly darker shade of light blue on hover */
+  color: white; /* Keep text white on hover */
 }
 
 /* Menu Toggle for Mobile */
@@ -69,6 +72,10 @@ body {
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
   .nav-list {
     display: none;
     flex-direction: column;
@@ -76,7 +83,7 @@ body {
     top: 60px; /* Adjust based on header height */
     left: 0;
     width: 100%;
-    background-color: #1e4494;
+    background-color: #ADD8E6; /* Light blue background for mobile menu */
     text-align: center;
     transition: max-height 0.3s ease;
     overflow: hidden;
@@ -90,6 +97,7 @@ body {
   .nav-list a {
     padding: 15px;
     width: 100%;
+    color: white; /* Ensure text remains white on mobile */
   }
 
   .menu-toggle {
@@ -104,5 +112,208 @@ body {
 
 /* Icon Hover Effect */
 .menu-toggle i:hover {
-  color: #143f90; /* Slight color change on hover */
+  color: #87CEEB; /* Slight color change on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the hero section */
+  height: auto; /* Allow height to adjust based on content */
+  overflow: hidden; /* Prevent images from overflowing */
+  position: relative; /* Ensures positioned elements are contained within the section */
+  margin: 0 auto; /* Center the hero section */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  width: 100%; /* Full width of the hero section */
+  position: relative; /* Position relative for absolute positioning of slides */
+  overflow: hidden; /* Hide any overflow of images */
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+/* Image Slides */
+.mySlides {
+  display: none; /* Initially hide all slides */
+  width: 100%; /* Full width for the slide container */
+  height: auto; /* Maintain aspect ratio of images */
+  position: absolute; /* Absolute position to stack slides on top of each other */
+  top: 0;
+  left: 0;
+}
+
+/* Individual Images */
+.hero-image {
+  width: 100%; /* Ensure image takes full width of the container */
+  height: auto; /* Maintain image aspect ratio */
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  object-position: center; /* Center the image in the container */
+}
+
+/* Main Content Styling */
+.main-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff; /* White background for main content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.reason-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reason-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reason-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
+}
+
+/* Core Services Section */
+.core-services {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #1e4494;
+  margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #ADD8E6; /* Light blue background for footer */
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #87CEEB; /* Match the hover effect with navbar link hover */
+}
+
+/* WhatsApp Chat Widget */
+.whatsapp-chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-chat-widget i {
+  margin-right: 5px;
+}
+
+.whatsapp-chat-widget:hover {
+  background-color: #20b954;
+}
+
+/* Responsive Grid Layouts */
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #ADD8E6; /* Light blue background for mobile menu */
+    z-index: 999;
+    padding: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list a {
+    padding: 15px 0;
+    width: 100%;
+    color: white; /* Ensure text remains white on mobile */
+  }
+
+  .products-grid, .reasons-grid, .services-grid {
+    grid-template-columns: 1fr; /* Stack items on mobile */
+  }
 }
