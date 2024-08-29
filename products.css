@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bai Jamjuree', sans-serif;
+  background-color: #f4f4f4; /* Light grey background for body */
+  color: #333; /* Default text color */
 }
 
 /* Header Styles */
@@ -52,12 +54,12 @@ body {
   padding: 10px;
   transition: background-color 0.3s, color 0.3s;
   font-weight: 500;
+  border-radius: 5px;
 }
 
 .nav-list a:hover,
 .nav-list a.current {
   background-color: #143f90; /* Darker shade on hover */
-  border-radius: 5px;
 }
 
 /* Menu Toggle for Mobile */
@@ -69,6 +71,10 @@ body {
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
   .nav-list {
     display: none;
     flex-direction: column;
@@ -107,41 +113,51 @@ body {
   color: #143f90; /* Slight color change on hover */
 }
 
-
 /* Hero Section Styles */
 .hero-section {
-    width: 100%;
-    max-width: 900px; /* Limit the width of the hero section */
-    height: 445px; /* Fixed height for the hero section */
-    overflow: hidden; /* Prevent images from overflowing */
-    position: relative; /* Ensures positioned elements are contained within the section */
-    margin: 0 auto; /* Center the hero section */
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the hero section */
+  height: auto; /* Allow height to adjust based on content */
+  overflow: hidden; /* Prevent images from overflowing */
+  position: relative; /* Ensures positioned elements are contained within the section */
+  margin: 0 auto; /* Center the hero section */
 }
 
 /* Slideshow Container */
 .slideshow-container {
-    width: 100%; /* Full width of the hero section */
-    height: 100%; /* Full height of the hero section */
-    position: relative; /* Position relative for absolute positioning of slides */
-    overflow: hidden; /* Hide any overflow of images */
+  width: 100%; /* Full width of the hero section */
+  position: relative; /* Position relative for absolute positioning of slides */
+  overflow: hidden; /* Hide any overflow of images */
+  border-radius: 10px; /* Rounded corners for a modern look */
 }
 
 /* Image Slides */
 .mySlides {
-    display: none; /* Initially hide all slides */
-    width: 100%; /* Full width for the slide container */
-    height: 100%; /* Full height for the slide container */
-    position: absolute; /* Absolute position to stack slides on top of each other */
-    top: 0;
-    left: 0;
+  display: none; /* Initially hide all slides */
+  width: 100%; /* Full width for the slide container */
+  height: auto; /* Maintain aspect ratio of images */
+  position: absolute; /* Absolute position to stack slides on top of each other */
+  top: 0;
+  left: 0;
 }
 
 /* Individual Images */
 .hero-image {
-    width: 100%; /* Ensure image takes full width of the container */
-    height: 100%; /* Ensure image takes full height of the container */
-    object-fit: cover; /* Ensures image covers the container without distortion */
-    object-position: center; /* Center the image in the container */
+  width: 100%; /* Ensure image takes full width of the container */
+  height: auto; /* Maintain image aspect ratio */
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  object-position: center; /* Center the image in the container */
+}
+
+/* Main Content Styling */
+.main-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff; /* White background for main content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px;
 }
 
 /* Why Choose Us Section */
@@ -255,8 +271,46 @@ body {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .whatsapp-chat-widget i {
   margin-right: 5px;
+}
+
+.whatsapp-chat-widget:hover {
+  background-color: #20b954;
+}
+
+/* Responsive Grid Layouts */
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #1e4494;
+    z-index: 999;
+    padding: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list a {
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .products-grid, .reasons-grid, .services-grid {
+    grid-template-columns: 1fr; /* Stack items on mobile */
+  }
 }
