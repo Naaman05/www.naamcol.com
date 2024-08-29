@@ -58,6 +58,10 @@
             overflow: hidden;
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px; /* Adds space at the bottom for product descriptions */
         }
 
         .product-item:hover {
@@ -68,15 +72,11 @@
         .company-name {
             background-color: #1e4494;
             color: white;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
             font-size: 1.2em;
             font-weight: bold;
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            z-index: 10;
         }
 
         /* Slideshow container */
@@ -84,7 +84,8 @@
             width: 100%;
             position: relative;
             overflow: hidden;
-            margin-top: 40px; /* Adds some spacing between the company name and the slideshow */
+            margin-top: 20px; /* Adds some spacing between the company name and the slideshow */
+            border-radius: 10px; /* Adds rounded corners to the slideshow */
         }
 
         .mySlides {
@@ -110,6 +111,7 @@
             transition: 0.6s ease;
             user-select: none;
             background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .next {
@@ -135,6 +137,13 @@
         @keyframes fade {
             from {opacity: .4} 
             to {opacity: 1}
+        }
+
+        .product-description {
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9em;
         }
 
         .whatsapp-chat-widget {
@@ -225,7 +234,9 @@
                         <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
                     </div>
-                    <p>Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...</p>
+                    <div class="product-description">
+                        Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
+                    </div>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
@@ -248,7 +259,9 @@
                         <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
                     </div>
-                    <p>As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...</p>
+                    <div class="product-description">
+                        As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
+                    </div>
                 </div>
 
                 <!-- Manji Food Industries -->
@@ -271,7 +284,9 @@
                         <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
                     </div>
-                    <p>Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...</p>
+                    <div class="product-description">
+                        Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
+                    </div>
                 </div>
 
                 <!-- Kimfay -->
@@ -294,9 +309,10 @@
                         <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
                     </div>
-                    <p>Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...</p>
+                    <div class="product-description">
+                        Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
+                    </div>
                 </div>
-
                 <!-- Trufoods -->
                 <div class="product-item">
                     <div class="company-name">Trufoods</div>
@@ -317,7 +333,9 @@
                         <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
                     </div>
-                    <p>Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...</p>
+                    <div class="product-description">
+                        Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
+                    </div>
                 </div>
             </div>
         </div>
