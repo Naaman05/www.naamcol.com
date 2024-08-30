@@ -34,6 +34,12 @@ body {
   height: 50px;
 }
 
+.logo-text {
+    font-size: 1.5em; /* Adjust the font size as needed */
+    font-weight: bold; /* Makes the text bold */
+    color: #333; /* Sets the text color, you can change it to match your design */
+}
+
 /* Navigation Styles */
 .main-nav {
   display: flex;
