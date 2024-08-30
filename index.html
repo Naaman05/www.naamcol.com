@@ -219,59 +219,6 @@
             text-decoration: none;
             font-size: 1.2em;
         }
-
-        /* Chatbot Styling */
-        #chatbot-container {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 300px;
-            max-height: 400px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        #chatbot-header {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        #chatbot-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-        }
-
-        #chatbot-input {
-            display: flex;
-            border-top: 1px solid #ddd;
-        }
-
-        #chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-        }
-
-        #chatbot-input button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        #chatbot-input button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 
@@ -336,16 +283,6 @@
         </div>
     </section>
 
-    <!-- Chatbot Widget -->
-    <div id="chatbot-container">
-        <div id="chatbot-header">Chat with Our AI</div>
-        <div id="chatbot-messages"></div>
-        <div id="chatbot-input">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
     <!-- WhatsApp Chat Widget -->
     <div class="whatsapp-chat-widget">
         <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
@@ -371,34 +308,6 @@
             document.querySelector('.nav-list').classList.toggle('active');
             this.classList.toggle('is-active');
         });
-    </script>
-
-    <!-- JavaScript for Chatbot Interaction -->
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById('user-input').value;
-            document.getElementById('user-input').value = '';
-
-            const response = await fetch('http://127.0.0.1:5000/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: userInput })
-            });
-
-            const data = await response.json();
-            displayMessage('User', userInput);
-            displayMessage('Bot', data.response);
-        }
-
-        function displayMessage(sender, message) {
-            const messageContainer = document.getElementById('chatbot-messages');
-            const messageElement = document.createElement('div');
-            messageElement.textContent = sender + ': ' + message;
-            messageContainer.appendChild(messageElement);
-            messageContainer.scrollTop = messageContainer.scrollHeight;
-        }
     </script>
 
     <!-- Include JavaScript for Slideshow -->
