@@ -18,6 +18,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .header-content {
@@ -30,24 +31,42 @@ body {
   box-sizing: border-box;
 }
 
-.logo img {
-  height: 50px;
+/* Logo and Text Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
+/* Logo Styling */
+.logo {
+  height: 60px; /* Adjust height for better fitting */
+  margin-right: 15px; /* Space between logo and text */
+  border-radius: 8px; /* Slight rounding for a modern look */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Logo Text Styling */
 .logo-text {
-    font-size: 1.5em; /* Adjust the font size as needed */
-    font-weight: bold; /* Makes the text bold */
-    color: #333; /* Sets the text color, you can change it to match your design */
+  font-size: 1.8em; /* Larger font size for emphasis */
+  font-weight: 700; /* Bolder weight for prominence */
+  color: #333; /* Dark text color for contrast */
+  letter-spacing: 0.5px; /* Spacing between letters for readability */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.logo-container:hover .logo-text {
+  color: #87CEEB; /* Change text color on hover for interactivity */
 }
 
 /* Navigation Styles */
-.main-nav {
-  display: flex;
-  align-items: center;
-}
-
 .nav-list {
   display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -55,9 +74,9 @@ body {
 }
 
 .nav-list a {
-  color: white; /* Set navbar text to white */
+  color: white; /* Navbar text color */
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 15px; /* Add padding for a cleaner look */
   transition: background-color 0.3s, color 0.3s;
   font-weight: 500;
   border-radius: 5px;
