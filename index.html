@@ -47,8 +47,8 @@
             top: 0;
             z-index: 1000;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
         }
 
@@ -68,7 +68,6 @@
             color: #333;
         }
 
-        /* Navigation Menu Styling */
         .nav__menu {
             display: flex;
             align-items: center;
@@ -92,7 +91,7 @@
             font-size: 1em;
             font-weight: 500;
             transition: background-color 0.3s, color 0.3s;
-            cursor: pointer; /* Adds a pointer on hover */
+            cursor: pointer;
         }
 
         .nav__button:hover {
@@ -258,7 +257,7 @@
 
             <!-- Navigation Menu -->
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
+                <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
                     <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
                     <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
                     <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
