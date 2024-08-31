@@ -4,395 +4,171 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- External CSS Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to style.css -->
+    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
+
     <title>Our Products</title>
-    <style>
-        /* General styling */
-        body {
-            font-family: 'Bai Jamjuree', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .nav-list a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .nav-list .current {
-            color: #007BFF;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .product-item {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .company-name {
-            background-color: #1e4494;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        .view-more-btn {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-        .view-more-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .product-description {
-            margin-top: 10px;
-            color: #555;
-            font-size: 0.9em;
-        }
-
-        /* Slideshow Section Below */
-        .product-slideshow-section {
-            width: 100%;
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        .slideshow-container {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .mySlides {
-            display: none;
-            width: 100%;
-        }
-
-        .mySlides img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev {
-            left: 0;
-            border-radius: 0 3px 3px 0;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        /* Fading animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 2s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        .whatsapp-chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-
-        .whatsapp-chat-button {
-            background-color: #25d366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            font-size: 1em;
-        }
-
-        .whatsapp-chat-button i {
-            margin-right: 10px;
-            font-size: 1.5em;
-        }
-
-        .footer {
-            background-color: #f1f1f1;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-        }
-
-        .social-icons .social-icon {
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-    </style>
 </head>
 
 <body class="our-products">
-    <!-- Header -->
-    <header class="main-header">
-        <div class="header-content">
-            <a href="index.html"><img src="naamcoli.png" alt="Naamcol Logo" class="logo"></a>
-            <nav class="nav-list">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="our-products.html" class="current">Our Products</a>
-                <a href="our-team.html">Our Team</a>
-                <a href="contact-us.html">Contact Us</a>
-            </nav>
-        </div>
+
+    <!--==================== HEADER (New Navbar) ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Naaman Muses & Co Ltd</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link current">Our Products</a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link">Our Team</a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Us</a></li>
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <!-- Search button -->
+                <i class="ri-search-line nav__search" id="search-btn"></i>
+
+                <!-- Login button -->
+                <i class="ri-user-line nav__login" id="login-btn"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <section class="section main-content">
-        <div class="container">
-            <h2>Our Products</h2>
-            <p>Naaman Muses and Co. Ltd is a leading distributor of various high-quality consumer goods and products from well-known brands...</p>
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search">
+        <form action="" class="search__form">
+            <i class="ri-search-line search__icon"></i>
+            <input type="search" placeholder="What are you looking for?" class="search__input">
+        </form>
+        <i class="ri-close-line search__close" id="search-close"></i>
+    </div>
 
-            <div class="products-grid">
-                <!-- Tropical Heat Products -->
-                <div class="product-item">
-                    <div class="company-name">Tropical Heat Products</div>
-                    <div class="product-description">
-                        Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
-                    </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('tropical-heat')">View More</button>
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form action="" class="login__form">
+            <h2 class="login__title">Log In</h2>
+            <div class="login__group">
+                <div>
+                    <label for="email" class="login__label">Email</label>
+                    <input type="email" placeholder="Write your email" id="email" class="login__input">
                 </div>
-
-                <!-- Pwani Oil Products Ltd -->
-                <div class="product-item">
-                    <div class="company-name">Pwani Oil Products Ltd</div>
-                    <div class="product-description">
-                        As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
-                    </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('pwani-oil')">View More</button>
-                </div>
-
-                <!-- Manji Food Industries -->
-                <div class="product-item">
-                    <div class="company-name">Manji Food Industries</div>
-                    <div class="product-description">
-                        Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
-                    </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('manji-food')">View More</button>
-                </div>
-
-                <!-- Kimfay -->
-                <div class="product-item">
-                    <div class="company-name">Kimfay</div>
-                    <div class="product-description">
-                        Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
-                    </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('kimfay')">View More</button>
-                </div>
-
-                <!-- Trufoods -->
-                <div class="product-item">
-                    <div class="company-name">Trufoods</div>
-                    <div class="product-description">
-                        Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
-                    </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('trufoods')">View More</button>
+                <div>
+                    <label for="password" class="login__label">Password</label>
+                    <input type="password" placeholder="Enter your password" id="password" class="login__input">
                 </div>
             </div>
-        </div>
-    </section>
+            <div>
+                <p class="login__signup">
+                    You do not have an account? <a href="#">Sign up</a>
+                </p>
+                <a href="#" class="login__forgot">You forgot your password</a>
+                <button type="submit" class="login__button">Log In</button>
+            </div>
+        </form>
+        <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
 
-    <!-- Slideshow Sections for Each Company -->
-    <section id="tropical-heat" class="product-slideshow-section" style="display:none;">
-        <h3>Tropical Heat Products</h3>
-        <div class="slideshow-container">
-            <!-- Full URL paths for the images hosted on GitHub Pages -->
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/t1.jpeg" alt="Tropical Heat 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/t2.png" alt="Tropical Heat 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/t3.jpg" alt="Tropical Heat 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/t4.jpg" alt="Tropical Heat 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-        </div>
-    </section>
+    <!--==================== MAIN CONTENT ====================-->
+    <main class="main">
+        <section class="section main-content">
+            <div class="container">
+                <h2>Our Products</h2>
+                <p>Naaman Muses and Co. Ltd is a leading distributor of various high-quality consumer goods and products from well-known brands...</p>
 
-    <section id="pwani-oil" class="product-slideshow-section" style="display:none;">
-        <h3>Pwani Oil Products Ltd</h3>
-        <div class="slideshow-container">
-            <!-- Replace with correct URLs for Pwani Oil Products -->
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/p1.jpg" alt="Pwani Oil 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/p2.png" alt="Pwani Oil 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/p3.png" alt="Pwani Oil 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/p4.png" alt="Pwani Oil 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-        </div>
-    </section>
+                <div class="products-grid">
+                    <!-- Tropical Heat Products -->
+                    <div class="product-item">
+                        <div class="company-name">Tropical Heat Products</div>
+                        <div class="product-description">
+                            Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
+                        </div>
+                        <button class="view-more-btn" onclick="scrollToSlideshow('tropical-heat')">View More</button>
+                    </div>
 
-    <section id="manji-food" class="product-slideshow-section" style="display:none;">
-        <h3>Manji Food Industries</h3>
-        <div class="slideshow-container">
-            <!-- Replace with correct URLs for Manji Food Products -->
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/m1.jpg" alt="Manji Food 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/m2.png" alt="Manji Food 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/m3.jpeg" alt="Manji Food 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/m4.jpeg" alt="Manji Food 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-        </div>
-    </section>
+                    <!-- Pwani Oil Products Ltd -->
+                    <div class="product-item">
+                        <div class="company-name">Pwani Oil Products Ltd</div>
+                        <div class="product-description">
+                            As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
+                        </div>
+                        <button class="view-more-btn" onclick="scrollToSlideshow('pwani-oil')">View More</button>
+                    </div>
 
-    <section id="kimfay" class="product-slideshow-section" style="display:none;">
-        <h3>Kimfay</h3>
-        <div class="slideshow-container">
-            <!-- Replace with correct URLs for Kimfay Products -->
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/k1.png" alt="Kimfay 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/k2.png" alt="Kimfay 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/k3.png" alt="Kimfay 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/k4.png" alt="Kimfay 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-        </div>
-    </section>
+                    <!-- Manji Food Industries -->
+                    <div class="product-item">
+                        <div class="company-name">Manji Food Industries</div>
+                        <div class="product-description">
+                            Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
+                        </div>
+                        <button class="view-more-btn" onclick="scrollToSlideshow('manji-food')">View More</button>
+                    </div>
 
-    <section id="trufoods" class="product-slideshow-section" style="display:none;">
-        <h3>Trufoods</h3>
-        <div class="slideshow-container">
-            <!-- Replace with correct URLs for Trufoods Products -->
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/z1.jpeg" alt="Trufoods 1">
+                    <!-- Kimfay -->
+                    <div class="product-item">
+                        <div class="company-name">Kimfay</div>
+                        <div class="product-description">
+                            Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
+                        </div>
+                        <button class="view-more-btn" onclick="scrollToSlideshow('kimfay')">View More</button>
+                    </div>
+
+                    <!-- Trufoods -->
+                    <div class="product-item">
+                        <div class="company-name">Trufoods</div>
+                        <div class="product-description">
+                            Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
+                        </div>
+                        <button class="view-more-btn" onclick="scrollToSlideshow('trufoods')">View More</button>
+                    </div>
+                </div>
             </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/z2.jpeg" alt="Trufoods 2">
+        </section>
+
+        <!-- Slideshow Sections for Each Company -->
+        <section id="tropical-heat" class="product-slideshow-section" style="display:none;">
+            <h3>Tropical Heat Products</h3>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="https://naaman05.github.io/www.naamcol.com/t1.jpeg" alt="Tropical Heat 1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://naaman05.github.io/www.naamcol.com/t2.png" alt="Tropical Heat 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://naaman05.github.io/www.naamcol.com/t3.jpg" alt="Tropical Heat 3">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://naaman05.github.io/www.naamcol.com/t4.jpg" alt="Tropical Heat 4">
+                </div>
+                <!-- Next/prev buttons -->
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
             </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/z3.jpeg" alt="Trufoods 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="https://naaman05.github.io/www.naamcol.com/z4.jpg" alt="Trufoods 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-        </div>
-    </section>
+        </section>
+
+        <!-- Repeat similar slideshow sections for each product brand -->
+
+    </main>
 
     <!-- WhatsApp Chat Widget -->
     <div class="whatsapp-chat-widget">
@@ -401,7 +177,7 @@
         </a>
     </div>
 
-    <!-- Footer -->
+    <!--==================== FOOTER ====================-->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2024 Naamcol. All rights reserved.</p>
@@ -455,5 +231,8 @@
             showSlides(slideIndices[i], i);
         }
     </script>
+
+    <!-- External JS Files -->
+    <script src="assets/js/main.js"></script> <!-- JS for navbar and interactivity -->
 </body>
 </html>
