@@ -4,50 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
-    <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <!-- External CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
+    <link rel="stylesheet" href="style.css"> <!-- Link to style.css -->
+    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
+
+    <!-- Meta Tags for SEO -->
+    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
+    <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
+
     <title>Home</title>
-
-    <style>
-        /* Include any custom CSS from your original index page here */
-        body {
-            font-family: 'Bai Jamjuree', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Add additional CSS styles as needed from your original code */
-    </style>
 </head>
 
 <body class="our-products">
-    <!--==================== HEADER ====================-->
+    <!--==================== HEADER (New Navbar) ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Logo</a>
+            <a href="index.html" class="nav__logo">Naaman Muses & Co Ltd</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="about-us.html" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="our-products.html" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Featured</a></li>
-                    <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Me</a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link">Our Products</a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link">Our Team</a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Us</a></li>
                 </ul>
 
                 <!-- Close button -->
@@ -77,7 +65,6 @@
             <i class="ri-search-line search__icon"></i>
             <input type="search" placeholder="What are you looking for?" class="search__input">
         </form>
-
         <i class="ri-close-line search__close" id="search-close"></i>
     </div>
 
@@ -85,38 +72,29 @@
     <div class="login" id="login">
         <form action="" class="login__form">
             <h2 class="login__title">Log In</h2>
-            
             <div class="login__group">
                 <div>
                     <label for="email" class="login__label">Email</label>
                     <input type="email" placeholder="Write your email" id="email" class="login__input">
                 </div>
-                
                 <div>
                     <label for="password" class="login__label">Password</label>
                     <input type="password" placeholder="Enter your password" id="password" class="login__input">
                 </div>
             </div>
-
             <div>
                 <p class="login__signup">
                     You do not have an account? <a href="#">Sign up</a>
                 </p>
-    
-                <a href="#" class="login__forgot">
-                    You forgot your password
-                </a>
-    
+                <a href="#" class="login__forgot">You forgot your password</a>
                 <button type="submit" class="login__button">Log In</button>
             </div>
         </form>
-
         <i class="ri-close-line login__close" id="login-close"></i>
     </div>
 
-    <!-- Main Content Sections from Original Code -->
+    <!--==================== MAIN CONTENT ====================-->
     <main class="main">
-        <!-- Example content from your original code -->
         <section class="section main-content">
             <div class="container">
                 <h2>Welcome to Naaman Muses and Co Ltd</h2>
@@ -125,7 +103,42 @@
             </div>
         </section>
 
-        <!-- Include more sections as needed -->
+        <!-- Additional Sections as in Original Code -->
+        <section class="section why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
+                <ul>
+                    <li>Wide range of quality products from reputable brands</li>
+                    <li>Efficient distribution network covering East Africa</li>
+                    <li>Strong focus on customer satisfaction and service excellence</li>
+                    <li>Commitment to sustainability and community development</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="core-services">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>Importing</h3>
+                        <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-truck service-icon"></i>
+                        <h3>Distribution</h3>
+                        <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3>Trading</h3>
+                        <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- WhatsApp Chat Widget -->
@@ -135,7 +148,7 @@
         </a>
     </div>
 
-    <!-- Footer from Original Code -->
+    <!--==================== FOOTER ====================-->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2024 Naamcol. All rights reserved.</p>
@@ -147,16 +160,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript to toggle menu visibility on mobile -->
-    <script>
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-list').classList.toggle('active');
-            this.classList.toggle('is-active');
-        });
-    </script>
-
-    <!-- Include JavaScript for Slideshow -->
-    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
-    <script src="assets/js/main.js"></script>
+    <!-- JavaScript for Navbar and Other Functionalities -->
+    <script src="assets/js/main.js"></script> <!-- JS for navbar and interactivity -->
+    <script src="slideshow.js"></script> <!-- Original JS for slideshow -->
 </body>
 </html>
