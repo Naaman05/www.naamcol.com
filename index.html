@@ -56,10 +56,12 @@
         }
 
         .nav__logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #007BFF;
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            height: 50px; /* Adjust logo size as needed */
         }
 
         .nav__menu {
@@ -83,17 +85,6 @@
         .nav__link:hover,
         .nav__link.current {
             color: #007BFF;
-        }
-
-        .nav__actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav__toggle, .nav__search, .nav__login {
-            cursor: pointer;
-            font-size: 1.4em;
         }
 
         /* Main Content Styling */
@@ -243,11 +234,12 @@
 
 <body class="our-products">
 
-    <!--==================== HEADER (New Navbar) ====================-->
+    <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <img src="naamcol.jpeg" alt="Naamcol Logo" class="logo">
-            <a href="index.html" class="">Naaman Muses & Co Ltd</a>
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+            </div>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -257,6 +249,9 @@
                     <li class="nav__item"><a href="our-team.html" class="nav__link">Our Team</a></li>
                     <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Us</a></li>
                 </ul>
+            </div>
+        </nav>
+    </header>
 
     <!--==================== MAIN CONTENT ====================-->
     <main class="main">
@@ -325,7 +320,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Navbar and Other Functionalities -->
+    <!-- JavaScript for Navbar Toggle -->
     <script>
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
