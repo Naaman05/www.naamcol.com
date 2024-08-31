@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- External CSS Links -->
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="team.css"> <!-- Link to team-specific styles -->
+    <link rel="stylesheet" href="team.css"> <!-- Link to specific CSS file for Team page -->
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
-    <title>Our Team</title>
+    <title>Our Team - Naaman Muses and Co Ltd</title>
 
     <style>
-        /* General Styling for Modern Look */
+        /* General Styling */
         body {
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
@@ -40,9 +41,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-        }
-
-        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,16 +48,25 @@
         }
 
         .nav__logo {
-            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            height: 50px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
+        }
+
+        .nav__logo-text {
+            font-size: 1.5em;
             font-weight: 700;
-            color: #007BFF;
-            text-decoration: none;
+            color: #333;
         }
 
         .nav__menu {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px; /* Space between buttons */
         }
 
         .nav__item {
@@ -67,57 +74,35 @@
         }
 
         .nav__link {
-            color: #333;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1em;
-            transition: color 0.3s;
         }
 
-        .nav__link:hover,
-        .nav__link.current {
+        .nav__button {
+            padding: 10px 20px;
+            border: 2px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav__button:hover {
+            background-color: white;
             color: #007BFF;
         }
 
-        .nav__actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav__toggle, .nav__search, .nav__login {
-            cursor: pointer;
-            font-size: 1.4em;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('managementteam.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        /* Team Section */
+        /* Team Content Styling */
         .team-section {
-            padding: 60px 0;
             background-color: #ffffff;
+            padding: 60px 0;
         }
 
         .team-section h2 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 2.5em;
             color: #333;
         }
@@ -126,20 +111,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            margin-top: 30px;
         }
 
         .team-member {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            padding: 25px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .team-member h3 {
@@ -151,7 +131,6 @@
         .team-member p {
             color: #555;
             font-size: 1em;
-            margin-bottom: 10px;
         }
 
         /* WhatsApp Chat Button */
@@ -215,86 +194,33 @@
         }
     </style>
 </head>
-<body class="team">
 
-    <!--==================== HEADER (New Navbar) ====================-->
+<body class="team-page">
+
+    <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index.html" class="nav__logo">Naaman Muses & Co Ltd</a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="about-us.html" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="our-products.html" class="nav__link">Our Products</a></li>
-                    <li class="nav__item"><a href="our-team.html" class="nav__link current">Our Team</a></li>
-                    <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Us</a></li>
-                </ul>
-
-                <!-- Close button -->
-                <div class="nav__close" id="nav-close">
-                    <i class="ri-close-line"></i>
-                </div>
+            <!-- Logo and Company Name -->
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
             </div>
 
-            <div class="nav__actions">
-                <!-- Search button -->
-                <i class="ri-search-line nav__search" id="search-btn"></i>
-
-                <!-- Login button -->
-                <i class="ri-user-line nav__login" id="login-btn"></i>
-
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line"></i>
-                </div>
+            <!-- Navigation Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <!--==================== SEARCH ====================-->
-    <div class="search" id="search">
-        <form action="" class="search__form">
-            <i class="ri-search-line search__icon"></i>
-            <input type="search" placeholder="What are you looking for?" class="search__input">
-        </form>
-        <i class="ri-close-line search__close" id="search-close"></i>
-    </div>
-
-    <!--==================== LOGIN ====================-->
-    <div class="login" id="login">
-        <form action="" class="login__form">
-            <h2 class="login__title">Log In</h2>
-            <div class="login__group">
-                <div>
-                    <label for="email" class="login__label">Email</label>
-                    <input type="email" placeholder="Write your email" id="email" class="login__input">
-                </div>
-                <div>
-                    <label for="password" class="login__label">Password</label>
-                    <input type="password" placeholder="Enter your password" id="password" class="login__input">
-                </div>
-            </div>
-            <div>
-                <p class="login__signup">
-                    You do not have an account? <a href="#">Sign up</a>
-                </p>
-                <a href="#" class="login__forgot">You forgot your password</a>
-                <button type="submit" class="login__button">Log In</button>
-            </div>
-        </form>
-        <i class="ri-close-line login__close" id="login-close"></i>
-    </div>
-
-    <!--==================== HERO SECTION ====================-->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Meet Our Team</h1>
-        </div>
-    </section>
-
-    <!--==================== OUR TEAM SECTION ====================-->
-    <section class="section team-section">
+    <!--==================== TEAM SECTION ====================-->
+    <section class="team-section">
         <div class="container">
             <h2>Our Expert Team</h2>
             <div class="team-grid">
@@ -317,7 +243,7 @@
         </div>
     </section>
 
-    <!-- WhatsApp Chat Widget -->
+    <!--==================== WHATSAPP CHAT WIDGET ====================-->
     <div class="whatsapp-chat-widget">
         <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
             <i class="fab fa-whatsapp"></i> Chat with Us
@@ -336,18 +262,25 @@
         </div>
     </footer>
 
-    <!-- JavaScript Code -->
+    <!-- JavaScript for Navbar Toggle -->
     <script>
         // JavaScript to handle the toggle of the mobile menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
 
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        }
     </script>
 
-    <!-- Include JavaScript for Slideshow -->
-    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
