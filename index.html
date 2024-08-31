@@ -62,12 +62,19 @@
 
         .nav__logo img {
             height: 50px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
+        }
+
+        .nav__logo-text {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #333;
         }
 
         .nav__menu {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 15px; /* Space between buttons */
         }
 
         .nav__item {
@@ -75,15 +82,22 @@
         }
 
         .nav__link {
-            color: #333;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1em;
-            transition: color 0.3s;
         }
 
-        .nav__link:hover,
-        .nav__link.current {
+        .nav__button {
+            padding: 10px 20px;
+            border: 2px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav__button:hover {
+            background-color: white;
             color: #007BFF;
         }
 
@@ -239,15 +253,16 @@
         <nav class="nav container">
             <div class="nav__logo">
                 <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
             </div>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link current">Home</a></li>
-                    <li class="nav__item"><a href="about-us.html" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="our-products.html" class="nav__link">Our Products</a></li>
-                    <li class="nav__item"><a href="our-team.html" class="nav__link">Our Team</a></li>
-                    <li class="nav__item"><a href="contact-us.html" class="nav__link">Contact Us</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
                 </ul>
             </div>
         </nav>
