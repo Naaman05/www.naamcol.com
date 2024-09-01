@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -87,7 +87,7 @@
             padding: 10px 20px;
             border: 2px solid #121213;
             background-color: #dde0e3;
-            color: rgb(0, 0, 0);
+            color: white;
             border-radius: 5px;
             font-size: 1em;
             font-weight: 500;
@@ -97,78 +97,66 @@
 
         .nav__button:hover {
             background-color: white;
-            color: #000000;
+            color: #007BFF;
         }
 
-        /* Mobile Menu Toggle Button */
-        .nav__toggle {
-            display: none; /* Hide toggle button on desktop */
+        /* Mobile Menu */
+        .nav__toggle, .nav__close {
+            display: none;
             font-size: 1.5em;
             cursor: pointer;
         }
 
-        /* Mobile Menu Styling */
-        .nav__mobile-menu {
-            display: none; /* Hide mobile menu by default */
-            position: absolute;
-            top: 70px;
-            right: 30px;
-            background-color: #1f5dc1;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav__mobile-item {
-            list-style: none;
-            margin-bottom: 10px;
-        }
-
-        .nav__mobile-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            display: block;
-        }
-
-        /* Hero Section with Background Image */
+        /* Hero Section with Slideshow */
         .hero-section {
-            background-image: url('h12.jpg'); /* Background image for the hero section */
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
             position: relative;
+            height: 400px;
+            overflow: hidden;
         }
 
-        .hero-section::after {
-            content: '';
+        .hero-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        .hero-images img {
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
-            z-index: 1;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-images img.active {
+            opacity: 1;
         }
 
         .hero-content {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 2;
+            text-align: center;
+            color: white;
         }
 
         .hero-content h1 {
             font-size: 3em;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* Main Content Styling */
         .main-content {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             padding: 60px 0;
         }
 
@@ -176,7 +164,7 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
-            color: #555;
+            color: #333;
         }
 
         .main-content p {
@@ -208,7 +196,7 @@
         }
 
         .core-services {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             padding: 60px 0;
         }
 
@@ -234,14 +222,14 @@
 
         .service-icon {
             font-size: 2.5em;
-            color: #094b92;
+            color: #007BFF;
             margin-bottom: 10px;
         }
 
         .service-item h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
-            color: #094b92;
+            color: #007BFF;
         }
 
         .service-item p {
@@ -279,7 +267,7 @@
 
         /* Modern Footer */
         .footer {
-            background-color: #1f5dc1;
+            background-color: #f1f1f1;
             padding: 20px 0;
             text-align: center;
         }
@@ -309,20 +297,27 @@
             color: #007BFF;
         }
 
-        /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             .nav__menu {
-                display: none; /* Hide the full navbar menu */
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                align-items: flex-start;
+                padding: 20px;
+                gap: 20px;
             }
 
             .nav__toggle {
-                display: block; /* Show toggle button on mobile */
+                display: block;
             }
 
-            .nav__mobile-menu {
-                display: flex; /* Display the mobile menu when toggled */
-                flex-direction: column;
-                align-items: flex-start;
+            .nav__menu.active {
+                display: flex;
             }
         }
     </style>
@@ -332,39 +327,59 @@
 
     <!--==================== HEADER (Responsive Navbar) ====================-->
     <header class="header" id="header">
-        <div class="nav__logo">
-            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-        </div>
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+            </div>
 
-        <!-- Toggle Button for Mobile View -->
-        <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-        </div>
+            <!-- Hamburger Menu Icon for Mobile -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
 
-        <!-- Full Navigation Menu for Desktop -->
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-            </ul>
-        </div>
+            <!-- Navigation Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
 
-        <!-- Mobile Menu -->
-        <div class="nav__mobile-menu" id="nav-mobile-menu">
-            <ul class="nav__list">
-                <li class="nav__mobile-item"><a href="index.html" class="nav__mobile-link">Home</a></li>
-                <li class="nav__mobile-item"><a href="about-us.html" class="nav__mobile-link">About Us</a></li>
-                <li class="nav__mobile-item"><a href="our-products.html" class="nav__mobile-link">Our Products</a></li>
-                <li class="nav__mobile-item"><a href="our-team.html" class="nav__mobile-link">Our Team</a></li>
-                <li class="nav__mobile-item"><a href="contact-us.html" class="nav__mobile-link">Contact Us</a></li>
-            </ul>
-        </div>
+                <!-- Close button for mobile menu -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+        </nav>
     </header>
-         <!--==================== MAIN CONTENT ====================-->
+
+    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <section class="hero-section">
+        <div class="hero-images">
+            <!-- Add multiple images for slideshow -->
+            <img src="dg11.jpg" alt="Hero Image 1" class="active">
+            <img src="dg2.jpg" alt="Hero Image 2">
+            <img src="dg3.jpg" alt="Hero Image 3">
+            <img src="dg4.jpg" alt="Hero Image 4">
+            <img src="dg5.jpg" alt="Hero Image 5">
+            <img src="dg6.jpg" alt="Hero Image 6">
+            <img src="dg7.jpg" alt="Hero Image 7">
+            <img src="dg8.jpg" alt="Hero Image 8">
+            <img src="dg9.jpg" alt="Hero Image 9">
+            <img src="dg10.jpg" alt="Hero Image 10">
+            <img src="dg1.jpg" alt="Hero Image 11">
+            <img src="dg12.jpg" alt="Hero Image 12">
+            <img src="oie_sc0q3010SmJE.jpg" alt="Hero Image 13">
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses and Co Ltd</h1>
+        </div>
+    </section>
+
+    <!--==================== MAIN CONTENT ====================-->
     <main class="main">
         <section class="section main-content">
             <div class="container">
@@ -418,7 +433,6 @@
             <i class="fab fa-whatsapp"></i> Chat with Us
         </a>
     </div>
-    </main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
@@ -432,17 +446,42 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Navbar Toggle -->
+    <!-- JavaScript for Navbar Toggle and Slideshow -->
     <script>
-        // JavaScript to handle the toggle of the mobile menu
-        const mobileMenuToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('nav-mobile-menu');
+        // JavaScript for mobile menu toggle
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
 
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        }
+
+        // JavaScript for image slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.hero-images img');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            slideIndex = (slideIndex + 1) % totalSlides;
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', showSlides);
     </script>
-
-    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
