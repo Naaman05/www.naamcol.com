@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <!-- External CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="home.css"> <!-- Link to specific CSS file for index page -->
+    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
-    <title>About Us - Naaman Muses and Co Ltd</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
+
+    <title>Home - Naaman Muses and Co Ltd</title>
 
     <style>
         /* General Styling for Modern Look */
@@ -57,12 +65,12 @@
         }
 
         .nav__logo img {
-            height: 80px; /* Adjust logo size as needed */
+            height: 60px; /* Adjust logo size as needed */
             margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 800;
             color: #efefef;
         }
@@ -111,34 +119,35 @@
             gap: 15px;
         }
 
-        /* Hero Section with Two Images */
-        .hero-section {
-            display: flex;
-            flex-direction: column; /* Align images vertically centered */
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            height: 400px;
+        /* Slideshow Section with Image Slideshow */
+        .slideshow-section {
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Optional: Limit the width of the slideshow */
+            margin: auto;
             overflow: hidden;
-            margin: 20px 0;
-            position: relative; /* To ensure the hero-content is still positioned correctly */
         }
 
-        .hero-image {
-            flex: none; /* Prevents the image containers from stretching */
+        .slideshow-images {
             display: flex;
+            flex-direction: column; /* To align images in the center vertically */
             justify-content: center;
             align-items: center;
-            height: auto; /* Adjust to content size */
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 10px 0; /* Add margin for spacing between images */
+            width: 100%;
+            height: 100%;
         }
 
-        .hero-image img {
-            width: auto; /* Adjust width to maintain image aspect ratio */
-            height: 200px; /* Set a fixed height or auto to fit */
-            object-fit: contain; /* Ensures the whole image is visible */
+        .slideshow-images img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Ensure the image fits inside the container */
+            display: none;
+        }
+
+        .slideshow-images img.active {
+            display: block;
         }
 
         .hero-content {
@@ -148,68 +157,13 @@
             transform: translate(-50%, -50%);
             z-index: 2;
             text-align: center;
-            color: #333;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: white;
         }
 
         .hero-content h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
-        }
-
-        /* Main Content Styling */
-        .about-section {
-            background-color: #ffffff;
-            padding: 60px 0;
-        }
-
-        .about-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-
-        .about-item {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .about-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .about-item h3 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #094b92;
-        }
-
-        .about-item p {
-            font-size: 1em;
-            color: #555;
-            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* WhatsApp Chat Button */
@@ -301,99 +255,99 @@
                 align-items: flex-start;
                 gap: 10px;
             }
-
-            .about-grid {
-                grid-template-columns: 1fr; /* Single column for mobile */
-            }
-
-            .hero-section {
-                height: auto; /* Adjust hero height for mobile view */
-                padding: 10px;
-            }
-
-            .hero-image {
-                margin-bottom: 10px;
-            }
         }
     </style>
 </head>
 
-<body class="about-page">
+<body class="home">
 
-    <!--==================== HEADER (Simplified Navbar) ====================-->
+    <!--==================== HEADER (Responsive Navbar) ====================-->
     <header class="header" id="header">
-        <!-- Logo and Navigation -->
-        <div class="nav__logo">
-            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-        </div>
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+            </div>
 
-        <!-- Mobile toggle icon -->
-        <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-        </div>
+            <!-- Mobile toggle icon -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
 
-        <!-- Navigation Menu -->
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list" style="display: flex; align-items: center; gap: 15px; margin: 0;">
-                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-            </ul>
-        </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <!--==================== HERO SECTION WITH TWO IMAGES ====================-->
-    <section class="hero-section">
-        <div class="hero-image">
-            <img src="ab1.png" alt="Hero Image 1">
-        </div>
-        <div class="hero-image">
-            <img src="ab2.png" alt="Hero Image 2">
-        </div>
-        <div class="hero-content">
-            <h1>About Us</h1>
+    <!--==================== SLIDESHOW SECTION ====================-->
+    <section class="slideshow-section">
+        <div class="slideshow-images">
+            <!-- Add multiple images for slideshow -->
+            <img src="r1.png" alt="Slideshow Image 1" class="active">
+            <img src="r2.png" alt="Slideshow Image 2">
+            <img src="t3.jpg" alt="Slideshow Image 3">
+            <img src="r3.png" alt="Slideshow Image 4">
+            <img src="r4.png" alt="Slideshow Image 5">
+            <img src="p3.png" alt="Slideshow Image 6">
+            <img src="k1.png" alt="Slideshow Image 7">
+            <img src="k2.png" alt="Slideshow Image 8">
+            <img src="k3.png" alt="Slideshow Image 9">
+            <img src="z1.jpeg" alt="Slideshow Image 10">
+            <img src="z2.jpeg" alt="Slideshow Image 11">
+            <img src="z3.jpeg" alt="Slideshow Image 12">
+            <img src="r5.png" alt="Slideshow Image 13">
+            <img src="r6.png" alt="Slideshow Image 14">
+            <img src="r7.png" alt="Slideshow Image 15">
         </div>
     </section>
 
-    <!--==================== ABOUT US SECTION ====================-->
-    <section class="about-section">
-        <div class="container">
-            <h2>About Naaman Muses and Co Ltd</h2>
-
-            <div class="about-grid">
-                <!-- Image and Text Pair 1 -->
-                <div class="about-item">
-                    <img src="1.png" alt="Our Mission"> <!-- Add your actual image source here -->
-                    <h3>Our Mission</h3>
-                    <p>To provide comprehensive, reliable, and innovative importation, distribution, and trading services, ensuring our clients' success and satisfaction in every endeavor.</p>
-                </div>
-
-                <!-- Image and Text Pair 2 -->
-                <div class="about-item">
-                    <img src="2.png" alt="Our Vision"> <!-- Add your actual image source here -->
-                    <h3>Our Vision</h3>
-                    <p>To be the leading provider of importation, distribution, and trading services in the region, recognized for our commitment to excellence, innovation, and customer-centric solutions.</p>
-                </div>
-
-                <!-- Image and Text Pair 3 -->
-                <div class="about-item">
-                    <img src="3.png" alt="Core Values"> <!-- Add your actual image source here -->
-                    <h3>Our Core Values</h3>
-                    <ul>
-                        <li><strong>Integrity:</strong> Upholding the highest standards of honesty and transparency in all our dealings.</li>
-                        <li><strong>Customer Focus:</strong> Placing our customers at the center of everything we do, ensuring their needs are met with excellence.</li>
-                        <li><strong>Excellence:</strong> Striving for the highest quality in our products and services, ensuring we exceed expectations.</li>
-                        <li><strong>Innovation:</strong> Continuously seeking innovative solutions to meet the evolving needs of our customers.</li>
-                        <li><strong>Teamwork:</strong> Fostering a collaborative and inclusive environment where every team member contributes to our success.</li>
-                        <li><strong>Sustainability:</strong> Committed to sustainable business practices that positively impact the environment and society.</li>
-                    </ul>
+    <!--==================== MAIN CONTENT ====================-->
+    <main class="main">
+        <section class="section main-content">
+            <div class="container">
+                <h2>Welcome to Naaman Muses and Co Ltd</h2>
+                <p>Naaman Muses and Co. Ltd is a company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
+                <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
+                <h2>Why Choose Us?</h2>
+                <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
+                <ul>
+                    <li>Wide range of quality products from reputable brands</li>
+                    <li>Efficient distribution network covering East Africa</li>
+                    <li>Strong focus on customer satisfaction and service excellence</li>
+                    <li>Commitment to sustainability and community development</li>
+                </ul>
+            </div>
+        </section>
+        <section class="core-services">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>Importing</h3>
+                        <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-truck service-icon"></i>
+                        <h3>Distribution</h3>
+                        <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3>Trading</h3>
+                        <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!--==================== WHATSAPP CHAT WIDGET ====================-->
     <div class="whatsapp-chat-widget">
@@ -414,8 +368,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript for Slideshow -->
     <script>
+        // JavaScript for image slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slideshow-images img');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            slideIndex = (slideIndex + 1) % totalSlides;
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', showSlides);
+
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
