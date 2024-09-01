@@ -112,52 +112,29 @@
         }
 
         /* Hero Section with Slideshow */
-        .hero-section {
+       .hero-section {
             position: relative;
             height: 400px;
             overflow: hidden;
-        }
-
-        .hero-images {
             display: flex;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .hero-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .hero-images img.active {
-            opacity: 1;
+            align-items: center;
+            justify-content: center;
+            background-image: url('managementteam.jpg'); /* Replace with your actual image */
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
+            position: relative;
             text-align: center;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero-content h1 {
             font-size: 3em;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-
         /* Main Content Styling */
         .main-content {
             background-color: #f9f9f9;
