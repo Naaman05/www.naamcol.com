@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <!-- External CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="about.css"> <!-- Link to specific CSS file for About Us page -->
-    <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to style.css -->
+    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
+
+    <!-- Meta Tags for SEO -->
+    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
+    <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
 
     <title>Home - Naaman Muses and Co Ltd</title>
 
     <style>
-        /* General Styling */
+        /* General Styling for Modern Look */
         body {
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
@@ -38,20 +46,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex; /* Make header a flex container */
-            justify-content: space-between; /* Space items evenly */
-            align-items: center; /* Center items vertically */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
         }
 
         .nav__logo {
-            display: flex; /* Flex container for logo and text */
+            display: flex;
             align-items: center;
-            gap: 10px; /* Gap between logo and text */
         }
 
         .nav__logo img {
             height: 50px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
@@ -61,7 +69,7 @@
         }
 
         .nav__menu {
-            display: flex; /* Display navigation links in a row */
+            display: flex;
             align-items: center;
             gap: 20px; /* Space between buttons */
         }
@@ -91,60 +99,122 @@
             color: #007BFF;
         }
 
-        /* Home Content Styling */
+        /* Hero Section with Background Image */
         .hero-section {
-            background-image: url('h12.jpg');
+            background-image: url('h12.jpg'); /* Background image for the hero section */
             background-size: cover;
             background-position: center;
-            height: 300px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
+            position: relative;
         }
 
-        .Home-section {
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* Main Content Styling */
+        .main-content {
             background-color: #ffffff;
             padding: 60px 0;
         }
 
-        .Home-section h2 {
+        .main-content h2 {
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
             color: #333;
         }
 
-        .Home-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        .main-content p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .why-choose-us h2,
+        .core-services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .why-choose-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: #555;
             margin-top: 20px;
         }
 
-        .Home-item {
+        .core-services {
             background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
+            padding: 60px 0;
         }
 
-        .Home-item h3 {
-            font-size: 1.5em;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
             color: #007BFF;
             margin-bottom: 10px;
         }
 
-        .Home-item p {
-            color: #555;
-            font-size: 1em;
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #007BFF;
         }
 
-        .Home-item.full-width {
-            grid-column: span 2;
+        .service-item p {
+            font-size: 1em;
+            color: #555;
         }
 
         /* WhatsApp Chat Button */
@@ -209,83 +279,93 @@
     </style>
 </head>
 
-<body class="Home">
+<body class="our-products">
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
-        <!-- Logo and Navigation -->
-        <div class="nav__logo">
-            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-        </div>
+        <nav class="nav container">
+            <!-- Logo and Company Name -->
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+            </div>
 
-        <!-- Navigation Menu -->
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list" style="display: flex; align-items: center; gap: 15px; margin: 0;">
-                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-            </ul>
-        </div>
+            <!-- Navigation Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <section class="section main-content">
-        <div class="container">
-            <h2>Welcome to Naaman Muses and Co Ltd</h2>
-            <p>Naaman Muses and Co. Ltd is a renowned company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
-            <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
+    <!--==================== HERO SECTION ====================-->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses and Co Ltd</h1>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="section why-choose-us">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
-            <ul>
-                <li>Wide range of quality products from reputable brands</li>
-                <li>Efficient distribution network covering East Africa</li>
-                <li>Strong focus on customer satisfaction and service excellence</li>
-                <li>Commitment to sustainability and community development</li>
-            </ul>
-        </div>
-    </section>
+    <!--==================== MAIN CONTENT ====================-->
+    <main class="main">
+        <section class="section main-content">
+            <div class="container">
+                <h2>Our Mission and Vision</h2>
+                <p>Naaman Muses and Co. Ltd is a renowned company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
+                <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
+            </div>
+        </section>
 
-    <!-- Services Section -->
-    <section class="core-services">
-        <div class="container">
-            <h2>Our Core Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-globe service-icon"></i>
-                    <h3>Importing</h3>
-                    <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-truck service-icon"></i>
-                    <h3>Distribution</h3>
-                    <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-handshake service-icon"></i>
-                    <h3>Trading</h3>
-                    <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+        <!-- Additional Sections as in Original Code -->
+        <section class="section why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
+                <ul>
+                    <li>Wide range of quality products from reputable brands</li>
+                    <li>Efficient distribution network covering East Africa</li>
+                    <li>Strong focus on customer satisfaction and service excellence</li>
+                    <li>Commitment to sustainability and community development</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="core-services">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>Importing</h3>
+                        <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-truck service-icon"></i>
+                        <h3>Distribution</h3>
+                        <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3>Trading</h3>
+                        <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- WhatsApp Chat Widget -->
+    <!--==================== WHATSAPP CHAT WIDGET ====================-->
     <div class="whatsapp-chat-widget">
         <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
             <i class="fab fa-whatsapp"></i> Chat with Us
         </a>
     </div>
 
-    <!-- Footer -->
+    <!--==================== FOOTER ====================-->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2024 Naamcol. All rights reserved.</p>
@@ -297,15 +377,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript to toggle menu visibility on mobile -->
+    <!-- JavaScript for Navbar Toggle -->
     <script>
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-list').classList.toggle('active');
-            this.classList.toggle('is-active');
-        });
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        }
     </script>
 
-    <!-- Include JavaScript for Slideshow -->
     <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
