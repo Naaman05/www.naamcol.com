@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="products.css"> <!-- Link to specific CSS file for About Us page -->
-    <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="responsive.css">
 
     <title>Our Products - Naaman Muses and Co Ltd</title>
 
@@ -57,8 +57,8 @@
         }
 
         .nav__logo img {
-            height: 80px; /* Adjust logo size as needed */
-            margin-right: 10px; /* Spacing between logo and text */
+            height: 80px;
+            margin-right: 10px;
         }
 
         .nav__logo-text {
@@ -70,7 +70,7 @@
         .nav__menu {
             display: flex;
             align-items: center;
-            gap: 15px; /* Space between buttons */
+            gap: 15px;
         }
 
         .nav__item {
@@ -85,7 +85,7 @@
             padding: 10px 20px;
             border: 2px solid #dde0e3;
             background-color: #dde0e3;
-            color: rgb(0, 0, 0);;
+            color: rgb(0, 0, 0);
             border-radius: 5px;
             font-size: 1em;
             font-weight: 700;
@@ -275,8 +275,8 @@
             background-color: #1ebe5d;
         }
 
-          /* Modern Footer */
-       .footer {
+        /* Modern Footer */
+        .footer {
             background-color: #1f5dc1;
             padding: 20px 0;
             text-align: center;
@@ -567,6 +567,14 @@
             });
             document.getElementById(sectionId).style.display = 'block'; // Show the specific section
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+
+            // Initialize the slideshow for the displayed section
+            const slideshows = document.getElementsByClassName('slideshow-container');
+            for (let i = 0; i < slideshows.length; i++) {
+                if (slideshows[i].parentNode.id === sectionId) {
+                    showSlides(slideIndices[i], i);
+                }
+            }
         }
 
         // Initialize slide indices for each slideshow
