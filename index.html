@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="stylesheet" href="style.css"> <!-- Link to style.css -->
     <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
-     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <!-- Meta Tags for SEO -->
     <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
@@ -42,8 +41,8 @@
 
         /* Modern Header */
         .header {
-            background-color: #1f5dc1;
-            border-bottom: 1px solid #1f5dc1;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -58,7 +57,7 @@
             align-items: center;
         }
 
-       .nav__logo img {
+        .nav__logo img {
             height: 50px; /* Adjust logo size as needed */
             margin-right: 10px; /* Spacing between logo and text */
         }
@@ -86,9 +85,9 @@
 
         .nav__button {
             padding: 10px 20px;
-            border: 2px solid #dde0e3;
-            background-color: #dde0e3;
-            color: #121213;
+            border: 2px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
             border-radius: 5px;
             font-size: 1em;
             font-weight: 500;
@@ -101,64 +100,39 @@
             color: #007BFF;
         }
 
-        /* Responsive Navbar for Mobile */
-        .nav__toggle {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        .nav__list {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Hero Section with Slideshow */
+        /* Hero Section with Background Image */
         .hero-section {
-            position: relative;
+            background-image: url('h12.jpg'); /* Background image for the hero section */
+            background-size: cover;
+            background-position: center;
             height: 400px;
-            overflow: hidden;
-        }
-
-        .hero-images {
             display: flex;
-            width: 100%;
-            height: 100%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-        }
-
-        .hero-images img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .hero-images img.active {
-            opacity: 1;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+            z-index: 1;
         }
 
         .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
             z-index: 2;
-            text-align: center;
-            color: white;
         }
 
         .hero-content h1 {
             font-size: 3em;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* Main Content Styling */
@@ -303,90 +277,31 @@
         .social-icons .social-icon:hover {
             color: #007BFF;
         }
-
-        /* Mobile View for Navbar */
-        @media (max-width: 768px) {
-            .nav__menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: white;
-                width: 100%;
-                border-top: 1px solid #e0e0e0;
-            }
-
-            .nav__menu.active {
-                display: flex;
-            }
-
-            .nav__toggle {
-                display: block;
-                font-size: 1.5em;
-                cursor: pointer;
-            }
-        }
-
-        /* Hamburger menu */
-        .nav__toggle {
-            display: none; /* Hidden by default */
-        }
-
-        /* Show the toggle icon for mobile view */
-        @media (max-width: 768px) {
-            .nav__toggle {
-                display: block;
-            }
-        }
     </style>
 </head>
 
 <body class="our-products">
 
-    <!--==================== HEADER (Responsive Navbar) ====================-->
+    <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-            </div>
+        <div class="nav__logo">
+            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+        </div>
 
-            <!-- Mobile toggle icon -->
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="ri-menu-line"></i>
-            </div>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
-                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
+                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+            </ul>
+        </div>
     </header>
 
-    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <!--==================== HERO SECTION WITH BACKGROUND IMAGE ====================-->
     <section class="hero-section">
-        <div class="hero-images">
-            <!-- Add multiple images for slideshow -->
-            <img src="dg1.jpg" alt="Hero Image 1" class="active">
-            <img src="dg2.jpg" alt="Hero Image 2">
-            <img src="dg3.jpg" alt="Hero Image 3">
-            <img src="dg4.jpg" alt="Hero Image 4">
-            <img src="dg5.jpg" alt="Hero Image 5">
-            <img src="dg6.jpg" alt="Hero Image 6">
-            <img src="dg7.jpg" alt="Hero Image 7">
-            <img src="dg8.jpg" alt="Hero Image 8">
-            <img src="dg9.jpg" alt="Hero Image 9">
-            <img src="dg10.jpg" alt="Hero Image 10">
-            <img src="dg11.jpg" alt="Hero Image 11">
-            <img src="dg12.jpg" alt="Hero Image 12">
-            <img src="oie_sc0q3010SmJE.jpg" alt="Hero Image 13">
-        </div>
         <div class="hero-content">
             <h1>Welcome to Naaman Muses and Co Ltd</h1>
         </div>
@@ -459,36 +374,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Slideshow -->
+    <!-- JavaScript for Navbar Toggle -->
     <script>
-        // JavaScript for image slideshow
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.hero-images img');
-        const totalSlides = slides.length;
-
-        function showSlides() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                if (index === slideIndex) {
-                    slide.classList.add('active');
-                }
-            });
-            slideIndex = (slideIndex + 1) % totalSlides;
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        document.addEventListener('DOMContentLoaded', showSlides);
-
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
 
         if (mobileMenu) {
             mobileMenu.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
             });
         }
+
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        }
     </script>
 
+    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
