@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <!-- Meta Tags for SEO -->
-    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
     <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
 
     <title>Home - Naaman Muses and Co Ltd</title>
@@ -122,33 +121,31 @@
 
         /* Hero Section with Slideshow */
         .hero-section {
-            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             height: 400px;
             overflow: hidden;
+            margin: 20px 0;
         }
 
-        .hero-images {
+        .hero-image {
+            flex: 1;
             display: flex;
-            width: 100%;
+            justify-content: center;
+            align-items: center;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
         }
 
-        .hero-images img {
+        .hero-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .hero-images img.active {
-            opacity: 1;
+            object-fit: contain; /* Ensures the whole image is visible */
         }
 
         .hero-content {
@@ -158,13 +155,16 @@
             transform: translate(-50%, -50%);
             z-index: 2;
             text-align: center;
-            color: white;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .hero-content h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* Main Content Styling */
@@ -209,7 +209,7 @@
         }
 
         .core-services {
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             padding: 60px 0;
         }
 
@@ -339,6 +339,16 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .hero-section {
+                flex-direction: column; /* Stack images vertically on mobile */
+                height: auto; /* Adjust hero height for mobile view */
+                padding: 10px;
+            }
+
+            .hero-image {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -370,44 +380,29 @@
         </nav>
     </header>
 
-    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <!--==================== HERO SECTION WITH TWO IMAGES ====================-->
     <section class="hero-section">
-        <div class="hero-images">
-            <!-- Add multiple images for slideshow -->
-            <img src="r1.png" alt="Hero Image 1" class="active">
-            <img src="r2.png" alt="Hero Image 2">
-            <img src="t3.jpg" alt="Hero Image 3">
-            <img src="r3.png" alt="Hero Image 4">
-            <img src="r4.png" alt="Hero Image 5">
-            <img src="p3.png" alt="Hero Image 6">
-            <img src="k1.png" alt="Hero Image 7">
-            <img src="k2.png" alt="Hero Image 8">
-            <img src="k3.png" alt="Hero Image 9">
-            <img src="z1.jpeg" alt="Hero Image 10">
-            <img src="z2.jpeg" alt="Hero Image 11">
-            <img src="z3.jpeg" alt="Hero Image 12">
-            <img src="r5.png" alt="Hero Image 13">
-            <img src="r6.png" alt="Hero Image 14">
-            <img src="r7.png" alt="Hero Image 15">
+        <div class="hero-image">
+            <img src="index1.png" alt="Hero Image 1"> <!-- First image for slideshow -->
+        </div>
+        <div class="hero-image">
+            <img src="index2.png" alt="Hero Image 2"> <!-- Second image for slideshow -->
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses & Co Ltd</h1>
         </div>
     </section>
+
     <!--==================== MAIN CONTENT ====================-->
     <main class="main">
         <section class="section main-content">
             <div class="container">
-                <h2>Welcome to Naaman Muses and Co Ltd</h2>
+                <h2>About Us</h2>
                 <p>Naaman Muses and Co. Ltd is a company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
                 <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
-                <h2>Why Choose Us?</h2>
-                <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
-                <ul>
-                    <li>Wide range of quality products from reputable brands</li>
-                    <li>Efficient distribution network covering East Africa</li>
-                    <li>Strong focus on customer satisfaction and service excellence</li>
-                    <li>Commitment to sustainability and community development</li>
-                </ul>
             </div>
         </section>
+
         <section class="core-services">
             <div class="container">
                 <h2>Our Core Services</h2>
