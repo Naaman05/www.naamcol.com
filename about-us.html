@@ -15,8 +15,8 @@
     <title>About Us - Naaman Muses and Co Ltd</title>
 
     <style>
-        /* General Styling */
-        body {
+       /* General Styling for Modern Look */
+       body {
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
             padding: 0;
@@ -33,37 +33,44 @@
 
         /* Modern Header */
         .header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
+            background-color: #1f5dc1;
+            border-bottom: 1px solid #1f5dc1;
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex; /* Make header a flex container */
-            justify-content: space-between; /* Space items evenly */
-            align-items: center; /* Center items vertically */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
         }
 
-        .nav__logo {
-            display: flex; /* Flex container for logo and text */
+        .nav {
+            display: flex;
             align-items: center;
-            gap: 10px; /* Gap between logo and text */
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
         }
 
         .nav__logo img {
-            height: 50px; /* Adjust logo size as needed */
+            height: 80px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #333;
+            font-size: 2em;
+            font-weight: 800;
+            color: #efefef;
         }
 
         .nav__menu {
-            display: flex; /* Display navigation links in a row */
+            display: flex;
             align-items: center;
-            gap: 20px; /* Space between buttons */
+            gap: 15px; /* Space between buttons */
         }
 
         .nav__item {
@@ -76,75 +83,162 @@
 
         .nav__button {
             padding: 10px 20px;
-            border: 2px solid #007BFF;
-            background-color: #007BFF;
-            color: white;
+            border: 2px solid #dde0e3;
+            background-color: #dde0e3;
+            color: rgb(0, 0, 0);;
             border-radius: 5px;
             font-size: 1em;
-            font-weight: 500;
+            font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
         }
 
         .nav__button:hover {
             background-color: white;
-            color: #007BFF;
+            color: #000000;
         }
 
-        /* About Us Content Styling */
-        .hero-section {
-            background-image: url('managementteam.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
+        /* Responsive Navbar for Mobile */
+        .nav__toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .nav__list {
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
+            gap: 15px;
         }
 
-        .about-section {
-            background-color: #ffffff;
+        /* Hero Section with Slideshow */
+        .hero-section {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .hero-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-images img.active {
+            opacity: 1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            background-color: #f9f9f9;
             padding: 60px 0;
         }
 
-        .about-section h2 {
+        .main-content h2 {
             text-align: center;
             margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #555;
+        }
+
+        .main-content p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .why-choose-us h2,
+        .core-services h2 {
+            text-align: center;
+            margin-bottom: 40px;
             font-size: 2.5em;
             color: #333;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        .why-choose-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: #555;
             margin-top: 20px;
         }
 
-        .about-item {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
+        .core-services {
+            background-color: #f9f9f9;
+            padding: 60px 0;
         }
 
-        .about-item h3 {
-            font-size: 1.5em;
-            color: #007BFF;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            color: #094b92;
             margin-bottom: 10px;
         }
 
-        .about-item p {
-            color: #555;
-            font-size: 1em;
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #094b92;
         }
 
-        .about-item.full-width {
-            grid-column: span 2;
+        .service-item p {
+            font-size: 1em;
+            color: #555;
         }
 
         /* WhatsApp Chat Button */
@@ -175,9 +269,9 @@
             background-color: #1ebe5d;
         }
 
-        /* Modern Footer */
-        .footer {
-            background-color: #f1f1f1;
+       /* Modern Footer */
+       .footer {
+            background-color: #1f5dc1;
             padding: 20px 0;
             text-align: center;
         }
@@ -189,6 +283,7 @@
             flex-direction: column;
             align-items: center;
             gap: 10px;
+            color: #f1f1f1;
         }
 
         .social-icons {
@@ -197,7 +292,7 @@
         }
 
         .social-icons .social-icon {
-            color: #333;
+            color: #f1f1f1;
             text-decoration: none;
             font-size: 1.5em;
             transition: color 0.3s;
@@ -205,6 +300,36 @@
 
         .social-icons .social-icon:hover {
             color: #007BFF;
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .nav__menu {
+                display: none; /* Hide the menu by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjusted to align with header height */
+                right: 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 200px;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .nav__menu.active {
+                display: flex;
+            }
+
+            .nav__toggle {
+                display: block; /* Show the toggle button on mobile */
+            }
+
+            .nav__list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -217,6 +342,11 @@
         <div class="nav__logo">
             <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+        </div>
+
+        <!-- Mobile toggle icon -->
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
         </div>
 
         <!-- Navigation Menu -->
@@ -287,22 +417,15 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Navbar Toggle -->
+    <!-- JavaScript for mobile menu -->
     <script>
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        const navClose = document.getElementById('nav-close');
 
         if (mobileMenu) {
             mobileMenu.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
-            });
-        }
-
-        if (navClose) {
-            navClose.addEventListener('click', () => {
-                navMenu.classList.remove('active');
             });
         }
     </script>
