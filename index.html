@@ -41,8 +41,8 @@
 
         /* Modern Header */
         .header {
-            background-color: #1f5dc1;
-            border-bottom: 1px solid #1f5dc1;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -50,6 +50,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
         }
 
         .nav__logo {
@@ -66,7 +73,6 @@
             font-size: 1.5em;
             font-weight: 700;
             color: #333;
-            margin-right: 30px; /* Space between logo text and navigation */
         }
 
         .nav__menu {
@@ -85,9 +91,9 @@
 
         .nav__button {
             padding: 10px 20px;
-            border: 2px solid #dde0e3;
-            background-color: #dde0e3;
-            color: #121213;
+            border: 2px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
             border-radius: 5px;
             font-size: 1em;
             font-weight: 500;
@@ -100,66 +106,18 @@
             color: #007BFF;
         }
 
-    /* Add responsive styling for mobile view */
-    .nav__menu {
-        display: none; /* Hide menu by default */
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        border-top: 1px solid #e0e0e0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-    }
-
-    .nav__menu.show-menu {
-        display: flex; /* Show menu when 'show-menu' class is added */
-    }
-
-    .nav__toggle {
-        display: none; /* Hide the hamburger menu icon by default */
-        cursor: pointer;
-        font-size: 2em;
-        color: #333;
-    }
-
-    @media (max-width: 768px) {
-        .nav__menu {
-            display: none; /* Hide menu in mobile view */
-        }
-
-        .nav__menu.show-menu {
-            display: flex; /* Show menu when toggle is active */
-        }
-
+        /* Responsive Navbar for Mobile */
         .nav__toggle {
-            display: block; /* Show the hamburger menu icon */
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
         }
 
         .nav__list {
-            flex-direction: column; /* Stack the nav items vertically in mobile view */
-            gap: 10px;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-
-        .nav__item {
-            width: 100%;
-        }
-
-        .nav__link {
-            display: block;
-            width: 100%;
-        }
-
-        .nav__button {
-            width: 100%; /* Make buttons full width in mobile view */
-            text-align: left;
-            padding-left: 20px; /* Add padding to align text */
-        }
-    }
 
         /* Hero Section with Slideshow */
         .hero-section {
@@ -210,7 +168,7 @@
 
         /* Main Content Styling */
         .main-content {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             padding: 60px 0;
         }
 
@@ -218,7 +176,7 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
-            color: #555;
+            color: #333;
         }
 
         .main-content p {
@@ -250,7 +208,7 @@
         }
 
         .core-services {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             padding: 60px 0;
         }
 
@@ -276,14 +234,14 @@
 
         .service-icon {
             font-size: 2.5em;
-            color: #094b92;
+            color: #007BFF;
             margin-bottom: 10px;
         }
 
         .service-item h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
-            color: #094b92;
+            color: #007BFF;
         }
 
         .service-item p {
@@ -321,7 +279,7 @@
 
         /* Modern Footer */
         .footer {
-            background-color: #1f5dc1;
+            background-color: #f1f1f1;
             padding: 20px 0;
             text-align: center;
         }
@@ -350,134 +308,20 @@
         .social-icons .social-icon:hover {
             color: #007BFF;
         }
-    </style>
-</head>
 
-<body class="our-products">
-
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
-    <!-- External CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="style.css"> <!-- Link to style.css -->
-    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
-
-    <title>Home - Naaman Muses and Co Ltd</title>
-
-    <style>
-        /* General Styling for Modern Look */
-        body {
-            font-family: 'Bai Jamjuree', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        /* Modern Header */
-        .header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-        }
-
-        .nav__logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav__logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .nav__logo-text {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .nav__menu {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav__item {
-            list-style: none;
-        }
-
-        .nav__link {
-            text-decoration: none;
-        }
-
-        .nav__button {
-            padding: 10px 20px;
-            border: 2px solid #007BFF;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: 500;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-
-        .nav__button:hover {
-            background-color: white;
-            color: #007BFF;
-        }
-
-        /* Responsive Navbar for Mobile */
-        .nav__toggle {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        .nav__list {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Hide the nav list by default on small screens */
+        /* Mobile View Adjustments */
         @media (max-width: 768px) {
             .nav__menu {
-                display: none;
+                display: none; /* Hide the menu by default on mobile */
                 flex-direction: column;
-                background-color: white;
                 position: absolute;
-                top: 60px; /* Adjust based on header height */
-                right: 0;
-                width: 200px;
+                top: 60px; /* Adjusted to align with header height */
+                right: 10px;
+                background-color: #fff;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 10px 20px;
-                z-index: 1000;
+                width: 200px;
+                border-radius: 5px;
+                padding: 10px;
             }
 
             .nav__menu.active {
@@ -485,19 +329,13 @@
             }
 
             .nav__toggle {
-                display: block;
-                color: #007BFF;
+                display: block; /* Show the toggle button on mobile */
             }
 
             .nav__list {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
-            }
-
-            .nav__button {
-                width: 100%;
-                text-align: left;
             }
         }
     </style>
@@ -507,65 +345,50 @@
 
     <!--==================== HEADER (Responsive Navbar) ====================-->
     <header class="header" id="header">
-        <div class="nav__logo">
-            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-        </div>
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+            </div>
 
-        <!-- Hamburger icon for mobile view -->
-        <div class="nav__toggle" id="nav-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
+            <!-- Mobile toggle icon -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
 
-        <!-- Navigation Menu -->
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-            </ul>
-        </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <!-- JavaScript for Navbar Toggle -->
-    <script>
-        // JavaScript to handle the toggle of the mobile menu
-        const mobileMenu = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        }
-    </script>
-</body>
-</html>
-
-
-   <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
-<section class="hero-section">
-    <div class="hero-images">
-        <!-- Add multiple images for slideshow -->
-        <img src="dg11.jpg" alt="Hero Image 1" class="active">
-        <img src="dg2.jpg" alt="Hero Image 2">
-        <img src="dg3.jpg" alt="Hero Image 3">
-        <img src="dg4.jpg" alt="Hero Image 4">
-        <img src="dg5.jpg" alt="Hero Image 5">
-        <img src="dg6.jpg" alt="Hero Image 6">
-        <img src="dg7.jpg" alt="Hero Image 7">
-        <img src="dg8.jpg" alt="Hero Image 8">
-        <img src="dg9.jpg" alt="Hero Image 9">
-        <img src="dg10.jpg" alt="Hero Image 10">
-        <img src="dg1.jpg" alt="Hero Image 11">
-        <img src="dg12.jpg" alt="Hero Image 12">
-    </div>
-    <div class="hero-content">
-        <h1>Welcome to Naaman Muses and Co Ltd</h1>
-    </div>
-</section>
+    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <section class="hero-section">
+        <div class="hero-images">
+            <!-- Add multiple images for slideshow -->
+            <img src="dg11.jpg" alt="Hero Image 1" class="active">
+            <img src="dg2.jpg" alt="Hero Image 2">
+            <img src="dg3.jpg" alt="Hero Image 3">
+            <img src="dg4.jpg" alt="Hero Image 4">
+            <img src="dg5.jpg" alt="Hero Image 5">
+            <img src="dg6.jpg" alt="Hero Image 6">
+            <img src="dg7.jpg" alt="Hero Image 7">
+            <img src="dg8.jpg" alt="Hero Image 8">
+            <img src="dg9.jpg" alt="Hero Image 9">
+            <img src="dg10.jpg" alt="Hero Image 10">
+            <img src="dg1.jpg" alt="Hero Image 11">
+            <img src="dg12.jpg" alt="Hero Image 12">
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses and Co Ltd</h1>
+        </div>
+    </section>
 
     <!--==================== MAIN CONTENT ====================-->
     <main class="main">
@@ -653,8 +476,17 @@
         }
 
         document.addEventListener('DOMContentLoaded', showSlides);
+
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
     </script>
 
-    <script src="slideshow.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
