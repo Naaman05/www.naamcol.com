@@ -15,8 +15,8 @@
     <title>About Us - Naaman Muses and Co Ltd</title>
 
     <style>
-       /* General Styling for Modern Look */
-       body {
+        /* General Styling for Modern Look */
+        body {
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
             padding: 0;
@@ -112,110 +112,81 @@
         }
 
         /* Hero Section with Slideshow */
-       .hero-section {
+        .hero-section {
             position: relative;
             height: 400px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('managementteam.jpg'); /* Replace with your actual image */
+            background-image: url('hero_image.jpg'); /* Add your actual image source here */
             background-size: cover;
             background-position: center;
         }
 
         .hero-content {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero-content h1 {
             font-size: 3em;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+
         /* Main Content Styling */
-        .main-content {
+        .about-section {
             background-color: #f9f9f9;
             padding: 60px 0;
         }
 
-        .main-content h2 {
+        .about-section h2 {
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
             color: #555;
         }
 
-        .main-content p {
-            color: #555;
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .why-choose-us {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-
-        .why-choose-us h2,
-        .core-services h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        .why-choose-us ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            font-size: 1.1em;
-            color: #555;
-            margin-top: 20px;
-        }
-
-        .core-services {
-            background-color: #f9f9f9;
-            padding: 60px 0;
-        }
-
-        .services-grid {
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            align-items: center;
         }
 
-        .service-item {
-            background-color: #f9f9f9;
+        .about-item {
+            background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
+        .about-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
-        .service-icon {
-            font-size: 2.5em;
-            color: #094b92;
-            margin-bottom: 10px;
+        .about-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .service-item h3 {
+        .about-item h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
             color: #094b92;
         }
 
-        .service-item p {
+        .about-item p {
             font-size: 1em;
             color: #555;
+            line-height: 1.6;
         }
 
         /* WhatsApp Chat Button */
@@ -307,6 +278,10 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .about-grid {
+                grid-template-columns: 1fr; /* Single column for mobile */
+            }
         }
     </style>
 </head>
@@ -342,31 +317,36 @@
     <section class="hero-section">
         <div class="hero-content">
             <h1>About Us</h1>
+            <img src="6.jpeg" alt="About us"> <!-- Add your actual image source here -->
         </div>
     </section>
 
     <section class="about-section">
         <div class="container">
             <h2>About Naaman Muses and Co Ltd</h2>
-            <p>Naaman Muses and Co. Ltd (Naamcol) is a premier provider of importation, distribution, and trading services based in Mombasa, Kenya. Founded several decades ago by Naaman Mohamed Naaman, our company is built on trust, integrity, and a commitment to quality—principles that continue to guide us today.</p>
-            <p>With a mission to be the foremost provider of importation, distribution, and trading services in East Africa, we have grown into a reliable partner for manufacturers and suppliers worldwide. Our ability to deliver top-quality products to customers promptly and efficiently has fostered long-term relationships and high satisfaction levels.</p>
-            
-           <!-- Image and Text Block -->
+
                 <div class="about-item">
-                    <img src="1.png" alt="Company Mission"> <!-- Add your actual image source here -->
+                    <h3>Company Overview</h3>
+                    <p>Naaman Muses and Co. Ltd (Naamcol) is a premier provider of importation, distribution, and trading services based in Mombasa, Kenya. Founded several decades ago by Naaman Mohamed Naaman, our company is built on trust, integrity, and a commitment to quality—principles that continue to guide us today.</p>
+                </div>
+
+                <div class="about-grid">
+                <!-- Image and Text Pair 1 -->
+                <div class="about-item">
+                    <img src="1.png" alt="Our Mission"> <!-- Add your actual image source here -->
                     <h3>Our Mission</h3>
                     <p>To provide comprehensive, reliable, and innovative importation, distribution, and trading services, ensuring our clients' success and satisfaction in every endeavor.</p>
                 </div>
 
-                <!-- Image and Text Block -->
+                <!-- Image and Text Pair 2 -->
                 <div class="about-item">
-                    <img src="2.png" alt="Company Vision"> <!-- Add your actual image source here -->
+                    <img src="2.png" alt="Our Vision"> <!-- Add your actual image source here -->
                     <h3>Our Vision</h3>
                     <p>To be the leading provider of importation, distribution, and trading services in the region, recognized for our commitment to excellence, innovation, and customer-centric solutions.</p>
                 </div>
 
-                <!-- Full-Width Text Block with Image -->
-                <div class="about-item full-width">
+                <!-- Image and Text Pair 3 -->
+                <div class="about-item">
                     <img src="3.png" alt="Core Values"> <!-- Add your actual image source here -->
                     <h3>Our Core Values</h3>
                     <ul>
