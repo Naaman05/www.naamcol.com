@@ -100,6 +100,67 @@
             color: #007BFF;
         }
 
+    /* Add responsive styling for mobile view */
+    .nav__menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #e0e0e0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+
+    .nav__menu.show-menu {
+        display: flex; /* Show menu when 'show-menu' class is added */
+    }
+
+    .nav__toggle {
+        display: none; /* Hide the hamburger menu icon by default */
+        cursor: pointer;
+        font-size: 2em;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .nav__menu {
+            display: none; /* Hide menu in mobile view */
+        }
+
+        .nav__menu.show-menu {
+            display: flex; /* Show menu when toggle is active */
+        }
+
+        .nav__toggle {
+            display: block; /* Show the hamburger menu icon */
+        }
+
+        .nav__list {
+            flex-direction: column; /* Stack the nav items vertically in mobile view */
+            gap: 10px;
+            width: 100%;
+        }
+
+        .nav__item {
+            width: 100%;
+        }
+
+        .nav__link {
+            display: block;
+            width: 100%;
+        }
+
+        .nav__button {
+            width: 100%; /* Make buttons full width in mobile view */
+            text-align: left;
+            padding-left: 20px; /* Add padding to align text */
+        }
+    }
+
         /* Hero Section with Slideshow */
         .hero-section {
             position: relative;
@@ -294,13 +355,16 @@
 
 <body class="our-products">
 
-    <!--==================== HEADER (Simplified Navbar) ====================-->
-    <header class="header" id="header">
+   <!--==================== HEADER (Responsive Navbar) ====================-->
+<header class="header" id="header">
+    <div class="nav container">
+        <!-- Logo and Company Name -->
         <div class="nav__logo">
             <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
         </div>
 
+        <!-- Navigation Menu -->
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
                 <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
@@ -310,7 +374,24 @@
                 <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
             </ul>
         </div>
-    </header>
+
+        <!-- Hamburger Menu Icon for Mobile -->
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+    </div>
+</header>
+
+<!-- JavaScript for Mobile Menu Toggle -->
+<script>
+    // JavaScript to handle the toggle of the mobile menu
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show-menu');
+    });
+</script>
 
    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
 <section class="hero-section">
