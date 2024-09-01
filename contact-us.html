@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-
     <!-- External CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="contact.css"> <!-- Link to specific CSS file for Contact page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="contact.css"> <!-- Link to specific CSS file for Contact Us page -->
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <title>Contact Us - Naaman Muses and Co Ltd</title>
@@ -41,20 +38,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; /* Make header a flex container */
+            justify-content: space-between; /* Space items evenly */
+            align-items: center; /* Center items vertically */
             padding: 15px 30px;
         }
 
         .nav__logo {
-            display: flex;
+            display: flex; /* Flex container for logo and text */
             align-items: center;
+            gap: 10px; /* Gap between logo and text */
         }
 
         .nav__logo img {
             height: 50px; /* Adjust logo size as needed */
-            margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
@@ -64,7 +61,7 @@
         }
 
         .nav__menu {
-            display: flex;
+            display: flex; /* Display navigation links in a row */
             align-items: center;
             gap: 20px; /* Space between buttons */
         }
@@ -94,7 +91,19 @@
             color: #007BFF;
         }
 
-        /* Contact Content Styling */
+        /* Contact Us Content Styling */
+        .hero-section {
+            background-image: url('freepik-export-20240825043525val8.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
         .contact-main {
             background-color: #ffffff;
             padding: 60px 0;
@@ -108,35 +117,43 @@
         }
 
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             gap: 30px;
-            margin-top: 30px;
         }
 
-        .contact-details,
-        .contact-form-section {
-            background-color: #f9f9f9;
-            padding: 20px;
+        .contact-details, .contact-form-section {
+            flex: 1 1 calc(50% - 30px);
+            background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
-        .contact-details h3,
-        .contact-form-section h2 {
+        .contact-details h3, .contact-form-section h2 {
             font-size: 1.8em;
-            margin-bottom: 10px;
             color: #007BFF;
+            margin-bottom: 20px;
         }
 
-        .contact-details p,
-        .contact-form-section p {
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .details-item {
+            margin-bottom: 20px;
+        }
+
+        .details-item p, .details-item a {
             color: #555;
             font-size: 1em;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
@@ -145,22 +162,22 @@
             font-weight: 600;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
             border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
         }
 
         .submit-button {
-            background-color: #007BFF;
-            color: white;
             padding: 10px 20px;
             border: none;
+            background-color: #007BFF;
+            color: white;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 1em;
         }
 
         .submit-button:hover {
@@ -233,34 +250,38 @@
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <!-- Logo and Company Name -->
-            <div class="nav__logo">
-                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
-                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
-            </div>
+        <!-- Logo and Navigation -->
+        <div class="nav__logo">
+            <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+            <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+        </div>
 
-            <!-- Navigation Menu -->
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list" style="display: flex; align-items: center; gap: 15px;">
-                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
-                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
-                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
-                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
-                </ul>
-            </div>
-        </nav>
+        <!-- Navigation Menu -->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list" style="display: flex; align-items: center; gap: 15px; margin: 0;">
+                <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+            </ul>
+        </div>
     </header>
 
-    <!--==================== CONTACT SECTION ====================-->
+    <!--==================== CONTACT US SECTION ====================-->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+        </div>
+    </section>
+
     <section class="contact-main">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Contact Information</h2>
             <div class="contact-wrapper">
                 <!-- Contact Details Section -->
                 <div class="contact-details">
-                    <h2>Contact Information</h2>
+                    <h3>Contact Information</h3>
                     <p>If you would prefer to talk to us over the phone or arrange to visit us, our contact details are below.</p>
                     <div class="details-grid">
                         <div class="details-item">
@@ -330,12 +351,6 @@
         </div>
     </section>
 
-    <!--==================== GOOGLE MAPS EMBED ====================-->
-    <div class="map-container">
-        <h3>Our Location</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3750581898236!2d-122.40641708421584!3d37.78583497975769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064df0f03bb%3A0x98f3e7e0a30c1!2sGoogle!5e0!3m2!1sen!2sus!4v1632768940880!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
     <!--==================== WHATSAPP CHAT WIDGET ====================-->
     <div class="whatsapp-chat-widget">
         <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
@@ -354,26 +369,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript for Navbar Toggle -->
-    <script>
-        // JavaScript to handle the toggle of the mobile menu
-        const mobileMenu = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const navClose = document.getElementById('nav-close');
-
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        }
-
-        if (navClose) {
-            navClose.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        }
-    </script>
 
 </body>
 </html>
