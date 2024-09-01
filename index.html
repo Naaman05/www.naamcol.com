@@ -119,7 +119,7 @@
             gap: 15px;
         }
 
-        /* Hero Section with Video */
+        /* Hero Section with Responsive Video */
         .hero-section {
             position: relative;
             height: 400px;
@@ -131,6 +131,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the video covers the container properly */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -321,6 +326,14 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .hero-section {
+                height: 300px; /* Adjust the height for mobile view */
+            }
+
+            .hero-content h1 {
+                font-size: 2em; /* Adjust font size for mobile */
+            }
         }
     </style>
 </head>
@@ -367,8 +380,8 @@
     <main class="main">
         <section class="section main-content">
             <div class="container">
-                <h2>About Naaman Muses and Co Ltd</h2>
-                <p>Naaman Muses and Co. Ltd is a company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
+                <h2>Welcome to Naaman Muses and Co Ltd</h2>
+                <p>Naaman Muses and Co. Ltd is a renowned company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
                 <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
                 <h2>Why Choose Us?</h2>
                 <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
@@ -423,26 +436,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Slideshow -->
+    <!-- JavaScript for mobile menu -->
     <script>
-        // JavaScript for image slideshow
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slideshow-images img');
-        const totalSlides = slides.length;
-
-        function showSlides() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                if (index === slideIndex) {
-                    slide.classList.add('active');
-                }
-            });
-            slideIndex = (slideIndex + 1) % totalSlides;
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        document.addEventListener('DOMContentLoaded', showSlides);
-
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
