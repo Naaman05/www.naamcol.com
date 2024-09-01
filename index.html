@@ -45,20 +45,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex; /* Make header a flex container */
-            justify-content: space-between; /* Space items evenly */
-            align-items: center; /* Center items vertically */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
         }
 
         .nav__logo {
-            display: flex; /* Flex container for logo and text */
+            display: flex;
             align-items: center;
-            gap: 10px; /* Gap between logo and text */
         }
 
         .nav__logo img {
-            height: 50px; /* Adjust logo size as needed */
+            height: 50px;
+            margin-right: 10px;
         }
 
         .nav__logo-text {
@@ -68,9 +68,9 @@
         }
 
         .nav__menu {
-            display: flex; /* Display navigation links in a row */
+            display: flex;
             align-items: center;
-            gap: 20px; /* Space between buttons */
+            gap: 15px;
         }
 
         .nav__item {
@@ -96,6 +96,19 @@
         .nav__button:hover {
             background-color: white;
             color: #007BFF;
+        }
+
+        /* Responsive Navbar for Mobile */
+        .nav__toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .nav__list {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         /* Hero Section with Slideshow */
