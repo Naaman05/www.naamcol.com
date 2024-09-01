@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <!-- Meta Tags for SEO -->
+    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
     <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
 
     <title>Home - Naaman Muses and Co Ltd</title>
@@ -119,51 +120,119 @@
             gap: 15px;
         }
 
-        /* Slideshow Section with Image Slideshow */
-        .slideshow-section {
+        /* Hero Section with Slideshow */
+        .hero-section {
             position: relative;
-            width: 100%;
-            max-width: 1200px; /* Optional: Limit the width of the slideshow */
-            margin: auto;
+            height: 400px;
             overflow: hidden;
         }
 
-        .slideshow-images {
+        .hero-images {
             display: flex;
-            flex-direction: column; /* To align images in the center vertically */
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
+            position: relative;
         }
 
-        .slideshow-images img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain; /* Ensure the image fits inside the container */
-            display: none;
-        }
-
-        .slideshow-images img.active {
-            display: block;
-        }
-
-        .hero-content {
+        .hero-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire container */
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            text-align: center;
-            color: white;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        .hero-content h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        .hero-images img.active {
+            opacity: 1;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .main-content p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .why-choose-us h2,
+        .core-services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .why-choose-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .core-services {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            color: #094b92;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #094b92;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: #555;
         }
 
         /* WhatsApp Chat Button */
@@ -255,6 +324,10 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .hero-section {
+                height: 300px; /* Adjusted height for mobile view */
+            }
         }
     </style>
 </head>
@@ -286,25 +359,25 @@
         </nav>
     </header>
 
-    <!--==================== SLIDESHOW SECTION ====================-->
-    <section class="slideshow-section">
-        <div class="slideshow-images">
+    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <section class="hero-section">
+        <div class="hero-images">
             <!-- Add multiple images for slideshow -->
-            <img src="r1.png" alt="Slideshow Image 1" class="active">
-            <img src="r2.png" alt="Slideshow Image 2">
-            <img src="t3.jpg" alt="Slideshow Image 3">
-            <img src="r3.png" alt="Slideshow Image 4">
-            <img src="r4.png" alt="Slideshow Image 5">
-            <img src="p3.png" alt="Slideshow Image 6">
-            <img src="k1.png" alt="Slideshow Image 7">
-            <img src="k2.png" alt="Slideshow Image 8">
-            <img src="k3.png" alt="Slideshow Image 9">
-            <img src="z1.jpeg" alt="Slideshow Image 10">
-            <img src="z2.jpeg" alt="Slideshow Image 11">
-            <img src="z3.jpeg" alt="Slideshow Image 12">
-            <img src="r5.png" alt="Slideshow Image 13">
-            <img src="r6.png" alt="Slideshow Image 14">
-            <img src="r7.png" alt="Slideshow Image 15">
+            <img src="r1.png" alt="Hero Image 1" class="active">
+            <img src="r2.png" alt="Hero Image 2">
+            <img src="t3.jpg" alt="Hero Image 3">
+            <img src="r3.png" alt="Hero Image 4">
+            <img src="r4.png" alt="Hero Image 5">
+            <img src="p3.png" alt="Hero Image 6">
+            <img src="k1.png" alt="Hero Image 7">
+            <img src="k2.png" alt="Hero Image 8">
+            <img src="k3.png" alt="Hero Image 9">
+            <img src="z1.jpeg" alt="Hero Image 10">
+            <img src="z2.jpeg" alt="Hero Image 11">
+            <img src="z3.jpeg" alt="Hero Image 12">
+            <img src="r5.png" alt="Hero Image 13">
+            <img src="r6.png" alt="Hero Image 14">
+            <img src="r7.png" alt="Hero Image 15">
         </div>
     </section>
 
@@ -372,7 +445,7 @@
     <script>
         // JavaScript for image slideshow
         let slideIndex = 0;
-        const slides = document.querySelectorAll('.slideshow-images img');
+        const slides = document.querySelectorAll('.hero-images img');
         const totalSlides = slides.length;
 
         function showSlides() {
