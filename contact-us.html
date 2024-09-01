@@ -31,39 +31,62 @@
             padding: 40px 0;
         }
 
+        /* General Styling for Modern Look */
+        body {
+            font-family: 'Bai Jamjuree', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
         /* Modern Header */
         .header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
+            background-color: #1f5dc1;
+            border-bottom: 1px solid #1f5dc1;
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex; /* Make header a flex container */
-            justify-content: space-between; /* Space items evenly */
-            align-items: center; /* Center items vertically */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
         }
 
-        .nav__logo {
-            display: flex; /* Flex container for logo and text */
+        .nav {
+            display: flex;
             align-items: center;
-            gap: 10px; /* Gap between logo and text */
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
         }
 
         .nav__logo img {
-            height: 50px; /* Adjust logo size as needed */
+            height: 80px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #333;
+            font-size: 2em;
+            font-weight: 800;
+            color: #efefef;
         }
 
         .nav__menu {
-            display: flex; /* Display navigation links in a row */
+            display: flex;
             align-items: center;
-            gap: 20px; /* Space between buttons */
+            gap: 15px; /* Space between buttons */
         }
 
         .nav__item {
@@ -76,21 +99,33 @@
 
         .nav__button {
             padding: 10px 20px;
-            border: 2px solid #007BFF;
-            background-color: #007BFF;
-            color: white;
+            border: 2px solid #dde0e3;
+            background-color: #dde0e3;
+            color: rgb(0, 0, 0);;
             border-radius: 5px;
             font-size: 1em;
-            font-weight: 500;
+            font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
         }
 
         .nav__button:hover {
             background-color: white;
-            color: #007BFF;
+            color: #000000;
         }
 
+        /* Responsive Navbar for Mobile */
+        .nav__toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .nav__list {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
         /* Contact Us Content Styling */
         .hero-section {
             background-image: url('freepik-export-20240825043525val8.jpeg');
@@ -225,9 +260,9 @@
             border-radius: 10px;
         }
 
-        /* Modern Footer */
-        .footer {
-            background-color: #f1f1f1;
+         /* Modern Footer */
+       .footer {
+            background-color: #1f5dc1;
             padding: 20px 0;
             text-align: center;
         }
@@ -239,6 +274,7 @@
             flex-direction: column;
             align-items: center;
             gap: 10px;
+            color: #f1f1f1;
         }
 
         .social-icons {
@@ -247,7 +283,7 @@
         }
 
         .social-icons .social-icon {
-            color: #333;
+            color: #f1f1f1;
             text-decoration: none;
             font-size: 1.5em;
             transition: color 0.3s;
@@ -255,6 +291,40 @@
 
         .social-icons .social-icon:hover {
             color: #007BFF;
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .nav__menu {
+                display: none; /* Hide the menu by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjusted to align with header height */
+                right: 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 200px;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .nav__menu.active {
+                display: flex;
+            }
+
+            .nav__toggle {
+                display: block; /* Show the toggle button on mobile */
+            }
+
+            .nav__list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr; /* Single column for mobile */
+            }
         }
     </style>
 </head>
@@ -269,6 +339,11 @@
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
         </div>
 
+        <!-- Mobile toggle icon -->
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+
         <!-- Navigation Menu -->
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list" style="display: flex; align-items: center; gap: 15px; margin: 0;">
@@ -280,7 +355,6 @@
             </ul>
         </div>
     </header>
-
     <!--==================== CONTACT US SECTION ====================-->
     <section class="hero-section">
         <div class="hero-content">
@@ -393,6 +467,59 @@
             </div>
         </div>
     </footer>
+<!-- JavaScript for Slideshow and Navbar Toggle -->
+    <script>
+        // Function to scroll to the specific slideshow section and show it
+        function scrollToSlideshow(sectionId) {
+            document.querySelectorAll('.product-slideshow-section').forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Show the specific section
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+        }
+
+        // Initialize slide indices for each slideshow
+        let slideIndices = [1, 1, 1, 1, 1]; // Set initial index to 1 for each slideshow
+
+        // Function to display slides
+        function showSlides(n, slideshowIndex) {
+            let slides = document.getElementsByClassName("slideshow-container")[slideshowIndex].getElementsByClassName("mySlides");
+            
+            if (n > slides.length) { 
+                slideIndices[slideshowIndex] = 1;
+            }
+            if (n < 1) { 
+                slideIndices[slideshowIndex] = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+
+            slides[slideIndices[slideshowIndex] - 1].style.display = "block";
+        }
+
+        // Function to control next and previous slide actions
+        function plusSlides(n, slideshowIndex) {
+            showSlides(slideIndices[slideshowIndex] += n, slideshowIndex);
+        }
+
+        // Initialize all slideshows
+        for (let i = 0; i < document.getElementsByClassName("slideshow-container").length; i++) {
+            showSlides(slideIndices[i], i);
+        }
+
+        <!-- JavaScript for mobile menu -->
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
 
 </body>
 </html>
