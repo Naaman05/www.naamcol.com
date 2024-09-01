@@ -120,35 +120,82 @@
             gap: 15px;
         }
 
-        /* Hero Section with Slideshow */
+        /* Hero Section with Two Images */
         .hero-section {
-            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             height: 400px;
             overflow: hidden;
+            margin: 20px 0;
         }
 
-        .hero-images {
+        .hero-image {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
             height: 100%;
-            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
         }
 
-        .hero-images img {
+        .hero-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire container */
+            object-fit: contain; /* Ensures the whole image is visible */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Slideshow Section */
+        .slideshow-section {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .slideshow-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+        }
+
+        .slideshow-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
 
-        .hero-images img.active {
+        .slideshow-images img.active {
             opacity: 1;
         }
 
@@ -326,7 +373,13 @@
             }
 
             .hero-section {
-                height: 300px; /* Adjusted height for mobile view */
+                flex-direction: column; /* Stack images vertically on mobile */
+                height: auto; /* Adjust hero height for mobile view */
+                padding: 10px;
+            }
+
+            .hero-image {
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -359,25 +412,38 @@
         </nav>
     </header>
 
-    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
+    <!--==================== HERO SECTION WITH TWO IMAGES ====================-->
     <section class="hero-section">
-        <div class="hero-images">
+        <div class="hero-image">
+            <img src="ab1.png" alt="Hero Image 1">
+        </div>
+        <div class="hero-image">
+            <img src="ab2.png" alt="Hero Image 2">
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses and Co Ltd</h1>
+        </div>
+    </section>
+
+    <!--==================== SLIDESHOW SECTION ====================-->
+    <section class="slideshow-section">
+        <div class="slideshow-images">
             <!-- Add multiple images for slideshow -->
-            <img src="r1.png" alt="Hero Image 1" class="active">
-            <img src="r2.png" alt="Hero Image 2">
-            <img src="t3.jpg" alt="Hero Image 3">
-            <img src="r3.png" alt="Hero Image 4">
-            <img src="r4.png" alt="Hero Image 5">
-            <img src="p3.png" alt="Hero Image 6">
-            <img src="k1.png" alt="Hero Image 7">
-            <img src="k2.png" alt="Hero Image 8">
-            <img src="k3.png" alt="Hero Image 9">
-            <img src="z1.jpeg" alt="Hero Image 10">
-            <img src="z2.jpeg" alt="Hero Image 11">
-            <img src="z3.jpeg" alt="Hero Image 12">
-            <img src="r5.png" alt="Hero Image 13">
-            <img src="r6.png" alt="Hero Image 14">
-            <img src="r7.png" alt="Hero Image 15">
+            <img src="r1.png" alt="Slideshow Image 1" class="active">
+            <img src="r2.png" alt="Slideshow Image 2">
+            <img src="t3.jpg" alt="Slideshow Image 3">
+            <img src="r3.png" alt="Slideshow Image 4">
+            <img src="r4.png" alt="Slideshow Image 5">
+            <img src="p3.png" alt="Slideshow Image 6">
+            <img src="k1.png" alt="Slideshow Image 7">
+            <img src="k2.png" alt="Slideshow Image 8">
+            <img src="k3.png" alt="Slideshow Image 9">
+            <img src="z1.jpeg" alt="Slideshow Image 10">
+            <img src="z2.jpeg" alt="Slideshow Image 11">
+            <img src="z3.jpeg" alt="Slideshow Image 12">
+            <img src="r5.png" alt="Slideshow Image 13">
+            <img src="r6.png" alt="Slideshow Image 14">
+            <img src="r7.png" alt="Slideshow Image 15">
         </div>
     </section>
 
@@ -385,7 +451,7 @@
     <main class="main">
         <section class="section main-content">
             <div class="container">
-                <h2>Welcome to Naaman Muses and Co Ltd</h2>
+                <h2>About Naaman Muses and Co Ltd</h2>
                 <p>Naaman Muses and Co. Ltd is a company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
                 <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
                 <h2>Why Choose Us?</h2>
@@ -445,7 +511,7 @@
     <script>
         // JavaScript for image slideshow
         let slideIndex = 0;
-        const slides = document.querySelectorAll('.hero-images img');
+        const slides = document.querySelectorAll('.slideshow-images img');
         const totalSlides = slides.length;
 
         function showSlides() {
