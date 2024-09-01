@@ -31,22 +31,6 @@
             padding: 40px 0;
         }
 
-        /* General Styling for Modern Look */
-        body {
-            font-family: 'Bai Jamjuree', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
         /* Modern Header */
         .header {
             background-color: #1f5dc1;
@@ -73,12 +57,12 @@
         }
 
         .nav__logo img {
-            height: 80px; /* Adjust logo size as needed */
+            height: 50px; /* Adjust logo size as needed */
             margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 800;
             color: #efefef;
         }
@@ -101,7 +85,7 @@
             padding: 10px 20px;
             border: 2px solid #dde0e3;
             background-color: #dde0e3;
-            color: rgb(0, 0, 0);;
+            color: rgb(0, 0, 0);
             border-radius: 5px;
             font-size: 1em;
             font-weight: 700;
@@ -126,6 +110,7 @@
             align-items: center;
             gap: 15px;
         }
+
         /* Contact Us Content Styling */
         .hero-section {
             background-image: url('freepik-export-20240825043525val8.jpeg');
@@ -260,8 +245,8 @@
             border-radius: 10px;
         }
 
-         /* Modern Footer */
-       .footer {
+        /* Modern Footer */
+        .footer {
             background-color: #1f5dc1;
             padding: 20px 0;
             text-align: center;
@@ -322,8 +307,12 @@
                 gap: 10px;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr; /* Single column for mobile */
+            .contact-wrapper {
+                flex-direction: column;
+            }
+
+            .contact-details, .contact-form-section {
+                flex: 1 1 100%; /* Full width on mobile */
             }
         }
     </style>
@@ -331,7 +320,7 @@
 
 <body class="contact-page">
 
-    <!--==================== HEADER (Simplified Navbar) ====================-->
+    <!--==================== HEADER (Responsive Navbar) ====================-->
     <header class="header" id="header">
         <!-- Logo and Navigation -->
         <div class="nav__logo">
@@ -346,7 +335,7 @@
 
         <!-- Navigation Menu -->
         <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list" style="display: flex; align-items: center; gap: 15px; margin: 0;">
+            <ul class="nav__list">
                 <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
                 <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
                 <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
@@ -355,13 +344,15 @@
             </ul>
         </div>
     </header>
-    <!--==================== CONTACT US SECTION ====================-->
+
+    <!--==================== HERO SECTION ====================-->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Contact Us</h1>
         </div>
     </section>
 
+    <!--==================== CONTACT US SECTION ====================-->
     <section class="contact-main">
         <div class="container">
             <h2>Contact Information</h2>
@@ -467,49 +458,9 @@
             </div>
         </div>
     </footer>
-<!-- JavaScript for Slideshow and Navbar Toggle -->
+
+    <!-- JavaScript for Slideshow and Navbar Toggle -->
     <script>
-        // Function to scroll to the specific slideshow section and show it
-        function scrollToSlideshow(sectionId) {
-            document.querySelectorAll('.product-slideshow-section').forEach(section => {
-                section.style.display = 'none'; // Hide all sections
-            });
-            document.getElementById(sectionId).style.display = 'block'; // Show the specific section
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
-        }
-
-        // Initialize slide indices for each slideshow
-        let slideIndices = [1, 1, 1, 1, 1]; // Set initial index to 1 for each slideshow
-
-        // Function to display slides
-        function showSlides(n, slideshowIndex) {
-            let slides = document.getElementsByClassName("slideshow-container")[slideshowIndex].getElementsByClassName("mySlides");
-            
-            if (n > slides.length) { 
-                slideIndices[slideshowIndex] = 1;
-            }
-            if (n < 1) { 
-                slideIndices[slideshowIndex] = slides.length;
-            }
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-
-            slides[slideIndices[slideshowIndex] - 1].style.display = "block";
-        }
-
-        // Function to control next and previous slide actions
-        function plusSlides(n, slideshowIndex) {
-            showSlides(slideIndices[slideshowIndex] += n, slideshowIndex);
-        }
-
-        // Initialize all slideshows
-        for (let i = 0; i < document.getElementsByClassName("slideshow-container").length; i++) {
-            showSlides(slideIndices[i], i);
-        }
-
-        <!-- JavaScript for mobile menu -->
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
