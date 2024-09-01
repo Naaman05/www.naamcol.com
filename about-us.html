@@ -121,6 +121,7 @@
             background-color: #ffffff;
             max-width: 1200px; /* Added max-width for centering */
             margin: 0 auto; /* Centers the hero section */
+            position: relative; /* Ensure proper positioning for hero content */
         }
 
         .hero-image {
@@ -137,8 +138,8 @@
 
         .hero-image img {
             width: 100%;
-            height: auto;
-            object-fit: contain; /* Ensures the whole image is visible */
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container properly */
         }
 
         .hero-content {
