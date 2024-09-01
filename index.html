@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
     <!-- Meta Tags for SEO -->
-    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
     <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
 
     <title>Home - Naaman Muses and Co Ltd</title>
@@ -66,8 +65,8 @@
         }
 
         .nav__logo img {
-            height: 60px; /* Adjust logo size as needed */
-            margin-right: 10px; /* Spacing between logo and text */
+            height: 60px;
+            margin-right: 10px;
         }
 
         .nav__logo-text {
@@ -79,7 +78,7 @@
         .nav__menu {
             display: flex;
             align-items: center;
-            gap: 15px; /* Space between buttons */
+            gap: 15px;
         }
 
         .nav__item {
@@ -120,33 +119,35 @@
             gap: 15px;
         }
 
-        /* Hero Section with Two Images */
+        /* Hero Section with Slideshow */
         .hero-section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
             height: 400px;
             overflow: hidden;
-            margin: 20px 0;
         }
 
-        .hero-image {
-            flex: 1;
+        .hero-images {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin: 0 10px;
-        }
-
-        .hero-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures the whole image is visible */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-images img.active {
+            opacity: 1;
         }
 
         .hero-content {
@@ -157,40 +158,35 @@
             z-index: 2;
             text-align: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
         }
 
         .hero-content h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        /* Slideshow Section */
+        /* Slideshow Section Styling */
         .slideshow-section {
-            position: relative;
-            height: 400px;
+            background-color: #ffffff;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
-            margin-top: 20px;
         }
 
         .slideshow-images {
-            display: flex;
+            position: relative;
             width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            max-width: 1200px;
+            overflow: hidden;
         }
 
         .slideshow-images img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -371,16 +367,6 @@
                 align-items: flex-start;
                 gap: 10px;
             }
-
-            .hero-section {
-                flex-direction: column; /* Stack images vertically on mobile */
-                height: auto; /* Adjust hero height for mobile view */
-                padding: 10px;
-            }
-
-            .hero-image {
-                margin-bottom: 10px;
-            }
         }
     </style>
 </head>
@@ -412,16 +398,25 @@
         </nav>
     </header>
 
-    <!--==================== HERO SECTION WITH TWO IMAGES ====================-->
+    <!--==================== HERO SECTION WITH IMAGE SLIDESHOW ====================-->
     <section class="hero-section">
-        <div class="hero-image">
-            <img src="ab1.png" alt="Hero Image 1">
-        </div>
-        <div class="hero-image">
-            <img src="ab2.png" alt="Hero Image 2">
-        </div>
-        <div class="hero-content">
-            <h1>Welcome to Naaman Muses and Co Ltd</h1>
+        <div class="hero-images">
+            <!-- Add multiple images for slideshow -->
+            <img src="r1.png" alt="Hero Image 1" class="active">
+            <img src="r2.png" alt="Hero Image 2">
+            <img src="t3.jpg" alt="Hero Image 3">
+            <img src="r3.png" alt="Hero Image 4">
+            <img src="r4.png" alt="Hero Image 5">
+            <img src="p3.png" alt="Hero Image 6">
+            <img src="k1.png" alt="Hero Image 7">
+            <img src="k2.png" alt="Hero Image 8">
+            <img src="k3.png" alt="Hero Image 9">
+            <img src="z1.jpeg" alt="Hero Image 10">
+            <img src="z2.jpeg" alt="Hero Image 11">
+            <img src="z3.jpeg" alt="Hero Image 12">
+            <img src="r5.png" alt="Hero Image 13">
+            <img src="r6.png" alt="Hero Image 14">
+            <img src="r7.png" alt="Hero Image 15">
         </div>
     </section>
 
@@ -451,7 +446,7 @@
     <main class="main">
         <section class="section main-content">
             <div class="container">
-                <h2>About Naaman Muses and Co Ltd</h2>
+                <h2>Welcome to Naaman Muses and Co Ltd</h2>
                 <p>Naaman Muses and Co. Ltd is a company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
                 <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
                 <h2>Why Choose Us?</h2>
