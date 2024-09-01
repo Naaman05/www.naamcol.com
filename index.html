@@ -22,8 +22,7 @@
 
     <title>Home - Naaman Muses and Co Ltd</title>
 
-    <style>
-        /* General Styling for Modern Look */
+    /* General Styling */
         body {
             font-family: 'Bai Jamjuree', sans-serif;
             margin: 0;
@@ -46,33 +45,32 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; /* Make header a flex container */
+            justify-content: space-between; /* Space items evenly */
+            align-items: center; /* Center items vertically */
             padding: 15px 30px;
         }
 
         .nav__logo {
-            display: flex;
+            display: flex; /* Flex container for logo and text */
             align-items: center;
+            gap: 10px; /* Gap between logo and text */
         }
 
         .nav__logo img {
             height: 50px; /* Adjust logo size as needed */
-            margin-right: 10px; /* Spacing between logo and text */
         }
 
         .nav__logo-text {
             font-size: 1.5em;
             font-weight: 700;
             color: #333;
-            margin-right: 30px; /* Space between logo text and navigation */
         }
 
         .nav__menu {
-            display: flex;
+            display: flex; /* Display navigation links in a row */
             align-items: center;
-            gap: 15px; /* Space between buttons */
+            gap: 20px; /* Space between buttons */
         }
 
         .nav__item {
