@@ -111,74 +111,6 @@
             gap: 15px;
         }
 
-        /* Hero Section with Centered Image */
-        .hero-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 1200px; /* Added max-width for centering */
-            margin: 40px auto; /* Centers the hero section */
-            position: relative; /* Ensure proper positioning for hero content */
-        }
-
-      /* CSS for Hero Section with ab2 Image */
-.hero-image-ab2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ensures the image container fills the width */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image-ab2 img {
-    width: 100%; /* Make the image fill the width of its container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 400px; /* Set a maximum height for desktop view */
-    object-fit: cover; /* Ensures the image covers the container without stretching */
-    display: block; /* Ensures the image behaves as a block element */
-    margin: 0 auto; /* Centers the image horizontally */
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .hero-image-ab2 {
-        max-height: 250px; /* Reduce container height for mobile view */
-    }
-
-    .hero-image-ab2 img {
-        max-height: 250px; /* Adjust image height for smaller screens */
-        object-fit: cover; /* Maintain cover style for a consistent look */
-    }
-
-    .hero-content {
-        display: none; /* Hide hero content in mobile view */
-    }
-}
-       .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            text-align: center;
-            color: #333;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-content h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
         /* Products Content Styling */
         .products-section {
             background-color: #ffffff;
@@ -216,18 +148,18 @@
 
         .product-logo-container {
             width: 100%;
-            height: 150px; /* Fixed height for logo container */
+            height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
-            overflow: hidden; /* Hide overflow to keep logos within bounds */
+            overflow: hidden;
         }
 
         .product-logo-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Ensures the logo fits without distortion */
+            object-fit: contain;
         }
 
         .company-name {
@@ -325,10 +257,10 @@
         /* Mobile View Adjustments */
         @media (max-width: 768px) {
             .nav__menu {
-                display: none; /* Hide the menu by default on mobile */
+                display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 60px; /* Adjusted to align with header height */
+                top: 60px;
                 right: 10px;
                 background-color: #fff;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -342,7 +274,7 @@
             }
 
             .nav__toggle {
-                display: block; /* Show the toggle button on mobile */
+                display: block;
             }
 
             .nav__list {
@@ -350,33 +282,11 @@
                 align-items: flex-start;
                 gap: 10px;
             }
-
-            .about-grid {
-                grid-template-columns: 1fr; /* Single column for mobile */
-            }
-
-            .hero-section {
-                flex-direction: column; /* Stack images vertically on mobile */
-                padding: 20px;
-            }
-
-            .hero-image {
-                max-width: 100%; /* Allow images to fill the width on mobile */
-            }
-            @media (max-width: 768px) {
-    .hero-image-ab2 img {
-        max-height: 200px; /* Further reduce the height on smaller screens */
-    }
-
-    .hero-content {
-        display: none; /* Hide hero content in mobile view */
-    }
-
         }
     </style>
 </head>
 
-<body class="about-page">
+<body class="products-page">
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
@@ -403,10 +313,10 @@
         </div>
     </header>
 
-   <!--==================== HERO SECTION WITH ab2 IMAGE ====================-->
+   <!--==================== HERO SECTION ====================-->
 <section class="hero-section">
     <div class="hero-image-ab2">
-        <img src="ab2.png" alt="Hero Image 2">
+        <img src="ab2.png" alt="Hero Image">
     </div>
 
     <!-- Optional hero content or overlay -->
@@ -414,7 +324,6 @@
         <h1>Our Products</h1>
     </div>
 </section>
-
 
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
@@ -432,7 +341,7 @@
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
                     </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('tropical-heat')">View More</button>
+                    <a href="pdfs/moha1.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
@@ -444,7 +353,7 @@
                     <div class="product-description">
                         As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
                     </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('pwani-oil')">View More</button>
+                    <a href="pdfs/pwani_oil_products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Manji Food Industries -->
@@ -456,7 +365,7 @@
                     <div class="product-description">
                         Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
                     </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('manji-food')">View More</button>
+                    <a href="pdfs/manji_food_products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Kimfay -->
@@ -468,7 +377,7 @@
                     <div class="product-description">
                         Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
                     </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('kimfay')">View More</button>
+                    <a href="pdfs/kimfay_products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Zesta -->
@@ -480,121 +389,9 @@
                     <div class="product-description">
                         Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
                     </div>
-                    <button class="view-more-btn" onclick="scrollToSlideshow('trufoods')">View More</button>
+                    <a href="pdfs/zesta_products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!--==================== SLIDESHOW SECTIONS FOR EACH COMPANY ====================-->
-    <!-- Tropical Heat Slideshow -->
-    <section id="tropical-heat" class="product-slideshow-section">
-        <h3>Tropical Heat Products</h3>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="r1.png" alt="Tropical Heat 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="r2.png" alt="Tropical Heat 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="t3.jpg" alt="Tropical Heat 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="t4.jpg" alt="Tropical Heat 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-        </div>
-    </section>
-
-    <!-- Repeat similar slideshow sections for Pwani Oil, Manji Food, Kimfay, and Trufoods -->
-    <!-- Pwani Oil Slideshow -->
-    <section id="pwani-oil" class="product-slideshow-section">
-        <h3>Pwani Oil Products Ltd</h3>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="p1.jpg" alt="Pwani Oil 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="p2.png" alt="Pwani Oil 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="p3.png" alt="Pwani Oil 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="p4.png" alt="Pwani Oil 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-        </div>
-    </section>
-
-    <!-- Manji Food Slideshow -->
-    <section id="manji-food" class="product-slideshow-section">
-        <h3>Manji Food Industries</h3>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="m1.jpg" alt="Manji Food 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="m2.png" alt="Manji Food 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="m3.jpeg" alt="Manji Food 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="m4.jpeg" alt="Manji Food 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-        </div>
-    </section>
-
-    <!-- Kimfay Slideshow -->
-    <section id="kimfay" class="product-slideshow-section">
-        <h3>Kimfay</h3>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="k1.png" alt="Kimfay 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="k2.png" alt="Kimfay 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="k3.png" alt="Kimfay 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="k4.png" alt="Kimfay 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-        </div>
-    </section>
-
-    <!-- Trufoods Slideshow -->
-    <section id="trufoods" class="product-slideshow-section">
-        <h3>Trufoods</h3>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="z1.jpeg" alt="Trufoods 1">
-            </div>
-            <div class="mySlides fade">
-                <img src="z2.jpeg" alt="Trufoods 2">
-            </div>
-            <div class="mySlides fade">
-                <img src="z3.jpeg" alt="Trufoods 3">
-            </div>
-            <div class="mySlides fade">
-                <img src="z4.jpg" alt="Trufoods 4">
-            </div>
-            <!-- Next/prev buttons -->
-            <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
         </div>
     </section>
 
@@ -617,56 +414,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Slideshow and Navbar Toggle -->
+    <!-- JavaScript for Navbar Toggle -->
     <script>
-        // Function to scroll to the specific slideshow section and show it
-        function scrollToSlideshow(sectionId) {
-            document.querySelectorAll('.product-slideshow-section').forEach(section => {
-                section.style.display = 'none'; // Hide all sections
-            });
-            document.getElementById(sectionId).style.display = 'block'; // Show the specific section
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
-
-            // Initialize the slideshow for the displayed section
-            const slideshows = document.getElementsByClassName('slideshow-container');
-            for (let i = 0; i < slideshows.length; i++) {
-                if (slideshows[i].parentNode.id === sectionId) {
-                    showSlides(slideIndices[i], i);
-                }
-            }
-        }
-
-        // Initialize slide indices for each slideshow
-        let slideIndices = [1, 1, 1, 1, 1]; // Set initial index to 1 for each slideshow
-
-        // Function to display slides
-        function showSlides(n, slideshowIndex) {
-            let slides = document.getElementsByClassName("slideshow-container")[slideshowIndex].getElementsByClassName("mySlides");
-            
-            if (n > slides.length) { 
-                slideIndices[slideshowIndex] = 1;
-            }
-            if (n < 1) { 
-                slideIndices[slideshowIndex] = slides.length;
-            }
-
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-
-            slides[slideIndices[slideshowIndex] - 1].style.display = "block";
-        }
-
-        // Function to control next and previous slide actions
-        function plusSlides(n, slideshowIndex) {
-            showSlides(slideIndices[slideshowIndex] += n, slideshowIndex);
-        }
-
-        // Initialize all slideshows
-        for (let i = 0; i < document.getElementsByClassName("slideshow-container").length; i++) {
-            showSlides(slideIndices[i], i);
-        }
-
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
