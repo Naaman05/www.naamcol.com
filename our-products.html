@@ -205,7 +205,7 @@
 
         .pdf-viewer iframe {
             width: 100%;
-            height: 500px;
+            height: 100vh; /* Full height to display all pages */
             border: none;
         }
 
@@ -349,19 +349,6 @@
             </ul>
         </div>
     </header>
-
-   <!--==================== HERO SECTION WITH ab2 IMAGE ====================-->
-<section class="hero-section">
-    <div class="hero-image-ab2">
-        <img src="ab2.png" alt="Hero Image 2">
-    </div>
-
-    <!-- Optional hero content or overlay -->
-    <div class="hero-content">
-        <h1>Our Products</h1>
-    </div>
-</section>
-
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
         <div class="container">
@@ -394,7 +381,7 @@
                 </div>
 
                 <!-- Manji Food Industries -->
-                <div class="product-item" onclick="showPDF('moha6.pdf')">
+                <div class="product-item" onclick="showPDF('manji-food-products.pdf')">
                     <div class="product-logo-container">
                         <img src="21.png" alt="Manji Food Logo">
                     </div>
@@ -435,7 +422,7 @@
     <!--==================== PDF VIEWER SECTION ====================-->
     <div class="pdf-viewer" id="pdf-viewer">
         <button class="back-button" onclick="goBack()">Back to Products</button>
-        <iframe src="" id="pdf-iframe"></iframe>
+        <iframe src="" id="pdf-iframe" allowfullscreen></iframe>
     </div>
 
     <!--==================== WHATSAPP CHAT WIDGET ====================-->
@@ -463,7 +450,7 @@
         function showPDF(pdfFile) {
             document.querySelector('.products-section').style.display = 'none';
             document.getElementById('pdf-viewer').style.display = 'block';
-            document.getElementById('pdf-iframe').src = pdfFile;
+            document.getElementById('pdf-iframe').src = pdfFile + '#toolbar=0&navpanes=0&scrollbar=0'; // Embed full PDF view
         }
 
         // Function to go back to the product list
