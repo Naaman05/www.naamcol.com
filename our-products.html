@@ -125,29 +125,42 @@
             position: relative; /* Ensure proper positioning for hero content */
         }
 
-       /* CSS for Hero Section with ab2 Image */
+      /* CSS for Hero Section with ab2 Image */
 .hero-image-ab2 {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%; /* Ensures the image container doesn't exceed the full width */
+    width: 100%; /* Ensures the image container fills the width */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image-ab2 img {
-    width: 100%;
+    width: 100%; /* Make the image fill the width of its container */
     height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Set a maximum height to reduce the image size */
-    object-fit: cover; /* Ensures the image covers the container properly */
-    display: block; /* Ensures image is a block element */
-    margin: 0 auto; /* Center the image horizontally */
+    max-height: 400px; /* Set a maximum height for desktop view */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+    display: block; /* Ensures the image behaves as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .hero-image-ab2 {
+        max-height: 250px; /* Reduce container height for mobile view */
+    }
 
-        .hero-content {
+    .hero-image-ab2 img {
+        max-height: 250px; /* Adjust image height for smaller screens */
+        object-fit: cover; /* Maintain cover style for a consistent look */
+    }
+
+    .hero-content {
+        display: none; /* Hide hero content in mobile view */
+    }
+}
+       .hero-content {
             position: absolute;
             top: 50%;
             left: 50%;
