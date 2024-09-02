@@ -188,11 +188,42 @@
             margin-top: 15px;
             font-size: 1em;
             transition: background-color 0.3s;
-            text-decoration: none; /* Ensures button look */
-            display: inline-block; /* Ensures it looks like a button */
+            text-decoration: none;
+            display: inline-block;
         }
 
         .view-more-btn:hover {
+            background-color: #1f5dc1;
+        }
+
+        /* PDF Viewer Styling */
+        .pdf-viewer {
+            display: none; /* Hidden by default */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .back-button {
+            background-color: #1f5dc1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
             background-color: #1f5dc1;
         }
 
@@ -297,7 +328,6 @@
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
-        <!-- Logo and Navigation -->
         <div class="nav__logo">
             <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
@@ -319,6 +349,19 @@
             </ul>
         </div>
     </header>
+
+   <!--==================== HERO SECTION WITH ab2 IMAGE ====================-->
+<section class="hero-section">
+    <div class="hero-image-ab2">
+        <img src="ab2.png" alt="Hero Image 2">
+    </div>
+
+    <!-- Optional hero content or overlay -->
+    <div class="hero-content">
+        <h1>Our Products</h1>
+    </div>
+</section>
+
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
         <div class="container">
@@ -327,7 +370,7 @@
 
             <div class="products-grid">
                 <!-- Tropical Heat Products -->
-                <div class="product-item">
+                <div class="product-item" onclick="showPDF('moha1.pdf')">
                     <div class="product-logo-container">
                         <img src="20.png" alt="Tropical Heat Logo">
                     </div>
@@ -335,11 +378,11 @@
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
                     </div>
-                    <a href="moha1.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <button class="view-more-btn">View More</button>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
-                <div class="product-item">
+                <div class="product-item" onclick="showPDF('moha3.pdf')">
                     <div class="product-logo-container">
                         <img src="22.png" alt="Pwani Oil Logo">
                     </div>
@@ -347,11 +390,11 @@
                     <div class="product-description">
                         As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
                     </div>
-                    <a href="moha3.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <button class="view-more-btn">View More</button>
                 </div>
 
                 <!-- Manji Food Industries -->
-                <div class="product-item">
+                <div class="product-item" onclick="showPDF('moha6.pdf')">
                     <div class="product-logo-container">
                         <img src="21.png" alt="Manji Food Logo">
                     </div>
@@ -359,11 +402,11 @@
                     <div class="product-description">
                         Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
                     </div>
-                    <a href="https://manji.co.ke/our-products/" target="_blank" class="view-more-btn">View More</a>
+                    <button class="view-more-btn">View More</button>
                 </div>
 
                 <!-- Kimfay -->
-                <div class="product-item">
+                <div class="product-item" onclick="showPDF('moha4.pdf')">
                     <div class="product-logo-container">
                         <img src="24.png" alt="Kimfay Logo">
                     </div>
@@ -371,11 +414,11 @@
                     <div class="product-description">
                         Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
                     </div>
-                    <a href="https://www.kimfay.com/product/" target="_blank" class="view-more-btn">View More</a>
+                    <button class="view-more-btn">View More</button>
                 </div>
 
                 <!-- Zesta -->
-                <div class="product-item">
+                <div class="product-item" onclick="showPDF('moha2.pdf')">
                     <div class="product-logo-container">
                         <img src="23.png" alt="Trufoods Logo">
                     </div>
@@ -383,11 +426,17 @@
                     <div class="product-description">
                         Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
                     </div>
-                    <a href="moha2.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <button class="view-more-btn">View More</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!--==================== PDF VIEWER SECTION ====================-->
+    <div class="pdf-viewer" id="pdf-viewer">
+        <button class="back-button" onclick="goBack()">Back to Products</button>
+        <iframe src="" id="pdf-iframe"></iframe>
+    </div>
 
     <!--==================== WHATSAPP CHAT WIDGET ====================-->
     <div class="whatsapp-chat-widget">
@@ -408,8 +457,21 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Slideshow and Navbar Toggle -->
+    <!-- JavaScript for PDF Viewer and Navbar Toggle -->
     <script>
+        // Function to show the PDF viewer
+        function showPDF(pdfFile) {
+            document.querySelector('.products-section').style.display = 'none';
+            document.getElementById('pdf-viewer').style.display = 'block';
+            document.getElementById('pdf-iframe').src = pdfFile;
+        }
+
+        // Function to go back to the product list
+        function goBack() {
+            document.getElementById('pdf-viewer').style.display = 'none';
+            document.querySelector('.products-section').style.display = 'block';
+        }
+
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
