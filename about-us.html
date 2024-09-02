@@ -330,6 +330,10 @@
                 max-width: 100%; /* Allow images to fill the width on mobile */
                 margin-bottom: 10px;
             }
+            @media (max-width: 768px) {
+    .hero-image img {
+        max-height: 200px; /* Reduce the height further on smaller screens */
+    }
         }
     </style>
 </head>
@@ -361,12 +365,21 @@
         </div>
     </header>
 
-    <!--==================== HERO SECTION WITH AN IMAGE ====================-->
-    <section class="hero-section">
+  <section class="about-section">
+    <div class="container">
+        <!-- Image Container with Reduced Height -->
         <div class="hero-image">
-            <img src="ab1.png" alt="Hero Image 1">
+            <img src="ab1.png" alt="About Us Image">
         </div>
-    </section>
+
+        <!-- Additional content can go here -->
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>Naaman Muses Co. Ltd is a leading company specializing in...</p>
+        </div>
+    </div>
+</section>
+
 
     <!--==================== ABOUT US MAIN SECTION ====================-->
     <section class="about-main-section">
