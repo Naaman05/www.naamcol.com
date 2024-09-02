@@ -125,24 +125,24 @@
             position: relative; /* Ensure proper positioning for hero content */
         }
 
-        /* CSS for Hero Section with ab1 Image */
+      /* CSS for Hero Section with ab1 Image */
 .hero-image-ab1 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     width: 100%; /* Ensures the image container fills the width */
+    max-height: 400px; /* Set a maximum height for the container on desktop view */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center container horizontally within its parent */
 }
 
 .hero-image-ab1 img {
-    width: 100%; /* Make the image fill the width of its container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 400px; /* Set a maximum height for desktop view */
+    max-width: 100%; /* Make the image fill the width of its container */
+    max-height: 100%; /* Ensure image doesn't exceed container's height */
     object-fit: cover; /* Ensures the image covers the container without stretching */
     display: block; /* Ensures the image behaves as a block element */
-    margin: 0 auto; /* Centers the image horizontally */
 }
 
 /* Media Query for Mobile Devices */
@@ -152,7 +152,6 @@
     }
 
     .hero-image-ab1 img {
-        max-height: 250px; /* Adjust image height for smaller screens */
         object-fit: cover; /* Maintain cover style for a consistent look */
     }
 
