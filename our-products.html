@@ -111,10 +111,46 @@
             gap: 15px;
         }
 
+        /* Hero Section with Centered Image */
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        /* CSS for Hero Section Image */
+        .hero-image-ab2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-image-ab2 img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
         /* Products Content Styling */
         .products-section {
             background-color: #ffffff;
             padding: 60px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .products-section h2 {
@@ -127,7 +163,7 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 30px;
             margin-top: 20px;
         }
 
@@ -190,7 +226,7 @@
         }
 
         .view-more-btn:hover {
-            background-color: #1f5dc1;
+            background-color: #094b92;
         }
 
         /* WhatsApp Chat Button */
@@ -286,11 +322,10 @@
     </style>
 </head>
 
-<body class="products-page">
+<body class="about-page">
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
-        <!-- Logo and Navigation -->
         <div class="nav__logo">
             <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
@@ -313,17 +348,17 @@
         </div>
     </header>
 
-   <!--==================== HERO SECTION ====================-->
-<section class="hero-section">
-    <div class="hero-image-ab2">
-        <img src="ab2.png" alt="Hero Image">
-    </div>
+    <!--==================== HERO SECTION ====================-->
+    <section class="hero-section">
+        <div class="hero-image-ab2">
+            <img src="ab2.png" alt="Hero Image">
+        </div>
 
-    <!-- Optional hero content or overlay -->
-    <div class="hero-content">
-        <h1>Our Products</h1>
-    </div>
-</section>
+        <!-- Optional hero content or overlay -->
+        <div class="hero-content">
+            <h1>Our Products</h1>
+        </div>
+    </section>
 
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
@@ -341,7 +376,7 @@
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
                     </div>
-                    <a href="pdfs/moha1.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="pdfs/tropical_heat_products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
