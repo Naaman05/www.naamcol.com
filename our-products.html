@@ -146,6 +146,22 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        .product-logo-container {
+            width: 100%;
+            height: 150px; /* Fixed height for logo container */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            overflow: hidden; /* Hide overflow to keep logos within bounds */
+        }
+
+        .product-logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures the logo fits without distortion */
+        }
+
         .company-name {
             background-color: #1f5dc1;
             color: white;
@@ -371,7 +387,6 @@
         </div>
     </header>
 
-
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
         <div class="container">
@@ -381,6 +396,9 @@
             <div class="products-grid">
                 <!-- Tropical Heat Products -->
                 <div class="product-item">
+                    <div class="product-logo-container">
+                        <img src="20.png" alt="Tropical Heat Logo">
+                    </div>
                     <div class="company-name">Tropical Heat Products</div>
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
@@ -390,6 +408,9 @@
 
                 <!-- Pwani Oil Products Ltd -->
                 <div class="product-item">
+                    <div class="product-logo-container">
+                        <img src="22.png" alt="Pwani Oil Logo">
+                    </div>
                     <div class="company-name">Pwani Oil Products Ltd</div>
                     <div class="product-description">
                         As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
@@ -399,6 +420,9 @@
 
                 <!-- Manji Food Industries -->
                 <div class="product-item">
+                    <div class="product-logo-container">
+                        <img src="21.png" alt="Manji Food Logo">
+                    </div>
                     <div class="company-name">Manji Food Industries</div>
                     <div class="product-description">
                         Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
@@ -408,6 +432,9 @@
 
                 <!-- Kimfay -->
                 <div class="product-item">
+                    <div class="product-logo-container">
+                        <img src="24.png" alt="Kimfay Logo">
+                    </div>
                     <div class="company-name">Kimfay</div>
                     <div class="product-description">
                         Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
@@ -415,9 +442,12 @@
                     <button class="view-more-btn" onclick="scrollToSlideshow('kimfay')">View More</button>
                 </div>
 
-                <!-- Trufoods -->
+                <!-- Zesta -->
                 <div class="product-item">
-                    <div class="company-name">Trufoods</div>
+                    <div class="product-logo-container">
+                        <img src="23.png" alt="Trufoods Logo">
+                    </div>
+                    <div class="company-name">Zesta</div>
                     <div class="product-description">
                         Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
                     </div>
@@ -556,7 +586,7 @@
                 <a href="https://wa.me/+2540722797764" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-    </footer
+    </footer>
 
     <!-- JavaScript for Slideshow and Navbar Toggle -->
     <script>
