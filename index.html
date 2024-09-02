@@ -1,316 +1,455 @@
-<style>
-    /* General Styling for Modern Look */
-    body {
-        font-family: 'Bai Jamjuree', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-        scroll-behavior: smooth;
-    }
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-    .container {
-        width: 90%;
-        margin: 0 auto;
-        padding: 40px 0;
-    }
+    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="home.css"> <!-- Link to home.css -->
+    <link rel="stylesheet" href="responsive.css"> <!-- Link to responsive CSS file -->
 
-    /* Modern Header */
-    .header {
-        background-color: #1f5dc1;
-        border-bottom: 1px solid #1f5dc1;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 30px;
-    }
+    <!-- Meta Tags for SEO -->
+    <meta name="msvalidate.01" content="33FD465852A4CEE66C86736E41A397F1" />
+    <meta name="google-site-verification" content="CNG5kavPL6U-CUycdOnPR6-vNr8gqtSbohPkAEsbdXY" />
 
-    .nav {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
-    }
+    <title>Home - Naaman Muses and Co Ltd</title>
 
-    .nav__logo {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav__logo img {
-        height: 80px; /* Adjust logo size as needed */
-        margin-right: 10px; /* Spacing between logo and text */
-    }
-
-    .nav__logo-text {
-        font-size: 2em;
-        font-weight: 800;
-        color: #efefef;
-    }
-
-    .nav__menu {
-        display: flex;
-        align-items: center;
-        gap: 15px; /* Space between buttons */
-    }
-
-    .nav__item {
-        list-style: none;
-    }
-
-    .nav__link {
-        text-decoration: none;
-    }
-
-    .nav__button {
-        padding: 10px 20px;
-        border: 2px solid #dde0e3;
-        background-color: #dde0e3;
-        color: rgb(0, 0, 0);
-        border-radius: 5px;
-        font-size: 1em;
-        font-weight: 700;
-        transition: background-color 0.3s, color 0.3s;
-        cursor: pointer;
-    }
-
-    .nav__button:hover {
-        background-color: white;
-        color: #000000;
-    }
-
-    /* Responsive Navbar for Mobile */
-    .nav__toggle {
-        display: none;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
-
-    .nav__list {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    /* Hero Section with Responsive Video */
-    .hero-section {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        background-color: #000; /* Background color for loading phase */
-    }
-
-    .hero-video {
-        width: 100%;
-        height: 60vh; /* Reduced height for desktop */
-        object-fit: cover; /* Ensures the video covers the container properly */
-    }
-
-    .hero-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        text-align: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        display: block; /* Display block by default */
-    }
-
-    .hero-content h1 {
-        font-size: 3em;
-        margin: 0;
-    }
-
-    /* Main Content Styling */
-    .main-content {
-        background-color: #f9f9f9;
-        padding: 60px 0;
-    }
-
-    .main-content h2 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2.5em;
-        color: #555;
-    }
-
-    .main-content p {
-        color: #555;
-        font-size: 1.1em;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .why-choose-us {
-        padding: 60px 0;
-        background-color: #f9f9f9;
-    }
-
-    .why-choose-us h2,
-    .core-services h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 2.5em;
-        color: #333;
-    }
-
-    .why-choose-us ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        font-size: 1.1em;
-        color: #555;
-        margin-top: 20px;
-    }
-
-    .core-services {
-        background-color: #f9f9f9;
-        padding: 60px 0;
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
-
-    .service-item {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-icon {
-        font-size: 2.5em;
-        color: #094b92;
-        margin-bottom: 10px;
-    }
-
-    .service-item h3 {
-        font-size: 1.8em;
-        margin-bottom: 10px;
-        color: #094b92;
-    }
-
-    .service-item p {
-        font-size: 1em;
-        color: #555;
-    }
-
-    /* WhatsApp Chat Button */
-    .whatsapp-chat-widget {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .whatsapp-chat-button {
-        background-color: #25d366;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        font-size: 1.1em;
-        transition: background-color 0.3s;
-    }
-
-    .whatsapp-chat-button i {
-        margin-right: 10px;
-        font-size: 1.5em;
-    }
-
-    .whatsapp-chat-button:hover {
-        background-color: #1ebe5d;
-    }
-
-    /* Modern Footer */
-    .footer {
-        background-color: #1f5dc1;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .footer-content {
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        color: #f1f1f1;
-    }
-
-    .social-icons {
-        display: flex;
-        gap: 15px;
-    }
-
-    .social-icons .social-icon {
-        color: #f1f1f1;
-        text-decoration: none;
-        font-size: 1.5em;
-        transition: color 0.3s;
-    }
-
-    .social-icons .social-icon:hover {
-        color: #007BFF;
-    }
-
-    /* Mobile View Adjustments */
-    @media (max-width: 768px) {
-        .nav__menu {
-            display: none; /* Hide the menu by default on mobile */
-            flex-direction: column;
-            position: absolute;
-            top: 60px; /* Adjusted to align with header height */
-            right: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            border-radius: 5px;
-            padding: 10px;
+    <style>
+        /* General Styling for Modern Look */
+        body {
+            font-family: 'Bai Jamjuree', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
         }
 
-        .nav__menu.active {
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Modern Header */
+        .header {
+            background-color: #1f5dc1;
+            border-bottom: 1px solid #1f5dc1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
         }
 
+        .nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            height: 80px; /* Adjust logo size as needed */
+            margin-right: 10px; /* Spacing between logo and text */
+        }
+
+        .nav__logo-text {
+            font-size: 2em;
+            font-weight: 800;
+            color: #efefef;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between buttons */
+        }
+
+        .nav__item {
+            list-style: none;
+        }
+
+        .nav__link {
+            text-decoration: none;
+        }
+
+        .nav__button {
+            padding: 10px 20px;
+            border: 2px solid #dde0e3;
+            background-color: #dde0e3;
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 700;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav__button:hover {
+            background-color: white;
+            color: #000000;
+        }
+
+        /* Responsive Navbar for Mobile */
         .nav__toggle {
-            display: block; /* Show the toggle button on mobile */
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
         }
 
         .nav__list {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
+        /* Hero Section with Responsive Video */
         .hero-section {
-            height: auto; /* Adjust hero section height for mobile */
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000; /* Background color for loading phase */
         }
 
         .hero-video {
             width: 100%;
-            height: auto; /* Ensure video maintains aspect ratio */
+            height: 60vh; /* Reduced height for desktop view */
             object-fit: cover; /* Ensures the video covers the container properly */
         }
 
         .hero-content {
-            display: none; /* Hide hero content text on mobile */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-    }
-</style>
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #555;
+        }
+
+        .main-content p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .why-choose-us h2,
+        .core-services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .why-choose-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .core-services {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            color: #094b92;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #094b92;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* WhatsApp Chat Button */
+        .whatsapp-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .whatsapp-chat-button {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-chat-button i {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+
+        .whatsapp-chat-button:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Modern Footer */
+        .footer {
+            background-color: #1f5dc1;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #f1f1f1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons .social-icon {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons .social-icon:hover {
+            color: #007BFF;
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .nav__menu {
+                display: none; /* Hide the menu by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjusted to align with header height */
+                right: 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 200px;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .nav__menu.active {
+                display: flex;
+            }
+
+            .nav__toggle {
+                display: block; /* Show the toggle button on mobile */
+            }
+
+            .nav__list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .hero-section {
+                height: auto; /* Adjust hero section height for mobile */
+            }
+
+            .hero-video {
+                width: 100%;
+                height: auto; /* Ensure video maintains aspect ratio */
+                object-fit: cover; /* Ensures the video covers the container properly */
+            }
+
+            /* Hide hero content text on mobile */
+            .hero-content {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="home">
+
+    <!--==================== HEADER (Responsive Navbar) ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
+                <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
+            </div>
+
+            <!-- Mobile toggle icon -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
+                    <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
+                    <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
+                    <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                    <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== HERO SECTION WITH VIDEO ====================-->
+    <section class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="c12.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Naaman Muses and Co Ltd</h1>
+        </div>
+    </section>
+
+    <!--==================== MAIN CONTENT ====================-->
+    <main class="main">
+        <section class="section main-content">
+            <div class="container">
+                <h2>Welcome to Naaman Muses and Co Ltd</h2>
+                <p>Naaman Muses and Co. Ltd is a renowned company specializing in importing, distributing, and trading a diverse range of products in East Africa. Established with a vision to deliver exceptional service and high-quality products to its customers, Naaman Muses and Co. Ltd has grown into a leading player in the region’s distribution sector.</p>
+                <p>Our website serves as an inviting platform for customers and partners, providing an in-depth look at our offerings and commitment to excellence. With a sleek, user-friendly design, our homepage highlights our services, mission, and values, making it easy for visitors to navigate and find the information they need.</p>
+                <h2>Why Choose Us?</h2>
+                <p>At Naaman Muses and Co Ltd, we are dedicated to providing the highest quality products and services to our customers. Our team is committed to excellence and customer satisfaction, ensuring that every interaction with our company is a positive experience.</p>
+                <ul>
+                    <li>Wide range of quality products from reputable brands</li>
+                    <li>Efficient distribution network covering East Africa</li>
+                    <li>Strong focus on customer satisfaction and service excellence</li>
+                    <li>Commitment to sustainability and community development</li>
+                </ul>
+            </div>
+        </section>
+        <section class="core-services">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-globe service-icon"></i>
+                        <h3>Importing</h3>
+                        <p>We source a wide range of products globally to meet the diverse needs of our customers in East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-truck service-icon"></i>
+                        <h3>Distribution</h3>
+                        <p>Our robust distribution network ensures timely delivery of products to various regions across East Africa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h3>Trading</h3>
+                        <p>We provide competitive trading solutions that cater to different markets and industries in the region.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== WHATSAPP CHAT WIDGET ====================-->
+    <div class="whatsapp-chat-widget">
+        <a href="https://wa.me/96871006120?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="whatsapp-chat-button">
+            <i class="fab fa-whatsapp"></i> Chat with Us
+        </a>
+    </div>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Naamcol. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/muses1888?igsh=MWtkeWN0djNucDIwZg==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/naaman-muses-2592545b/?originalSubdomain=ke" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/+2540722797764" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // JavaScript to handle the toggle of the mobile menu
+        const mobileMenu = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+
+</body>
+</html>
