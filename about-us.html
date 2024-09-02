@@ -125,23 +125,27 @@
             position: relative; /* Ensure proper positioning for hero content */
         }
 
-        .hero-image {
-            width: 100%;
-            max-width: 600px; /* Limit the width of the image */
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        /* CSS for Hero Section with ab1 Image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 100%; /* Ensures the image container doesn't exceed the full width */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* Ensures the image covers the container properly */
-            border-radius: 10px;
-        }
+.hero-image img {
+    width: 100%;
+    height: auto; /* Keep the width 100% to maintain responsiveness */
+    max-height: 300px; /* Set a maximum height to reduce the image size */
+    object-fit: cover; /* Ensures the image covers the container properly */
+    display: block; /* Centers the image block */
+    margin: 0 auto; /* Center the image horizontally */
+}
 
         /* Main Content Styling */
         .about-main-section {
