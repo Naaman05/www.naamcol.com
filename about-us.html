@@ -125,41 +125,40 @@
             position: relative; /* Ensure proper positioning for hero content */
         }
 
-      /* CSS for Hero Section with ab1 Image */
-.hero-image-ab1 {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 100%; /* Ensures the image container fills the width */
-    max-height: 400px; /* Set a maximum height for the container on desktop view */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center container horizontally within its parent */
-}
+        /* CSS for Hero Section with ab1 Image */
+        .hero-image-ab1 {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            width: 100%; /* Ensures the image container fills the width */
+            max-height: 400px; /* Set a maximum height for the container on desktop view */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 auto; /* Center container horizontally within its parent */
+        }
 
-.hero-image-ab1 img {
-    max-width: 100%; /* Make the image fill the width of its container */
-    max-height: 100%; /* Ensure image doesn't exceed container's height */
-    object-fit: cover; /* Ensures the image covers the container without stretching */
-    display: block; /* Ensures the image behaves as a block element */
-}
+        .hero-image-ab1 img {
+            max-width: 100%; /* Make the image fill the width of its container */
+            max-height: 100%; /* Ensure image doesn't exceed container's height */
+            object-fit: cover; /* Ensures the image covers the container without stretching */
+            display: block; /* Ensures the image behaves as a block element */
+        }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .hero-image-ab1 {
-        max-height: 250px; /* Reduce container height for mobile view */
-    }
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .hero-image-ab1 {
+                max-height: 250px; /* Reduce container height for mobile view */
+            }
 
-    .hero-image-ab1 img {
-        object-fit: cover; /* Maintain cover style for a consistent look */
-    }
+            .hero-image-ab1 img {
+                object-fit: cover; /* Maintain cover style for a consistent look */
+            }
 
-    .hero-content {
-        display: none; /* Hide hero content in mobile view */
-    }
-}
-
+            .hero-content {
+                display: none; /* Hide hero content in mobile view */
+            }
+        }
 
         /* Main Content Styling */
         .about-main-section {
@@ -311,7 +310,7 @@
                 right: 10px;
                 background-color: #fff;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 200px;
+                                width: 200px;
                 border-radius: 5px;
                 padding: 10px;
             }
@@ -344,10 +343,10 @@
                 max-width: 100%; /* Allow images to fill the width on mobile */
                 margin-bottom: 10px;
             }
-            @media (max-width: 768px) {
-    .hero-image img {
-        max-height: 200px; /* Reduce the height further on smaller screens */
-    }
+
+            .hero-image img {
+                max-height: 200px; /* Reduce the height further on smaller screens */
+            }
         }
     </style>
 </head>
@@ -373,18 +372,19 @@
                 <li class="nav__item"><a href="index.html" class="nav__link"><button class="nav__button">Home</button></a></li>
                 <li class="nav__item"><a href="about-us.html" class="nav__link"><button class="nav__button">About Us</button></a></li>
                 <li class="nav__item"><a href="our-products.html" class="nav__link"><button class="nav__button">Our Products</button></a></li>
-                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">Our Team</button></a></li>
+                <li class="nav__item"><a href="our-team.html" class="nav__link"><button class="nav__button">
+                Our Team</button></a></li>
                 <li class="nav__item"><a href="contact-us.html" class="nav__link"><button class="nav__button">Contact Us</button></a></li>
             </ul>
         </div>
     </header>
 
-  <section class="about-section">
-    <div class="container">
-        <!-- Image Container with Reduced Height -->
-        <div class="hero-image">
+    <!--==================== HERO SECTION WITH CENTERED IMAGE ====================-->
+    <section class="hero-section">
+        <div class="hero-image-ab1">
             <img src="ab1.png" alt="About Us Image">
         </div>
+    </section>
 
     <!--==================== ABOUT US MAIN SECTION ====================-->
     <section class="about-main-section">
