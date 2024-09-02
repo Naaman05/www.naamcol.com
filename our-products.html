@@ -125,23 +125,27 @@
             position: relative; /* Ensure proper positioning for hero content */
         }
 
-        .hero-image {
-            width: 100%;
-            max-width: 600px; /* Limit the width of the image */
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+       /* CSS for Hero Section with ab2 Image */
+.hero-image-ab2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Ensures the image container doesn't exceed the full width */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* Ensures the image covers the container properly */
-            border-radius: 10px;
-        }
+.hero-image-ab2 img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Set a maximum height to reduce the image size */
+    object-fit: cover; /* Ensures the image covers the container properly */
+    display: block; /* Ensures image is a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
 
         .hero-content {
             position: absolute;
@@ -346,6 +350,15 @@
             .hero-image {
                 max-width: 100%; /* Allow images to fill the width on mobile */
             }
+            @media (max-width: 768px) {
+    .hero-image-ab2 img {
+        max-height: 200px; /* Further reduce the height on smaller screens */
+    }
+
+    .hero-content {
+        display: none; /* Hide hero content in mobile view */
+    }
+
         }
     </style>
 </head>
@@ -377,13 +390,18 @@
         </div>
     </header>
 
-    <!--==================== HERO SECTION WITH CENTERED IMAGE ====================-->
-    <section class="hero-section">
-        <div class="hero-image">
-            <img src="ab2.png" alt="Hero Image 2">
-        </div>
-        </div>
-    </section>
+   <!--==================== HERO SECTION WITH ab2 IMAGE ====================-->
+<section class="hero-section">
+    <div class="hero-image-ab2">
+        <img src="ab2.png" alt="Hero Image 2">
+    </div>
+
+    <!-- Optional hero content or overlay -->
+    <div class="hero-content">
+        <h1>Our Products</h1>
+    </div>
+</section>
+
 
     <!--==================== PRODUCTS SECTION ====================-->
     <section class="products-section">
