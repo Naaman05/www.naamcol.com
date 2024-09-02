@@ -111,46 +111,10 @@
             gap: 15px;
         }
 
-        /* Hero Section with Centered Image */
-        .hero-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-            margin: 40px auto;
-            position: relative;
-        }
-
-        /* CSS for Hero Section Image */
-        .hero-image-ab2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-image-ab2 img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-
         /* Products Content Styling */
         .products-section {
             background-color: #ffffff;
             padding: 60px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .products-section h2 {
@@ -163,7 +127,7 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -211,7 +175,7 @@
             margin-top: 10px;
             color: #555;
             font-size: 0.9em;
-            margin-bottom: 20px; /* Added margin for spacing between text and button */
+            margin-bottom: 15px; /* Added margin for spacing between text and button */
         }
 
         .view-more-btn {
@@ -221,13 +185,15 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px; /* Added margin for spacing between text and button */
+            margin-top: 15px;
             font-size: 1em;
             transition: background-color 0.3s;
+            text-decoration: none; /* Ensures button look */
+            display: inline-block; /* Ensures it looks like a button */
         }
 
         .view-more-btn:hover {
-            background-color: #094b92;
+            background-color: #1f5dc1;
         }
 
         /* WhatsApp Chat Button */
@@ -319,6 +285,10 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -327,6 +297,7 @@
 
     <!--==================== HEADER (Simplified Navbar) ====================-->
     <header class="header" id="header">
+        <!-- Logo and Navigation -->
         <div class="nav__logo">
             <a href="index.html"><img src="naamcol.jpeg" alt="Naamcol Logo" class="logo"></a>
             <span class="nav__logo-text">Naaman Muses & Co Ltd</span>
@@ -364,7 +335,7 @@
                     <div class="product-description">
                         Known for its extensive range of snacks, spices, and condiments, Tropical Heat is a favorite among consumers...
                     </div>
-                    <a href="pdfs/tropical_heat_products.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="tropical-heat-products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Pwani Oil Products Ltd -->
@@ -376,7 +347,7 @@
                     <div class="product-description">
                         As a distributor of Pwani Oil Products, we supply a range of cooking oils, fats, and soaps...
                     </div>
-                    <a href="pdfs/pwani_oil_products.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="pwani-oil-products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Manji Food Industries -->
@@ -388,7 +359,7 @@
                     <div class="product-description">
                         Manji is a leading manufacturer of biscuits and baked goods. We distribute a comprehensive range of their products...
                     </div>
-                    <a href="pdfs/manji_food_products.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="manji-food-products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Kimfay -->
@@ -400,7 +371,7 @@
                     <div class="product-description">
                         Specializing in personal hygiene and sanitary products, Kimfay is a trusted name...
                     </div>
-                    <a href="pdfs/kimfay_products.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="kimfay-products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
 
                 <!-- Zesta -->
@@ -412,7 +383,7 @@
                     <div class="product-description">
                         Trufoods is known for its extensive range of food products, including jams, sauces, and beverages...
                     </div>
-                    <a href="pdfs/zesta_products.pdf" target="_blank" class="view-more-btn">View More</a>
+                    <a href="zesta-products.pdf" target="_blank" class="view-more-btn">View More</a>
                 </div>
             </div>
         </div>
@@ -437,7 +408,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Navbar Toggle -->
+    <!-- JavaScript for Slideshow and Navbar Toggle -->
     <script>
         // JavaScript to handle the toggle of the mobile menu
         const mobileMenu = document.getElementById('nav-toggle');
